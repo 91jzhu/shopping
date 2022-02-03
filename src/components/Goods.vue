@@ -2,7 +2,7 @@
   <div class="goodsWrapper">
 <!--    <header>导航栏</header>-->
 <!--    <main>商品</main>-->
-    <Tabs>
+    <Tabs :selected="selected" @update="update">
       <Tab title="tab1">content1</Tab>
       <Tab title="tab2">content2</Tab>
       <Tab title="tab3">content3</Tab>
@@ -18,11 +18,13 @@ import Tabs from './Tabs.vue'
 import {ref} from 'vue'
 
 export default {
-  name: "Goods.vue",
   components:{Navbar,Tab,Tabs},
   setup(){
-    const selected=ref('tab1')
-    return {selected}
+    let selected=ref('tab1')
+    const update=val=>{
+      selected.value=val
+    }
+    return {selected,update}
   }
 }
 </script>

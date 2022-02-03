@@ -1,23 +1,36 @@
 <template>
   <div class="tabsWrapper">
-    <div class="title" v-for="t in titles">
-      {{ t }}
+    <div class="titleWrapper">
+      <div class="title" v-for="child in children"
+           :class="{selected:selected===child.props.title}"
+           @click="()=>show(child.props.title)">
+        {{ child.props.title }}
+      </div>
+      <div class="line"/>
     </div>
-    <div class="content">
-      <component v-for="c in defaults" :is="c"/>
+    <div class="contentWrapper">
+      <component class="content"
+                 v-for="child in children"
+                 :is="child"
+                 v-show="child.props.title===selected"/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 export default {
-  name:'Tabs.vue',
+  props: {
+    selected: String
+  },
   setup(props, context) {
-    console.log(12);
-    const defaults = context.slots.default()
-    const titles = context.attrs
-    console.log(context);
-    return {defaults, titles,props}
+    const children = context.slots.default()
+    children.forEach(child => {
+      console.log(child);
+    })
+    const show = (title) => {
+      context.emit('update', title)
+    }
+    return {children, show}
   },
 }
 </script>
@@ -26,21 +39,34 @@ export default {
 .tabsWrapper {
   width: 33.33333%;
 
-  .title {
+  .titleWrapper {
     border-bottom: 1px solid grey;
-    cursor: pointer;
+    width: 100%;
 
-    &.selected {
-      background: black;
-      color: deepskyblue;
+    .line{
+
+    }
+
+    .title {
+      cursor: pointer;
+      display: inline-block;
+      width: 33.33333%;
+      text-align: center;
+
+      &.selected {
+        color: deepskyblue;
+      }
     }
   }
 
-  .content {
-    display: block;
+  .contentWrapper {
+    border: 1px solid red;
 
-    &.selected {
+    .content {
+      background: black;
+      display: none;
     }
   }
 }
+
 </style>

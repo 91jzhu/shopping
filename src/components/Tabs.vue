@@ -1,23 +1,20 @@
 <template>
   <div class="tabsWrapper">
-    <div class="title" v-for="t in titles">
-      {{ t }}
+    <div class="title" v-for="child in children">
+      {{ child.props.title }}
     </div>
     <div class="content">
-      <component v-for="c in defaults" :is="c"/>
+      <component v-for="(child, index) in children" :is="child"/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 export default {
-  name:'Tabs.vue',
+  name:'Tabs',
   setup(props, context) {
-    console.log(12);
-    const defaults = context.slots.default()
-    const titles = context.attrs
-    console.log(context);
-    return {defaults, titles,props}
+    const children = context.slots.default()
+    return {children, props}
   },
 }
 </script>

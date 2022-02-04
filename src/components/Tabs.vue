@@ -6,27 +6,25 @@
            @click="()=>show(child.props.title)">
         {{ child.props.title }}
       </div>
-      <div class="line"/>
     </div>
     <div class="contentWrapper">
       <component class="content"
-                 v-for="child in children"
+                 v-for="(child,index) in children"
+                 :class="{selected:child.props.title===selected}"
                  :is="child"
-                 v-show="child.props.title===selected"/>
+                 :key="index"/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import {ref,onMounted,watchEffect} from 'vue'
 export default {
   props: {
     selected: String
   },
   setup(props, context) {
     const children = context.slots.default()
-    children.forEach(child => {
-      console.log(child);
-    })
     const show = (title) => {
       context.emit('update', title)
     }
@@ -35,36 +33,44 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style  scoped lang="scss">
 .tabsWrapper {
   width: 33.33333%;
 
   .titleWrapper {
     border-bottom: 1px solid grey;
     width: 100%;
-
+    position: relative;
     .line{
-
+      position: absolute;
+      height:3px;
+      width:100px;
+      background: deepskyblue;
+      left:0;
+      bottom:0;
     }
 
     .title {
       cursor: pointer;
       display: inline-block;
-      width: 33.33333%;
       text-align: center;
-
+      color:grey;
+      width:33.33333%;
+      padding: 8px 0;
       &.selected {
-        color: deepskyblue;
+        color:black;
+        font-size: 24px;
       }
     }
   }
 
   .contentWrapper {
-    border: 1px solid red;
 
-    .content {
-      background: black;
+    ::v-deep .content {
       display: none;
+      &.selected{
+        display: block;
+      }
     }
   }
 }

@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Good.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icon.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TabContent/Pet.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TabContent/Snacks.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TabContent/Sports.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Goods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Goods.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tabs.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +31,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="24Yfn4uWeyp0VKIs7AIOfJJb8ua" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -38,7 +54,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/新建草稿文件" value="Vue" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../coms-ui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -71,6 +87,11 @@
       <workItem from="1643883727191" duration="86000" />
       <workItem from="1643883915268" duration="1340000" />
       <workItem from="1643885728819" duration="8685000" />
+      <workItem from="1643899815248" duration="588000" />
+      <workItem from="1643900473812" duration="16000" />
+      <workItem from="1643936978181" duration="1316000" />
+      <workItem from="1643955903616" duration="90000" />
+      <workItem from="1643956043385" duration="8000000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1643812736433</created>
@@ -79,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643812736433</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="tab 切换完成">
+      <created>1643899830845</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1643899830845</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,6 +115,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化项目" />
+    <MESSAGE value="tab 切换完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="tab 切换完成" />
   </component>
 </project>

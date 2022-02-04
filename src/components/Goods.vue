@@ -1,13 +1,17 @@
 <template>
   <div class="goodsWrapper">
-<!--    <header>导航栏</header>-->
-<!--    <main>商品</main>-->
-    <Tabs :selected="selected" @update="update">
-      <Tab title="tab1">content1</Tab>
-      <Tab title="tab2">content2</Tab>
-      <Tab title="tab3">content3</Tab>
+    <Tabs :selected="selected" @update="update" class="header">
+      <Tab title="零食">
+        <Snacks/>
+      </Tab>
+      <Tab title="宠物">
+        <Pet/>
+      </Tab>
+      <Tab title="体育">
+        <Sports/>
+      </Tab>
     </Tabs>
-<!--    <Navbar/>-->
+    <Navbar/>
   </div>
 </template>
 
@@ -15,33 +19,35 @@
 import Navbar from './Navbar.vue'
 import Tab from './Tab.vue'
 import Tabs from './Tabs.vue'
+import Snacks from './TabContent/Snacks.vue'
+import Pet from './TabContent/Pet.vue'
+import Sports from './TabContent/Sports.vue'
 import {ref} from 'vue'
 
 export default {
-  components:{Navbar,Tab,Tabs},
-  setup(){
-    let selected=ref('tab1')
-    const update=val=>{
-      selected.value=val
+  components: {Navbar, Tab, Tabs, Snacks,Pet,Sports},
+  setup() {
+    let selected = ref('零食')
+    const update = val => {
+      selected.value = val
     }
-    return {selected,update}
+    return {selected, update}
   }
 }
 </script>
 
 <style scoped lang="scss">
-.goodsWrapper{
+.goodsWrapper {
   display: flex;
   flex-direction: column;
-  height:100vh;
-  header{
-    border:1px solid red;
+  height: 100vh;
+
+  .header {
+    width: 100%;
 
   }
-  main{
-    border:1px solid blue;
-    flex:1;
-  }
 }
+
+
 
 </style>

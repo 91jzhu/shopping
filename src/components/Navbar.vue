@@ -12,6 +12,11 @@
 
 <style lang="scss" scoped>
 .navWrapper{
+  z-index: 2;
+  position: absolute;
+  left:0;
+  bottom:0;
+  width:100%;
   display: flex;
   justify-content: space-between;
   a{

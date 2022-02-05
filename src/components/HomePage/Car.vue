@@ -38,7 +38,7 @@ export default {
       }
     }
     const open=()=>{
-        openToast()
+        openToast({tip:'已收藏'})
     }
     const active=ref(false)
     return {visible,show,openDialog,active,open}

@@ -1,7 +1,8 @@
 import {createApp, h} from "vue";
 import Toast from "./Toast.vue";
 
-const openToast=()=>{
+const openToast=(option:any)=>{
+    const {tip='未设置'}=option
     const div=document.createElement('div')
     document.body.appendChild(div)
     const app=createApp({
@@ -13,7 +14,7 @@ const openToast=()=>{
                     app.unmount()
                     div.remove()
                 }
-            },{tip:'已收藏111 '})
+            },{tip})
         }
     })
     app.mount(div)

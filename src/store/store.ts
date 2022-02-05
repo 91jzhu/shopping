@@ -1,21 +1,28 @@
 
 import {reactive, readonly} from "vue";
 
-const carItem=reactive<String[]>([])
+const carItem=JSON.parse(localStorage.getItem('carItem')!)||reactive<String[]>([])
+
 const addCar=(name:String)=>{
-  carItem.push(name)
-  console.log(carItem);
+  const tmp=JSON.parse(localStorage.getItem('carItem')||'[]')
+  tmp.push(name)
+  localStorage.setItem('carItem',JSON.stringify(tmp))
 }
 const deleteCar=(name:String)=>{
-  carItem.splice(carItem.indexOf(name),1)
+  const tmp=JSON.parse(localStorage.getItem('carItem')||'[]')
+  tmp.splice(carItem.indexOf(name),1)
+  localStorage.setItem('carItem',JSON.stringify(tmp))
 }
 
-const collectItem=reactive<String[]>([])
+const collectItem=JSON.parse(localStorage.getItem('collectItem')!)||reactive<String[]>([])
 const addCollect=(name:String)=>{
-  collectItem.push(name)
-  console.log(collectItem)
+  const tmp=JSON.parse(localStorage.getItem('collectItem')||'[]')
+  tmp.push(name)
+  localStorage.setItem('collectItem',JSON.stringify(tmp))
 }
 const deleteCollect=(name:String)=>{
-  collectItem.splice(collectItem.indexOf(name),1)
+  const tmp=JSON.parse(localStorage.getItem('collectItem')||'[]')
+  tmp.splice(carItem.indexOf(name),1)
+  localStorage.setItem('collectItem',JSON.stringify(tmp))
 }
 export {carItem,addCar,deleteCar,addCollect,deleteCollect}

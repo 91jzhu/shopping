@@ -12,7 +12,6 @@
 import Icon from './Tool/Icon.vue'
 import {openDialog} from "./Tool/openDialog";
 import {addCar, addCollect} from "../store/store";
-
 export default {
   components: {Icon},
   props: {

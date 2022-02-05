@@ -1,5 +1,5 @@
 <template>
-  <div class="good" @touchstart="touch">
+  <div class="good" @click.stop="touch">
     <Icon :name="name"/>
     <div class="line"/>
     <div class="slot">
@@ -10,6 +10,8 @@
 
 <script lang="ts">
 import Icon from './Tool/Icon.vue'
+import {openDialog} from "./Tool/openDialog";
+import {addCar, addCollect} from "../store/store";
 
 export default {
   components: {Icon},
@@ -17,10 +19,12 @@ export default {
     name: String,
   },
   setup(props, context) {
-    const touch = (e: TouchEvent) => {
-      setTimeout(() => {
-        console.log(props.name);
-      }, 500)
+    const touch = (e: PointerEvent) => {
+      console.log(typeof props.name);
+      openDialog({
+        carFunc:()=>addCar(props.name),
+        collectFunc:()=>addCollect(props.name)
+      })
     }
     return {touch}
   }

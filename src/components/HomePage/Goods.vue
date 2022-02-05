@@ -1,6 +1,6 @@
 <template>
   <div class="goodsWrapper">
-    <Tabs :selected="selected" @update="update" class="header">
+    <Tabs v-model:selected="selected" class="header">
       <Tab title="零食">
         <Snacks/>
       </Tab>
@@ -28,10 +28,7 @@ export default {
   components: {Navbar, Tab, Tabs, Snacks,Pet,Sports},
   setup() {
     let selected = ref('零食')
-    const update = val => {
-      selected.value = val
-    }
-    return {selected, update}
+    return {selected}
   }
 }
 </script>

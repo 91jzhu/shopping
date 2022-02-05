@@ -26,7 +26,7 @@ export default {
   setup(props, context) {
     const children = context.slots.default()
     const show = (title) => {
-      context.emit('update', title)
+      context.emit('update:selected', title)
     }
     return {children, show}
   },

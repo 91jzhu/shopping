@@ -18,13 +18,15 @@
 
 <script lang="ts">
 import Icon from "./Icon.vue";
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 
 export default {
   name: "Dialog",
   components: {Icon},
   props: {
-    visible: Boolean
+    visible: Boolean,
+    carFunc:Function,
+    collectFunc:Function
   },
   setup(props, context) {
     const overload = ref(null)
@@ -33,19 +35,21 @@ export default {
     const emitClose = () => {
       context.emit('update:visible', false)
     }
-    const close = (e) => {
-      if (overload.value && overload.value === e.target) {
+    const close = (e:PointerEvent) => {
+      if (overload.value && (overload.value as HTMLDivElement)===(e.target as HTMLDivElement)){
         emitClose()
       }
     }
-    const addGood = (e) => {
-      if (carIcon.value && carIcon.value.contains(e.target)) {
+    const addGood = (e:PointerEvent) => {
+      if (carIcon.value && (carIcon.value as HTMLDivElement).contains(e.target as HTMLDivElement)) {
         emitClose()
+        props.carFunc()
       }
     }
-    const collectGood = (e) => {
-      if (collectIcon.value && collectIcon.value.contains(e.target)) {
+    const collectGood = (e:PointerEvent) => {
+      if (collectIcon.value && (collectIcon.value as HTMLDivElement).contains(e.target as HTMLDivElement)) {
         emitClose()
+        props.collectFunc()
       }
     }
     return {props, close, overload, carIcon,collectIcon, addGood, collectGood}
@@ -62,7 +66,6 @@ export default {
   height: 100%;
   background: rgba(193, 193, 193, 0.3);
   z-index: 2;
-
   .content {
     position: absolute;
     height: 20%;
@@ -76,7 +79,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     box-shadow: 1px 1px 1px grey;
-
     h3 {
       border-bottom: 1px solid grey;
       display: flex;
@@ -84,20 +86,14 @@ export default {
       align-items: center;
       padding-bottom: 12px;
     }
-
     .select {
       display: flex;
       justify-content: space-around;
       align-items: center;
       padding-top: 6px;
-      //border:1px solid red;
-      .toCar {
-      }
-
-      .collect {
-      }
+      .toCar {}
+      .collect {}
     }
-
   }
 }
 </style>

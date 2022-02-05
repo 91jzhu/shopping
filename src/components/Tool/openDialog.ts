@@ -1,7 +1,8 @@
 import {createApp, h, render} from "vue";
 import Dialog from "./Dialog.vue";
 
-const openDialog = (option) => {
+const openDialog = (option:any) => {
+    const {carFunc,collectFunc}=option
     const div = document.createElement('div')
     document.body.appendChild(div)
     const app = createApp({
@@ -13,7 +14,8 @@ const openDialog = (option) => {
                         app.unmount()
                         div.remove()
                     }
-                }
+                },
+                carFunc,collectFunc
             })
         }
     })

@@ -41,14 +41,6 @@ export default {
     border-bottom: 1px solid grey;
     width: 100%;
     position: relative;
-    .line{
-      position: absolute;
-      height:3px;
-      width:100px;
-      background: deepskyblue;
-      left:0;
-      bottom:0;
-    }
 
     .title {
       cursor: pointer;

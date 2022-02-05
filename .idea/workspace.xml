@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Good.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Icon.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TabContent/Pet.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TabContent/Snacks.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TabContent/Sports.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Goods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Goods.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tabs.vue" afterDir="false" />
-    </list>
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="完成商品页面的商品" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,11 +13,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="Vue Single File Component" />
+        <option value="TypeScript File" />
       </list>
     </option>
-    <option name="SCHEME" value="项目" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,6 +28,14 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/components/Tool/Dialog.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/HomePage/Car.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/Info.vue" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="24Yfn4uWeyp0VKIs7AIOfJJb8ua" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -54,15 +52,24 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/新建草稿文件" value="Vue" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/JZHU/tyre" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
-    <property name="ts.external.directory.path" value="D:\ws\WebStorm 2021.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Project\shopping\node_modules\typescript\lib" />
+    <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Project\shopping\src\components\Tool" />
+      <recent name="C:\Project\shopping\src\components\HomePage" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -91,7 +98,18 @@
       <workItem from="1643900473812" duration="16000" />
       <workItem from="1643936978181" duration="1316000" />
       <workItem from="1643955903616" duration="90000" />
-      <workItem from="1643956043385" duration="8000000" />
+      <workItem from="1643956043385" duration="13621000" />
+      <workItem from="1643974568258" duration="1368000" />
+      <workItem from="1643975960566" duration="1362000" />
+      <workItem from="1643983636090" duration="477000" />
+      <workItem from="1643984125970" duration="823000" />
+      <workItem from="1643984964948" duration="1480000" />
+      <workItem from="1643986466278" duration="495000" />
+      <workItem from="1643987058398" duration="418000" />
+      <workItem from="1644029353042" duration="363000" />
+      <workItem from="1644029730124" duration="4099000" />
+      <workItem from="1644038615880" duration="54000" />
+      <workItem from="1644038727071" duration="13100000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1643812736433</created>
@@ -107,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643899830845</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="完成商品页面的商品">
+      <created>1643965706395</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1643965706395</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +141,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化项目" />
     <MESSAGE value="tab 切换完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="tab 切换完成" />
+    <MESSAGE value="完成商品页面的商品" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成商品页面的商品" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

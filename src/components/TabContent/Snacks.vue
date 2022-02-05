@@ -66,7 +66,10 @@
 <script lang="ts">
 import Good from '../Good.vue'
 export default {
-  components:{Good}
+  components:{Good},
+  setup(props,context){
+    return {}
+  }
 }
 </script>
 

@@ -9,18 +9,18 @@
 </template>
 
 <script lang="ts">
-import Icon from './Icon.vue'
+import Icon from './Tool/Icon.vue'
 
 export default {
   components: {Icon},
   props: {
     name: String,
   },
-  setup(props,context){
-    const touch=(e)=>{
-      setTimeout(()=>{
-        console.log(e.target);
-      },500)
+  setup(props, context) {
+    const touch = (e: TouchEvent) => {
+      setTimeout(() => {
+        console.log(props.name);
+      }, 500)
     }
     return {touch}
   }
@@ -35,15 +35,19 @@ export default {
   height: 72px;
   display: flex;
   position: relative;
-  .line{
+
+  .line {
     position: absolute;
-    width:1px;
-    height:70px;
-    background: red;
-    left:88px;
+    width: 1px;
+    height: 52px;
+    background: darkgrey;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 88px;
   }
-  .slot{
-    flex:1;
+
+  .slot {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;

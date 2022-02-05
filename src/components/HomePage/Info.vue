@@ -1,10 +1,10 @@
 <template>
-  <h1>car</h1>
+  <h1>info</h1>
 </template>
 
 <script>
 export default {
-  name: "Car.vue"
+  name: "Info"
 }
 </script>
 

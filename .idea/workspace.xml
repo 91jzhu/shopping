@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="数据持久化">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="优化数据持久化代码">
+      <change afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Tool/openCart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Good.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Good.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tool/openToast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/openToast.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Pet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Pet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Snacks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Snacks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Sports.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Sports.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +74,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.24610336" />
     <property name="ts.external.directory.path" value="C:\Project\shopping\node_modules\typescript\lib" />
     <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
@@ -118,7 +124,10 @@
       <workItem from="1644029353042" duration="363000" />
       <workItem from="1644029730124" duration="4099000" />
       <workItem from="1644038615880" duration="54000" />
-      <workItem from="1644038727071" duration="20739000" />
+      <workItem from="1644038727071" duration="22892000" />
+      <workItem from="1644068533510" duration="454000" />
+      <workItem from="1644069022342" duration="2319000" />
+      <workItem from="1644117486322" duration="5962000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1643812736433</created>
@@ -155,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644060711105</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="优化数据持久化代码">
+      <created>1644062198967</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1644062198967</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +194,8 @@
     <MESSAGE value="完成商品页面的商品" />
     <MESSAGE value="使用 reactive 模拟 vuex" />
     <MESSAGE value="数据持久化" />
-    <option name="LAST_COMMIT_MESSAGE" value="数据持久化" />
+    <MESSAGE value="优化数据持久化代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化数据持久化代码" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

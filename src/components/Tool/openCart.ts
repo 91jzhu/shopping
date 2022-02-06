@@ -5,6 +5,7 @@ import Cart from '../Cart.vue'
 
 const openCart=({name,ref,price}:Car)=>{
     const div=document.createElement('div')
+    div.classList.add('bottle')
     ref&&ref.value.appendChild(div)
     const app=createApp({
         render(){

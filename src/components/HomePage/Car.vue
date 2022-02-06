@@ -50,7 +50,6 @@ export default {
 
   .settle {
     .carList {
-      border: 1px solid red;
       margin-top: 8px;
       border-radius: 12px;
       display: flex;

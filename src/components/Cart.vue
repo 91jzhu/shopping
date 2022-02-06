@@ -1,9 +1,9 @@
 <template>
   <div class="cart">
-    <Icon :name="name"/>
+    <Icon :name="name" class="cartIcon"/>
     <div class="line"></div>
     <div class="cash">
-      {{price}}
+      {{ price }}
     </div>
   </div>
 </template>
@@ -12,23 +12,45 @@
 import Icon from "./Tool/Icon.vue";
 import {onMounted} from "vue";
 import {openCart} from "./Tool/openCart";
+
 export default {
   name: "Cart.vue",
   components: {Icon},
-  props:{
-    name:String,
-    price:Number
+  props: {
+    name: String,
+    price: Number
   },
 }
 </script>
 
 <style scoped lang="scss">
-.cart{
-  width:49vw;
-  border:1px solid green;
+.cart {
+  border-radius: 12px;
+  border: 1px solid green;
   display: flex;
-  flex-direction: column;
-  .line{}
-  .cash{}
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding:12px 0;
+  width:92%;
+  height:50%;
+
+  .line {
+      position: absolute;
+      width: 1px;
+      height: 52px;
+      background: darkgrey;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50%;
+  }
+
+  .cash {
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+  }
 }
 </style>

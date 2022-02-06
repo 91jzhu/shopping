@@ -17,6 +17,12 @@
   height:100vh;
   overflow: hidden;
 }
+.bottle{
+  width:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /**::-webkit-scrollbar {*/
 /*  !*滚动条整体样式*!*/
 /*  width : 8px;  !*高宽分别对应横竖滚动条的尺寸*!*/

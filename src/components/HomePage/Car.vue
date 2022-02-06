@@ -28,7 +28,7 @@ export default {
     onMounted(()=>{
         if(carList.value){
           carItem.forEach((name:String)=>{
-            // openCart({name,ref:carList,})//todo
+            // openCart({name,ref:carList,price:})//todo
           })
         }
     })

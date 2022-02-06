@@ -1,99 +1,63 @@
 <template>
   <div class="pet">
-    <Good name="pethome">
+    <Good name="pethome" price="$35">
       <template v-slot:describe>
         宠物也需要家
       </template>
-      <template v-slot:price>
-        $35
-      </template>
     </Good>
-    <Good name="petlove">
+    <Good name="petlove" price="$20">
       <template v-slot:describe>
         介个就是爱情
       </template>
-      <template v-slot:price>
-        $20
-      </template>
     </Good>
-    <Good name="petfood">
+    <Good name="petfood" price="$15">
       <template v-slot:describe>
         喜欢宠物就给它买零食
       </template>
-      <template v-slot:price>
-        $15
-      </template>
     </Good>
-    <Good name="petclothes">
+    <Good name="petclothes" price="$23">
       <template v-slot:describe>
         洗衣服显然比为宠物洗澡更简单
       </template>
-      <template v-slot:price>
-        $23
-      </template>
     </Good>
-    <Good name="cat">
+    <Good name="cat" price="$49">
       <template v-slot:describe>
         一位楚楚可怜的喵星人
       </template>
-      <template v-slot:price>
-        $49
-      </template>
     </Good>
-    <Good name="dog">
+    <Good name="dog" price="$49">
       <template v-slot:describe>
         一位呆呆的汪星人
       </template>
-      <template v-slot:price>
-        $49
-      </template>
     </Good>
-    <Good name="petvaccin">
+    <Good name="petvaccin" price="$69">
       <template v-slot:describe>
         阻止病毒折磨我们的宠物
       </template>
-      <template v-slot:price>
-        $69
-      </template>
     </Good>
-    <Good name="petpicture">
+    <Good name="petpicture" price="$99">
       <template v-slot:describe>
         为宠物量身打造的摄像机
       </template>
-      <template v-slot:price>
-        $99
-      </template>
     </Good>
-    <Good name="petwash">
+    <Good name="petwash" price="$59">
       <template v-slot:describe>
         洗澡后的宠物更有活力
       </template>
-      <template v-slot:price>
-        $59
-      </template>
     </Good>
-    <Good name="petbag">
+    <Good name="petbag" price="$39">
       <template v-slot:describe>
         宠物的移动房车
       </template>
-      <template v-slot:price>
-        $39
-      </template>
     </Good>
-    <Good name="petnice">
+    <Good name="petnice" price="$39">
       <template v-slot:describe>
         为爱美人士的宠物准备
       </template>
-      <template v-slot:price>
-        $39
-      </template>
     </Good>
-    <Good name="pettoy">
+    <Good name="pettoy" price="$15">
       <template v-slot:describe>
         您和宠物娱乐的最佳选择
-      </template>
-      <template v-slot:price>
-        $15
       </template>
     </Good>
   </div>

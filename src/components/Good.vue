@@ -7,7 +7,7 @@
     </div>
     <div class="line2"/>
     <div class="cash">
-      <slot name="price"/>
+      {{price}}
     </div>
   </div>
 </template>
@@ -16,6 +16,8 @@
 import Icon from './Tool/Icon.vue'
 import {openDialog} from "./Tool/openDialog";
 import {addCar, addCollect} from "../store/store";
+import { toRefs } from 'vue';
+import Car from "./HomePage/Car.vue";
 export default {
   components: {Icon},
   props: {
@@ -24,10 +26,9 @@ export default {
   },
   setup(props, context) {
     const touch = (e: PointerEvent) => {
-      console.log(typeof props.name);
       openDialog({
-        carFunc:()=>addCar(props.name),
-        collectFunc:()=>addCollect(props.name)
+        carFunc:()=>addCar({name:props.name,price:props.price}),
+        collectFunc:()=>addCollect({name:props.name,price:props.price})
       })
     }
     return {touch}

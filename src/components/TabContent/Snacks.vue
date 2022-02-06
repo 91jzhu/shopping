@@ -1,99 +1,63 @@
 <template>
   <div class="snacks">
-    <Good name="cake">
+    <Good name="cake" price="$7">
       <template v-slot:describe>
         一块美味的小蛋糕
       </template>
-      <template v-slot:price>
-          $7
-      </template>
     </Good>
-    <Good name="bread">
+    <Good name="bread" price="$5">
       <template v-slot:describe>
         刚烤熟的面包
       </template>
-      <template v-slot:price>
-        $5
-      </template>
     </Good>
-    <Good name="pizza">
+    <Good name="pizza" price="$12">
       <template v-slot:describe>
         偶尔来点快餐
       </template>
-      <template v-slot:price>
-        $12
-      </template>
     </Good>
-    <Good name="pear">
+    <Good name="pear" price="$2">
       <template v-slot:describe>
         酸酸甜甜的梨
       </template>
-      <template v-slot:price>
-        $2
-      </template>
     </Good>
-    <Good name="bigcake">
+    <Good name="bigcake" price="$56">
       <template v-slot:describe>
         生日也不能亏待自己
       </template>
-      <template v-slot:price>
-        $56
-      </template>
     </Good>
-    <Good name="fish">
+    <Good name="fish" price="$28">
       <template v-slot:describe>
         海鲜来均衡营养
       </template>
-      <template v-slot:price>
-        $28
-      </template>
     </Good>
-    <Good name="banana">
+    <Good name="banana" price="$2.5">
       <template v-slot:describe>
         健身后恰一根香蕉，美滋滋
       </template>
-      <template v-slot:price>
-        $2.5
-      </template>
     </Good>
-    <Good name="sweet">
+    <Good name="sweet" price="$3">
       <template v-slot:describe>
         趁身体没反应过来吃个甜甜圈
       </template>
-      <template v-slot:price>
-        $3
-      </template>
     </Good>
-    <Good name="beer">
+    <Good name="beer" price="$3">
       <template v-slot:describe>
         快乐就一起哈啤
       </template>
-      <template v-slot:price>
-        $3
-      </template>
     </Good>
-    <Good name="sugar">
+    <Good name="sugar" price="$1.5">
       <template v-slot:describe>
         送女神一个她会很开心
       </template>
-      <template v-slot:price>
-        $1.5
-      </template>
     </Good>
-    <Good name="apple">
+    <Good name="apple" price="$2">
       <template v-slot:describe>
         一日一苹果，医生远离我
       </template>
-      <template v-slot:price>
-        $2
-      </template>
     </Good>
-    <Good name="watermelon">
+    <Good name="watermelon" price="$3">
       <template v-slot:describe>
         西瓜和夏天最配了
-      </template>
-      <template v-slot:price>
-        $3
       </template>
     </Good>
   </div>

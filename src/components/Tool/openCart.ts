@@ -10,8 +10,8 @@ const openCart=({name,ref,price}:Car)=>{
         render(){
             return h(Cart,{
                 name,
-            },{name,price}
-            )
+                price
+            },{name,price})
         }
     })
     app.mount(div)

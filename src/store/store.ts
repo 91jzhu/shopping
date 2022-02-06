@@ -42,9 +42,7 @@ const add = ({name,price, key, error, success}:Add) => {
             return
         }
     })
-    const obj={name,price}
-    tmp.push(obj)
-    console.log(obj);
+    tmp.push({name,price})
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: success})
 }

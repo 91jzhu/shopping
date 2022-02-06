@@ -1,14 +1,14 @@
 <template>
   <div class="cart">
-    <Icon name="name"/>
+    <Icon :name="name"/>
     <div class="line"></div>
     <div class="cash">
-      <slot name="price"/>
+      {{price}}
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Icon from "./Tool/Icon.vue";
 import {onMounted} from "vue";
 import {openCart} from "./Tool/openCart";
@@ -19,16 +19,15 @@ export default {
     name:String,
     price:Number
   },
-  setup(){
-
-  }
 }
 </script>
 
 <style scoped lang="scss">
 .cart{
-  width:45%;
-  border:1px solid red;
+  width:49vw;
+  border:1px solid green;
+  display: flex;
+  flex-direction: column;
   .line{}
   .cash{}
 }

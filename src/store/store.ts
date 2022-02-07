@@ -14,7 +14,6 @@ const addCar = ({name,price}:Partial<Add>) => {
         error: '宝贝已经在购物车啦',
         success: '添加成功，宝贝在购物车等您'
     })
-    console.log(carItem);
 }
 const deleteCar = (name: String) => {
     remove({name, key: 'carItem'})
@@ -63,4 +62,4 @@ const remove = ({name, key}:Remove) => {
     localStorage.setItem('carItem', JSON.stringify(tmp))
 }
 
-export {fetchCar,addCar, deleteCar,addCollect,deleteCollect}
+export {carItem,fetchCar,addCar, deleteCar,addCollect,deleteCollect}

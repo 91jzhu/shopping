@@ -1,8 +1,23 @@
+<!--<template>-->
+<!--  <div class="carWrapper">-->
+<!--    <div class="header">购物车详情</div>-->
+<!--    <div class="settle">-->
+<!--      <div class="carList" ref="carList" v-if="visible">-->
+<!--        <component v-for="cart in carItem" :is="cart"></component>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="btnWrapper">-->
+<!--      <button class="btn">结算</button>-->
+<!--    </div>-->
+<!--    <Navbar/>-->
+<!--  </div>-->
+<!--</template>-->
+
 <template>
   <div class="carWrapper">
     <div class="header">购物车详情</div>
     <div class="settle">
-      <div class="carList" ref="carList"></div>
+      <div class="carList" ref="carList" v-if="visible"></div>
     </div>
     <div class="btnWrapper">
       <button class="btn">结算</button>
@@ -17,12 +32,13 @@ import Navbar from '../Navbar.vue'
 import {openCart} from "../Tool/openCart";
 import Cart from '../Cart.vue'
 import {Add, Car} from "../../type";
-import {fetchCar} from '../../store/store';
+import {carItem, fetchCar} from '../../store/store';
 
 export default {
   components: {Cart, Navbar},
   setup() {
     const carList = ref(null)
+    const visible=ref(true)
     onMounted(() => {
       if (carList.value) {
         fetchCar('carItem').forEach(({name, price}: Partial<Add>) => {
@@ -30,7 +46,7 @@ export default {
         })
       }
     })
-    return {carList}
+    return {carList,visible,carItem}
   }
 }
 </script>
@@ -54,6 +70,9 @@ export default {
       border-radius: 12px;
       display: flex;
       flex-wrap: wrap;
+    }
+    .replace{
+
     }
   }
 

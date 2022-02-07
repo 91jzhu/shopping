@@ -18,7 +18,7 @@
   overflow: hidden;
 }
 .bottle{
-  width:50%;
+  width:100%;
   display: flex;
   justify-content: center;
   align-items: center;

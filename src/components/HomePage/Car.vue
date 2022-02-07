@@ -14,10 +14,10 @@
 <script lang="ts">
 import {onMounted, ref} from 'vue';
 import Navbar from '../Navbar.vue'
-import {carItem} from "../../store/store";
 import {openCart} from "../Tool/openCart";
 import Cart from '../Cart.vue'
 import {Add, Car} from "../../type";
+import { fetch } from '../../store/store';
 
 export default {
   components: {Cart, Navbar},
@@ -25,7 +25,7 @@ export default {
     const carList = ref(null)
     onMounted(() => {
       if (carList.value) {
-        carItem.forEach(({name, price}: Partial<Add>) => {
+        fetch('carItem').forEach(({name, price}: Partial<Add>) => {
           openCart(<Car>{name, ref: carList, price})
         })
       }

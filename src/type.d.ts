@@ -3,10 +3,10 @@ import {Ref} from "vue";
 type Car={
     name:String,
     ref: Ref
-    price:Number
+    price:String
 }
 type Add = {
-    name: String, price:Number,key: string, error: String, success: String
+    name: String, price:String,key: string, error: String, success: String
 }
 
 type Remove={

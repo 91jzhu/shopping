@@ -1,8 +1,11 @@
 import {reactive} from "vue";
 import {openToast} from "../components/Tool/openToast";
-import {Add, Car, Remove} from "../type";
+import {Add, Remove} from "../type";
 
 const carItem = JSON.parse(localStorage.getItem('carItem')!) || reactive<String[]>([])
+const fetch=(key:string)=>{
+    return JSON.parse(localStorage.getItem(key)!) || reactive<String[]>([])
+}
 const addCar = ({name,price}:Partial<Add>) => {
     add(<Add>{
         name,
@@ -11,7 +14,6 @@ const addCar = ({name,price}:Partial<Add>) => {
         error: '宝贝已经在购物车啦',
         success: '添加成功，宝贝在购物车等您'
     })
-    console.log(price);
     console.log(carItem);
 }
 const deleteCar = (name: String) => {
@@ -35,13 +37,12 @@ const deleteCollect = (name: String) => {
 }
 
 const add = ({name,price, key, error, success}:Add) => {
-    const tmp = JSON.parse(localStorage.getItem(key) || '[]')
-    tmp.forEach((item:Partial<Add>)=>{
-        if(item.name===name){
-            openToast({tip: error})
-            return
-        }
-    })
+    const tmp = fetch(key)
+    const result=tmp.some((item:Partial<Add>)=> item.name===name)
+    if(result){
+        openToast({tip: error})
+        return
+    }
     tmp.push({name,price})
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: success})
@@ -57,4 +58,4 @@ const remove = ({name, key}:Remove) => {
     localStorage.setItem('carItem', JSON.stringify(tmp))
 }
 
-export {carItem, addCar, deleteCar, addCollect, deleteCollect}
+export {carItem, fetch,addCar, deleteCar, addCollect, deleteCollect}

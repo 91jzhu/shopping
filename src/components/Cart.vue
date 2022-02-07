@@ -1,5 +1,5 @@
 <template>
-  <div class="cart">
+  <div class="cart" @click.stop="touch">
     <Icon :name="name" class="cartIcon"/>
     <div class="line"></div>
     <div class="cash">
@@ -12,14 +12,21 @@
 import Icon from "./Tool/Icon.vue";
 import {onMounted} from "vue";
 import {openCart} from "./Tool/openCart";
+import { openDialog } from "./Tool/openDialog";
 
 export default {
   name: "Cart.vue",
   components: {Icon},
   props: {
     name: String,
-    price: Number
+    price: String
   },
+  setup(){
+    const touch=()=>{
+      openDialog({})
+    }
+    return {touch}
+  }
 }
 </script>
 

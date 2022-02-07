@@ -16,13 +16,11 @@
 import Icon from './Tool/Icon.vue'
 import {openDialog} from "./Tool/openDialog";
 import {addCar, addCollect} from "../store/store";
-import { toRefs } from 'vue';
-import Car from "./HomePage/Car.vue";
 export default {
   components: {Icon},
   props: {
     name: String,
-    price:Number
+    price:String
   },
   setup(props, context) {
     const touch = (e: PointerEvent) => {

@@ -20,6 +20,8 @@ const deleteCar = (name: String) => {
     remove({name, key: 'carItem'})
 }
 
+
+// 收藏夹 api
 const collectItem = JSON.parse(localStorage.getItem('collectItem')!) || reactive<String[]>([])
 const addCollect = ({name,price}:Partial<Add>) => {
     console.log(name);
@@ -35,6 +37,8 @@ const addCollect = ({name,price}:Partial<Add>) => {
 const deleteCollect = (name: String) => {
     remove({name, key: 'collectItem'})
 }
+//
+
 
 const add = ({name,price, key, error, success}:Add) => {
     const tmp=fetchCar(key)
@@ -59,4 +63,4 @@ const remove = ({name, key}:Remove) => {
     localStorage.setItem('carItem', JSON.stringify(tmp))
 }
 
-export {fetchCar,addCar, deleteCar, addCollect, deleteCollect}
+export {fetchCar,addCar, deleteCar,addCollect,deleteCollect}

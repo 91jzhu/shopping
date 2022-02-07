@@ -11,7 +11,14 @@ const openCart=({name,ref,price}:Car)=>{
         render(){
             return h(Cart,{
                 name,
-                price
+                price,
+                visible:true,
+                'onUpdate:visible':(val:Boolean)=>{
+                    if(!val){
+                        app.unmount()
+                        div.remove()
+                    }
+                }
             },{name,price})
         }
     })

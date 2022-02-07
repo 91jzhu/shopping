@@ -1,5 +1,5 @@
 <template>
-  <div class="cart" @click.stop="touch">
+  <div class="cart" @click.stop="touch" v-if="visible">
     <Icon :name="name" class="cartIcon"/>
     <div class="line"></div>
     <div class="cash">
@@ -9,19 +9,20 @@
 </template>
 
 <script lang="ts">
-import { deleteCar ,fetch} from "../store/store";
+import { deleteCar} from "../store/store";
 import Icon from "./Tool/Icon.vue";
 import {openDialog} from "./Tool/openDialog";
-import {Car} from "../type";
 import { openToast } from "./Tool/openToast";
+import {ref} from "vue";
 export default {
   name: "Cart.vue",
   components: {Icon},
   props: {
     name: String,
-    price: String
+    price: String,
   },
   setup(props,context) {
+    const visible=ref(true)
     const touch = () => {
       openDialog({
         title: '确定要删除商品吗',
@@ -33,10 +34,11 @@ export default {
         rightFunc: (context) => {
           context.emit('update:visible',false)
           deleteCar(props.name)
+          visible.value=false
         }
       })//todo
     }
-    return {touch}
+    return {touch,visible}
   }
 }
 </script>

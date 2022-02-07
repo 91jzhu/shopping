@@ -30,11 +30,6 @@ export default {
         })
       }
     })
-    // watch(carItem,()=>{
-    //   carItem.forEach(({name, price}: Partial<Add>) => {
-    //     openCart(<Car>{name, ref: carList, price})
-    //   })
-    // })
     return {carList}
   }
 }

@@ -1,23 +1,9 @@
-<!--<template>-->
-<!--  <div class="carWrapper">-->
-<!--    <div class="header">购物车详情</div>-->
-<!--    <div class="settle">-->
-<!--      <div class="carList" ref="carList" v-if="visible">-->
-<!--        <component v-for="cart in carItem" :is="cart"></component>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="btnWrapper">-->
-<!--      <button class="btn">结算</button>-->
-<!--    </div>-->
-<!--    <Navbar/>-->
-<!--  </div>-->
-<!--</template>-->
-
 <template>
   <div class="carWrapper">
     <div class="header">购物车详情</div>
     <div class="settle">
-      <div class="carList" ref="carList" v-if="visible"></div>
+      <div class="carList" ref="carList" v-show="visible"></div>
+      <div class="replace" ref="replace" v-show="!visible">购物车空空如也</div>
     </div>
     <div class="btnWrapper">
       <button class="btn">结算</button>
@@ -39,14 +25,18 @@ export default {
   setup() {
     const carList = ref(null)
     const visible=ref(true)
+    const replace=ref(null)
     onMounted(() => {
       if (carList.value) {
         fetchCar('carItem').forEach(({name, price}: Partial<Add>) => {
           openCart(<Car>{name, ref: carList, price})
         })
+        if((carList.value as HTMLDivElement).children.length===0){
+          visible.value=false
+        }
       }
     })
-    return {carList,visible,carItem}
+    return {carList,visible,carItem,replace}
   }
 }
 </script>

@@ -14,4 +14,11 @@ type Remove={
     key:string
 }
 
-export {Car,Add,Remove}
+type DialogType={
+    carFunc:Function,
+    collectFunc:Function,
+    title:String,
+    leftIcon:String,
+    rightIcon:String
+}
+export {Car,Add,Remove,DialogType}

@@ -2,13 +2,13 @@
   <teleport to="body">
     <div class="diaWrapper" v-show="props.visible" @click.stop="close" ref="overload">
       <div class="content">
-        <h3>放到购物车或者收藏</h3>
+        <h3>{{title}}</h3>
         <div class="select">
           <div class="toCar" @click.stop="addGood" ref="carIcon">
-            <Icon name="car"/>
+            <Icon :name="leftIcon"/>
           </div>
           <div class="collect" @click.stop="collectGood" ref="collectIcon">
-            <Icon name="collect"/>
+            <Icon :name="rightIcon"/>
           </div>
         </div>
       </div>
@@ -19,14 +19,15 @@
 <script lang="ts">
 import Icon from "./Icon.vue";
 import {ref} from "vue";
-
 export default {
-  name: "Dialog",
   components: {Icon},
   props: {
+    title:String,
     visible: Boolean,
     carFunc:Function,
-    collectFunc:Function
+    collectFunc:Function,
+    leftIcon:String,
+    rightIcon:String
   },
   setup(props, context) {
     const overload = ref(null)
@@ -88,9 +89,9 @@ export default {
     }
     .select {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
-      padding-top: 6px;
+      padding:6px 14px 0 14px;
       .toCar {}
       .collect {}
     }

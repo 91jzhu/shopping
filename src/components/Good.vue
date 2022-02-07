@@ -7,7 +7,7 @@
     </div>
     <div class="line2"/>
     <div class="cash">
-      {{price}}
+      {{ price }}
     </div>
   </div>
 </template>
@@ -16,17 +16,21 @@
 import Icon from './Tool/Icon.vue'
 import {openDialog} from "./Tool/openDialog";
 import {addCar, addCollect} from "../store/store";
+
 export default {
   components: {Icon},
   props: {
     name: String,
-    price:String
+    price: String
   },
   setup(props, context) {
     const touch = (e: PointerEvent) => {
       openDialog({
-        carFunc:()=>addCar({name:props.name,price:props.price}),
-        collectFunc:()=>addCollect({name:props.name,price:props.price})
+        title: '放到购物车或收藏',
+        leftIcon: 'car',
+        rightIcon: 'collect',
+        carFunc: () => addCar({name: props.name, price: props.price}),
+        collectFunc: () => addCollect({name: props.name, price: props.price})
       })
     }
     return {touch}
@@ -52,14 +56,15 @@ export default {
     transform: translateY(-50%);
     left: 88px;
   }
-  .line2{
+
+  .line2 {
     position: absolute;
     width: 1px;
     height: 52px;
     background: darkgrey;
     top: 50%;
     transform: translateY(-50%);
-    right:20%
+    right: 20%
   }
 
   .slot {
@@ -67,16 +72,17 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:0 16px;
+    padding: 0 16px;
   }
-  .cash{
-    width:16%;
-    height:100%;
+
+  .cash {
+    width: 16%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    padding:0 8px;
+    padding: 0 8px;
   }
 }
 </style>

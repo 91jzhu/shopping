@@ -12,7 +12,7 @@
 import Icon from "./Tool/Icon.vue";
 import {onMounted} from "vue";
 import {openCart} from "./Tool/openCart";
-import { openDialog } from "./Tool/openDialog";
+import {openDialog} from "./Tool/openDialog";
 
 export default {
   name: "Cart.vue",
@@ -21,9 +21,15 @@ export default {
     name: String,
     price: String
   },
-  setup(){
-    const touch=()=>{
-      openDialog({})
+  setup() {
+    const touch = () => {
+      openDialog({
+        title: '确定要删除商品吗',
+        leftIcon: 'delete',
+        rightIcon: 'confirm',
+        carFunc: () => {},
+        collectFunc: () => {}
+      })//todo
     }
     return {touch}
   }
@@ -38,22 +44,22 @@ export default {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding:12px 0;
-  width:92%;
-  height:50%;
+  padding: 12px 0;
+  width: 92%;
+  height: 50%;
 
   .line {
-      position: absolute;
-      width: 1px;
-      height: 52px;
-      background: darkgrey;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 50%;
+    position: absolute;
+    width: 1px;
+    height: 52px;
+    background: darkgrey;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
   }
 
   .cash {
-    flex:1;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;

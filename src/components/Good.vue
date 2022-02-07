@@ -29,8 +29,8 @@ export default {
         title: '放到购物车或收藏',
         leftIcon: 'car',
         rightIcon: 'collect',
-        carFunc: () => addCar({name: props.name, price: props.price}),
-        collectFunc: () => addCollect({name: props.name, price: props.price})
+        leftFunc: () => addCar({name: props.name, price: props.price}),
+        rightFunc: () => addCollect({name: props.name, price: props.price})
       })
     }
     return {touch}

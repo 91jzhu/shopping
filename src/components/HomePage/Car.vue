@@ -12,12 +12,12 @@
 </template>
 
 <script lang="ts">
-import {onMounted, ref} from 'vue';
+import {computed, onMounted, onUpdated, ref, watch, watchEffect} from 'vue';
 import Navbar from '../Navbar.vue'
 import {openCart} from "../Tool/openCart";
 import Cart from '../Cart.vue'
 import {Add, Car} from "../../type";
-import { fetch } from '../../store/store';
+import {fetchCar} from '../../store/store';
 
 export default {
   components: {Cart, Navbar},
@@ -25,11 +25,16 @@ export default {
     const carList = ref(null)
     onMounted(() => {
       if (carList.value) {
-        fetch('carItem').forEach(({name, price}: Partial<Add>) => {
+        fetchCar('carItem').forEach(({name, price}: Partial<Add>) => {
           openCart(<Car>{name, ref: carList, price})
         })
       }
     })
+    // watch(carItem,()=>{
+    //   carItem.forEach(({name, price}: Partial<Add>) => {
+    //     openCart(<Car>{name, ref: carList, price})
+    //   })
+    // })
     return {carList}
   }
 }

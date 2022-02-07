@@ -9,11 +9,11 @@
 </template>
 
 <script lang="ts">
+import { deleteCar ,fetch} from "../store/store";
 import Icon from "./Tool/Icon.vue";
-import {onMounted} from "vue";
-import {openCart} from "./Tool/openCart";
 import {openDialog} from "./Tool/openDialog";
-
+import {Car} from "../type";
+import { openToast } from "./Tool/openToast";
 export default {
   name: "Cart.vue",
   components: {Icon},
@@ -21,14 +21,19 @@ export default {
     name: String,
     price: String
   },
-  setup() {
+  setup(props,context) {
     const touch = () => {
       openDialog({
         title: '确定要删除商品吗',
         leftIcon: 'delete',
         rightIcon: 'confirm',
-        carFunc: () => {},
-        collectFunc: () => {}
+        leftFunc: () => {
+          openToast({})
+        },
+        rightFunc: (context) => {
+          context.emit('update:visible',false)
+          deleteCar(props.name)
+        }
       })//todo
     }
     return {touch}

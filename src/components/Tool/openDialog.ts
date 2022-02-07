@@ -2,7 +2,7 @@ import {createApp, h, render} from "vue";
 import Dialog from "./Dialog.vue";
 import {DialogType} from "../../type";
 
-const openDialog = ({carFunc,collectFunc,title,leftIcon,rightIcon}:DialogType) => {
+const openDialog = ({leftFunc,rightFunc,title,leftIcon,rightIcon}:DialogType) => {
     const div = document.createElement('div')
     document.body.appendChild(div)
     const app = createApp({
@@ -18,7 +18,7 @@ const openDialog = ({carFunc,collectFunc,title,leftIcon,rightIcon}:DialogType) =
                         div.remove()
                     }
                 },
-                carFunc,collectFunc
+                leftFunc,rightFunc
             })
         }
     })

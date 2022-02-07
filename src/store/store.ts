@@ -3,7 +3,7 @@ import {openToast} from "../components/Tool/openToast";
 import {Add, Remove} from "../type";
 
 const carItem = JSON.parse(localStorage.getItem('carItem')!) || reactive<String[]>([])
-const fetch=(key:string)=>{
+const fetchCar=(key:string)=>{
     return JSON.parse(localStorage.getItem(key)!) || reactive<String[]>([])
 }
 const addCar = ({name,price}:Partial<Add>) => {
@@ -37,7 +37,7 @@ const deleteCollect = (name: String) => {
 }
 
 const add = ({name,price, key, error, success}:Add) => {
-    const tmp = fetch(key)
+    const tmp=fetchCar(key)
     const result=tmp.some((item:Partial<Add>)=> item.name===name)
     if(result){
         openToast({tip: error})
@@ -49,13 +49,14 @@ const add = ({name,price, key, error, success}:Add) => {
 }
 
 const remove = ({name, key}:Remove) => {
-    const tmp = JSON.parse(localStorage.getItem(key) || '[]')
-    tmp.forEach((item:Partial<Add>)=>{
-        if(item.name===name){
-            tmp.splice(tmp.indexOf(item),1)
-        }
-    })
+    const tmp=fetchCar(key)
+    const result=tmp.find((item:Partial<Add>)=> item.name===name)
+    if(!result){
+        openToast({tip:'删除失败'})
+        return
+    }
+    tmp.splice(tmp.indexOf(result),1)
     localStorage.setItem('carItem', JSON.stringify(tmp))
 }
 
-export {carItem, fetch,addCar, deleteCar, addCollect, deleteCollect}
+export {fetchCar,addCar, deleteCar, addCollect, deleteCollect}

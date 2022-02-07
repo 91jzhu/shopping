@@ -15,8 +15,8 @@ type Remove={
 }
 
 type DialogType={
-    carFunc:Function,
-    collectFunc:Function,
+    leftFunc:Function,
+    rightFunc:Function,
     title:String,
     leftIcon:String,
     rightIcon:String

@@ -24,8 +24,8 @@ export default {
   props: {
     title:String,
     visible: Boolean,
-    carFunc:Function,
-    collectFunc:Function,
+    leftFunc:Function,
+    rightFunc:Function,
     leftIcon:String,
     rightIcon:String
   },
@@ -44,13 +44,13 @@ export default {
     const addGood = (e:PointerEvent) => {
       if (carIcon.value && (carIcon.value as HTMLDivElement).contains(e.target as HTMLDivElement)) {
         emitClose()
-        props.carFunc()
+        props.leftFunc()
       }
     }
     const collectGood = (e:PointerEvent) => {
       if (collectIcon.value && (collectIcon.value as HTMLDivElement).contains(e.target as HTMLDivElement)) {
+        props.rightFunc(context)
         emitClose()
-        props.collectFunc()
       }
     }
     return {props, close, overload, carIcon,collectIcon, addGood, collectGood}

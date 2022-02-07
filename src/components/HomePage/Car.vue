@@ -2,8 +2,8 @@
   <div class="carWrapper">
     <div class="header">购物车详情</div>
     <div class="settle">
-      <div class="carList" ref="carList" v-show="visible"></div>
-      <div class="replace" ref="replace" v-show="!visible">购物车空空如也</div>
+      <div class="carList" ref="carList" v-if="visible"></div>
+      <div class="replace" v-else>购物车空空如也</div>
     </div>
     <div class="btnWrapper">
       <button class="btn">结算</button>
@@ -25,7 +25,6 @@ export default {
   setup() {
     const carList = ref(null)
     const visible=ref(true)
-    const replace=ref(null)
     onMounted(() => {
       if (carList.value) {
         fetchCar('carItem').forEach(({name, price}: Partial<Add>) => {
@@ -36,7 +35,7 @@ export default {
         }
       }
     })
-    return {carList,visible,carItem,replace}
+    return {carList,visible,carItem}
   }
 }
 </script>

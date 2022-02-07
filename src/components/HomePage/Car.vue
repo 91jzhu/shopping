@@ -6,6 +6,7 @@
       <div class="replace" v-else>购物车空空如也</div>
     </div>
     <div class="btnWrapper">
+      <div class="amount"></div>
       <button class="btn">结算</button>
     </div>
     <Navbar/>
@@ -54,6 +55,8 @@ export default {
   }
 
   .settle {
+    border:1px solid red;
+    height:calc(100vh - 155px);
     .carList {
       margin-top: 8px;
       border-radius: 12px;
@@ -61,7 +64,13 @@ export default {
       flex-wrap: wrap;
     }
     .replace{
-
+      border:1px solid red;
+      background: lightgrey;
+      height:100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 36px;
     }
   }
 

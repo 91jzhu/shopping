@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="replace 改用条件渲染" />
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="replace 基础样式">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +121,7 @@
       <workItem from="1644068533510" duration="454000" />
       <workItem from="1644069022342" duration="2319000" />
       <workItem from="1644117486322" duration="16992000" />
-      <workItem from="1644202441843" duration="21818000" />
+      <workItem from="1644202441843" duration="24784000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1643812736433</created>
@@ -238,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644232540567</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="replace 基础样式">
+      <created>1644232831861</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1644232831861</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +284,8 @@
     <MESSAGE value="重新设计购物车商品样式与功能" />
     <MESSAGE value="完成购物车 replace 功能" />
     <MESSAGE value="replace 改用条件渲染" />
-    <option name="LAST_COMMIT_MESSAGE" value="replace 改用条件渲染" />
+    <MESSAGE value="replace 基础样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="replace 基础样式" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

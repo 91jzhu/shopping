@@ -6,7 +6,10 @@
       <div class="replace" v-else>购物车空空如也</div>
     </div>
     <div class="btnWrapper">
-      <div class="amount"></div>
+      <div class="amount">
+        <span class="sum">合计:</span>
+        <span class="money">{{'$'+amount}}</span>
+      </div>
       <button class="btn">结算</button>
     </div>
     <Navbar/>
@@ -26,9 +29,11 @@ export default {
   setup() {
     const carList = ref(null)
     const visible=ref(true)
+    const amount=ref(0)
     onMounted(() => {
       if (carList.value) {
         fetchCar('carItem').forEach(({name, price}: Partial<Add>) => {
+          amount.value+=Number(price!.slice(1))
           openCart(<Car>{name, ref: carList, price})
         })
         if((carList.value as HTMLDivElement).children.length===0){
@@ -36,7 +41,7 @@ export default {
         }
       }
     })
-    return {carList,visible,carItem}
+    return {carList,visible,carItem,amount}
   }
 }
 </script>
@@ -57,11 +62,16 @@ export default {
   .settle {
     border:1px solid red;
     height:calc(100vh - 155px);
+    overflow-y:auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     .carList {
       margin-top: 8px;
       border-radius: 12px;
       display: flex;
       flex-wrap: wrap;
+
     }
     .replace{
       border:1px solid red;
@@ -81,6 +91,16 @@ export default {
     width: 100%;
     height: 64px;
     background: navajowhite;
+    .amount{
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      right:140px;
+      .sum{}
+      .money{
+        font-size: 20px;
+      }
+    }
 
     .btn {
       width: 102px;

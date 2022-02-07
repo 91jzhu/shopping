@@ -49,6 +49,7 @@ const add = ({name,price, key, error, success}:Add) => {
     tmp.push({name,price})
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: success})
+    //todo
 }
 
 const remove = ({name, key}:Remove) => {

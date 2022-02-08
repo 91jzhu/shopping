@@ -16,9 +16,7 @@
     </div>
   </div>
 </template>
-
 <script lang="ts">
-import {ref,onMounted,watchEffect} from 'vue'
 export default {
   props: {
     selected: String
@@ -29,19 +27,15 @@ export default {
       context.emit('update:selected', title)
     }
     return {children, show}
-  },
+  }
 }
 </script>
-
 <style  scoped lang="scss">
 .tabsWrapper {
   width: 33.33333%;
-
   .titleWrapper {
-    border-bottom: 1px solid grey;
     width: 100%;
     position: relative;
-
     .title {
       cursor: pointer;
       display: inline-block;
@@ -49,15 +43,27 @@ export default {
       color:grey;
       width:33.33333%;
       padding: 8px 0;
+      font-size: 24px;
+      position: relative;
       &.selected {
         color:black;
-        font-size: 24px;
+        font-weight: 600;
+        transform: translateY(4%);
+        &::after{
+          display: block;
+          content: "";
+          position: absolute;
+          width:60px;
+          height:2px;
+          left:50%;
+          margin-left: -30px;
+          background: black;
+        }
       }
     }
   }
 
   .contentWrapper {
-
     ::v-deep .content {
       display: none;
       &.selected{

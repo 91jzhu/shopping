@@ -10,8 +10,8 @@
       </pre>
     </div>
     <div class="function">
-      <div>待收货</div>
-      <div>我的收藏</div>
+      <div class="receive" @click.stop="touch('receive')"><Icon name="receive"/>待收货</div>
+      <div class="collects" @click.stop="touch('collect')"><Icon name="collects"/>我的收藏</div>
     </div>
     <button class="record">我的购买记录</button>
     <Navbar/>
@@ -21,10 +21,20 @@
 <script lang="ts">
 import Navbar from "../Navbar.vue";
 import Icon from "../Tool/Icon.vue";
-
+import {openCart} from "../Tool/openCart";
 export default {
   name: "Info",
-  components: {Icon, Navbar}
+  components: {Icon, Navbar},
+  setup(){
+    const touch=(type:String)=>{
+      if(type==='receive'){
+        openCart()
+      }else{
+        openCart()
+      }
+    }
+    return {touch}
+  }
 }
 </script>
 
@@ -71,6 +81,25 @@ export default {
     border:1px solid blue;
     margin-top: 24px;
     height:16%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .receive{
+      height:100%;
+      border:1px solid red;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .collects{
+      height:100%;
+      border:1px solid red;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
   .record{
     height:10%;

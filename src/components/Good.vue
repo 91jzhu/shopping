@@ -1,13 +1,16 @@
 <template>
   <div class="good" @click.stop="touch">
-    <Icon :name="name"/>
-    <div class="line"/>
-    <div class="slot">
-      <slot name="describe"/>
-    </div>
-    <div class="line2"/>
-    <div class="cash">
-      {{ price }}
+    <div class="wrapper">
+      <Icon :name="name" class="goodIcon"/>
+      <div class="describe">
+        <slot name="describe"/>
+      </div>
+      <div class="cash">
+        <div class="price">{{ price }}</div>
+        <div class="customer">
+          <slot name="customer"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -16,6 +19,7 @@
 import Icon from './Tool/Icon.vue'
 import {openDialog} from "./Tool/openDialog";
 import {addCar, addCollect} from "../store/store";
+import {ref} from "vue";
 
 export default {
   components: {Icon},
@@ -24,7 +28,9 @@ export default {
     price: String
   },
   setup(props, context) {
+    // const active=ref(false)
     const touch = (e: PointerEvent) => {
+      // active.value=true
       openDialog({
         title: '放到购物车或收藏',
         leftIcon: 'car',
@@ -40,49 +46,63 @@ export default {
 
 <style lang="scss" scoped>
 .good {
-  border: 1px solid grey;
-  width: 99%;
+  width:50%;
   overflow: hidden;
-  height: 72px;
+  height:64vw;
   display: flex;
-  position: relative;
-
-  .line {
-    position: absolute;
-    width: 1px;
-    height: 52px;
-    background: darkgrey;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 88px;
+  justify-content: center;
+  align-items: center;
+  &.active {
+    box-shadow: inset 2px 2px 1px #888888;
   }
 
-  .line2 {
-    position: absolute;
-    width: 1px;
-    height: 52px;
-    background: darkgrey;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20%
-  }
-
-  .slot {
-    flex: 1;
+  .wrapper {
+    width: 92%;
+    height:224px;
+    border-radius: 24px;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 16px;
-  }
-
-  .cash {
-    width: 16%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    padding: 0 8px;
+    flex-direction: column;
+    //box-shadow: 1px 1px 1px grey;
+    .goodIcon {
+      width:100%;
+      height:150px;
+      background: #f5f5f5;
+      border-radius: 24px;
+    }
+    .describe {
+      flex:1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 20px;
+      margin: 6px 0;
+      font-size: 4vw;
+    }
+    .cash {
+      font-size: 24px;
+      height:36px;
+      display: flex;
+      justify-content: flex-start;
+      .price{
+        //border:1px solid red;
+        width:26%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 5vw;
+        font-weight: 500;
+      }
+      .customer{
+        //border:1px solid red;
+        color:darkgrey;
+        flex:1;
+        font-size: 16px;
+        line-height: 40px;
+        padding-bottom: 6px;
+        padding-left:8px;
+      }
+    }
   }
 }
 </style>

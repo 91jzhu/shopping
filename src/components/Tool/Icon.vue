@@ -14,8 +14,8 @@ export default {
 
 <style>
 .icon {
-  padding:0 12px;
-  width: 64px; height: 64px;
+  width: 4rem; height: 4rem;
+  vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
 }

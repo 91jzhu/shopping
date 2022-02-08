@@ -4,6 +4,9 @@
       <template v-slot:describe>
         宠物也需要家
       </template>
+      <template v-slot:customer>
+        1000+ 人付款
+      </template>
     </Good>
     <Good name="petlove" price="$20">
       <template v-slot:describe>

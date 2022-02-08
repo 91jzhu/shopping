@@ -4,6 +4,7 @@ type Car={
     name:String,
     ref: Ref
     price:String,
+    count:Number
 }
 type Add = {
     name: String, price:String,key: string, error: String, success: String

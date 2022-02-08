@@ -1,6 +1,6 @@
 <template>
   <div class="carWrapper">
-    <div class="header">购物车详情</div>
+    <div class="header">购物车{{3}}</div>
     <div class="settle">
       <div class="carList" ref="carList" v-if="visible"></div>
       <div class="replace" v-else>购物车空空如也</div>
@@ -48,13 +48,17 @@ export default {
 
 <style scoped lang="scss">
 .carWrapper {
+  background: #efe8de;
   .header {
     width: 99%;
     height: 49px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 18px;
     align-items: center;
     border: 1px solid red;
+    font-size: 20px;
+    font-weight: 600;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
   }

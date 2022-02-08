@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { deleteCar} from "../store/store";
+// import { deleteCar} from "../store/store";
 import Icon from "./Tool/Icon.vue";
 import {openDialog} from "./Tool/openDialog";
 import { openToast } from "./Tool/openToast";
@@ -33,7 +33,7 @@ export default {
         leftFunc: () => {},
         rightFunc: (context) => {
           context.emit('update:visible',false)
-          deleteCar(props.name)
+          // deleteCar(props.name)
           visible.value=false
           location.reload()
         }
@@ -46,6 +46,7 @@ export default {
 
 <style scoped lang="scss">
 .cart {
+  background: white;
   border-radius: 12px;
   border: 1px solid blue;
   display: flex;

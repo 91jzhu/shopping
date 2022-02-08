@@ -18,7 +18,7 @@
 <script lang="ts">
 import Icon from './Tool/Icon.vue'
 import {openDialog} from "./Tool/openDialog";
-import {addCar, addCollect} from "../store/store";
+import {addCar} from "../store/store";
 import {ref} from "vue";
 
 export default {
@@ -36,7 +36,7 @@ export default {
         leftIcon: 'car',
         rightIcon: 'collect',
         leftFunc: () => addCar({name: props.name, price: props.price}),
-        rightFunc: () => addCollect({name: props.name, price: props.price})
+        rightFunc: () => {}
       })
     }
     return {touch}

@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="重构 sports">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="Goods 页面完成">
+      <change afterPath="$PROJECT_DIR$/src/lib/next.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tool/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/Tabs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Good.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Good.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/type.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/type.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +125,7 @@
       <workItem from="1644069022342" duration="2319000" />
       <workItem from="1644117486322" duration="16992000" />
       <workItem from="1644202441843" duration="29140000" />
-      <workItem from="1644290069184" duration="18907000" />
+      <workItem from="1644290069184" duration="22926000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1643812736433</created>
@@ -283,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644320320983</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Goods 页面完成">
+      <created>1644322968698</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1644322968698</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +336,8 @@
     <MESSAGE value="重构 Snacks" />
     <MESSAGE value="重构 pet" />
     <MESSAGE value="重构 sports" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构 sports" />
+    <MESSAGE value="Goods 页面完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="Goods 页面完成" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

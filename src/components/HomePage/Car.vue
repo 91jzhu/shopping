@@ -2,7 +2,9 @@
   <div class="carWrapper">
     <div class="header">购物车{{3}}</div>
     <div class="settle">
-      <div class="carList" ref="carList" v-if="visible"></div>
+      <div class="carList" ref="carList" v-if="visible">
+        <div v-for="(item,index) in cars" :key="index">{{item}}</div>
+      </div>
       <div class="replace" v-else>购物车空空如也</div>
     </div>
     <div class="btnWrapper">
@@ -30,18 +32,20 @@ export default {
     const carList = ref(null)
     const visible=ref(true)
     const amount=ref(0)
+    const cars=ref<HTMLDivElement[]>([])
     onMounted(() => {
       if (carList.value) {
-        fetchCar('carItem').forEach(({name, price}: Partial<Add>) => {
-          amount.value+=Number(price!.slice(1))
-          openCart(<Car>{name, ref: carList, price})
+        fetchCar('carItem').forEach(({name, price,count,expect}: Partial<Car>) => {
+          amount.value+=Number(price!.slice(1))*count
+          cars.value.push(openCart(<Car>{name, price,count,expect}))
         })
+        console.log(cars.value);
         if((carList.value as HTMLDivElement).children.length===0){
           visible.value=false
         }
       }
     })
-    return {carList,visible,carItem,amount}
+    return {carList,visible,carItem,amount,cars}
   }
 }
 </script>

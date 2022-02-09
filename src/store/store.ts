@@ -1,6 +1,7 @@
 import {reactive} from "vue";
 import {openToast} from "../components/Tool/openToast";
 import {Add, Car, Remove} from "../type";
+import {randomNum} from "../lib/randomNum";
 
 const carItem = JSON.parse(localStorage.getItem('carItem')!) || reactive<String[]>([])
 const fetchCar=(key:string)=>{
@@ -12,14 +13,24 @@ const addCar = ({name,price}:Partial<Add>) => {
     if(result){
         result.count++
     }else{
-        tmp.push({name,price,count:0})
+        tmp.push({name,price,count:1,expect:randomNum(1,5)})
     }
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: '添加成功，宝贝在购物车等您'})
 }
-// const deleteCar = (name: String) => {
-//     remove({name, key: 'carItem'})
-// }
+const deleteCar = ({name,count}:Partial<Car>) => {
+    const tmp=fetchCar('carItem')
+    const result=tmp.find((item:Partial<Add>)=> item.name===name)
+    if(result){
+        if(count!==1){
+            result.count-=1
+        }else{
+            tmp.splice(tmp.indexOf(result),1)
+        }
+    }
+    localStorage.setItem('carItem', JSON.stringify(tmp))
+    openToast({tip:'删除成功'})
+}
 
 
 // 收藏夹 api
@@ -63,5 +74,5 @@ const addCar = ({name,price}:Partial<Add>) => {
 //     localStorage.setItem('carItem', JSON.stringify(tmp))
 // }
 
-export {carItem,fetchCar,addCar}
+export {carItem,fetchCar,addCar,deleteCar}
 // , deleteCar,addCollect,deleteCollect

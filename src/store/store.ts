@@ -1,11 +1,11 @@
-import {reactive} from "vue";
 import {openToast} from "../components/Tool/openToast";
 import {Add, Car, Remove} from "../type";
 import {randomNum} from "../lib/randomNum";
+import { ref} from "vue";
 
-const carItem = JSON.parse(localStorage.getItem('carItem')!) || reactive<String[]>([])
+const carItem = JSON.parse(localStorage.getItem('carItem')!) || ref<String[]>([])
 const fetchCar=(key:string)=>{
-    return JSON.parse(localStorage.getItem(key)!) || reactive<String[]>([])
+    return JSON.parse(localStorage.getItem(key)!) || ref<String[]>([])
 }
 const addCar = ({name,price}:Partial<Add>) => {
     const tmp=fetchCar('carItem')

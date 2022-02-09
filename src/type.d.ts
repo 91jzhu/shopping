@@ -23,4 +23,4 @@ type DialogType={
     leftIcon:String,
     rightIcon:String
 }
-export {Car,Add,Remove,DialogType}
+export {Add,Remove,DialogType,Car}

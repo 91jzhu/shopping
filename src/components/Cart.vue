@@ -13,13 +13,10 @@
   </div>
 </template>
 <script lang="ts">
-// import { deleteCar} from "../store/store";
 import Icon from "./Tool/Icon.vue";
 import {openDialog} from "./Tool/openDialog";
-import {openToast} from "./Tool/openToast";
 import {ref} from "vue";
 import {deleteCar} from "../store/store";
-
 export default {
   name: "Cart.vue",
   components: {Icon},

@@ -1,16 +1,20 @@
 <template>
   <div class="carWrapper">
-    <div class="header">购物车{{3}}</div>
+    <div class="header">购物车{{ 3 }}</div>
     <div class="settle">
       <div class="carList" ref="carList" v-if="visible">
-        <div v-for="(item,index) in cars" :key="index">{{item}}</div>
+        <Cart v-for="item in cars"
+              :key="item.name"
+              :name="item.name"
+              :count="item.count"
+              :expect="item.expect"/>
       </div>
       <div class="replace" v-else>购物车空空如也</div>
     </div>
     <div class="btnWrapper">
       <div class="amount">
         <span class="sum">合计:</span>
-        <span class="money">{{'$'+amount}}</span>
+        <span class="money">{{ '$' + amount }}</span>
       </div>
       <button class="btn">结算</button>
     </div>
@@ -19,40 +23,32 @@
 </template>
 
 <script lang="ts">
-import {computed, onMounted, onUpdated, ref, watch, watchEffect} from 'vue';
+import {computed, onMounted, onUpdated, ref, toRefs, watch, watchEffect} from 'vue';
 import Navbar from '../Navbar.vue'
-import {openCart} from "../Tool/openCart";
 import Cart from '../Cart.vue'
-import {Add, Car} from "../../type";
 import {carItem, fetchCar} from '../../store/store';
-
 export default {
   components: {Cart, Navbar},
   setup() {
     const carList = ref(null)
-    const visible=ref(true)
-    const amount=ref(0)
-    const cars=ref<HTMLDivElement[]>([])
+    const visible = ref(true)
+    const amount = ref(0)
+    const cars=ref(fetchCar('carItem'))
     onMounted(() => {
       if (carList.value) {
-        fetchCar('carItem').forEach(({name, price,count,expect}: Partial<Car>) => {
-          amount.value+=Number(price!.slice(1))*count
-          cars.value.push(openCart(<Car>{name, price,count,expect}))
-        })
-        console.log(cars.value);
-        if((carList.value as HTMLDivElement).children.length===0){
-          visible.value=false
+        if ((carList.value as HTMLDivElement).children.length === 0) {
+          visible.value = false
         }
       }
     })
-    return {carList,visible,carItem,amount,cars}
+    return {carList, visible, carItem, amount, cars}
   }
 }
 </script>
-
 <style scoped lang="scss">
 .carWrapper {
   background: #efe8de;
+
   .header {
     width: 99%;
     height: 49px;
@@ -68,12 +64,14 @@ export default {
   }
 
   .settle {
-    border:1px solid red;
-    height:calc(100vh - 155px);
-    overflow-y:auto;
+    border: 1px solid red;
+    height: calc(100vh - 155px);
+    overflow-y: auto;
+
     &::-webkit-scrollbar {
       display: none;
     }
+
     .carList {
       margin-top: 8px;
       border-radius: 12px;
@@ -81,10 +79,11 @@ export default {
       flex-wrap: wrap;
 
     }
-    .replace{
-      border:1px solid red;
+
+    .replace {
+      border: 1px solid red;
       background: lightgrey;
-      height:100%;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -99,13 +98,17 @@ export default {
     width: 100%;
     height: 64px;
     background: navajowhite;
-    .amount{
+
+    .amount {
       position: absolute;
-      top:50%;
+      top: 50%;
       transform: translateY(-50%);
-      right:140px;
-      .sum{}
-      .money{
+      right: 140px;
+
+      .sum {
+      }
+
+      .money {
         font-size: 20px;
       }
     }

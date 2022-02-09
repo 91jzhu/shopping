@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="为商品增加 count 字段">
-      <change afterPath="$PROJECT_DIR$/src/lib/randomNum.ts" afterDir="false" />
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="渲染商品列表">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tool/openCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/openCart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/openCart.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/type.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/type.d.ts" afterDir="false" />
     </list>
@@ -126,7 +126,9 @@
       <workItem from="1644117486322" duration="16992000" />
       <workItem from="1644202441843" duration="29140000" />
       <workItem from="1644290069184" duration="23239000" />
-      <workItem from="1644373834680" duration="15276000" />
+      <workItem from="1644373834680" duration="21166000" />
+      <workItem from="1644404430454" duration="146000" />
+      <workItem from="1644406921631" duration="5580000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1643812736433</created>
@@ -303,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644331115469</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="渲染商品列表">
+      <created>1644393577199</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1644393577199</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +330,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="初始化项目" />
     <MESSAGE value="tab 切换完成" />
     <MESSAGE value="完成商品页面的商品" />
     <MESSAGE value="使用 reactive 模拟 vuex" />
@@ -346,7 +354,8 @@
     <MESSAGE value="重构 sports" />
     <MESSAGE value="Goods 页面完成" />
     <MESSAGE value="为商品增加 count 字段" />
-    <option name="LAST_COMMIT_MESSAGE" value="为商品增加 count 字段" />
+    <MESSAGE value="渲染商品列表" />
+    <option name="LAST_COMMIT_MESSAGE" value="渲染商品列表" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

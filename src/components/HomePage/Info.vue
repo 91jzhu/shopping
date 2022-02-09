@@ -21,16 +21,16 @@
 <script lang="ts">
 import Navbar from "../Navbar.vue";
 import Icon from "../Tool/Icon.vue";
-import {openCart} from "../Tool/openCart";
+import {ref} from "vue";
 export default {
   name: "Info",
-  components: {Icon, Navbar},
+  components: { Icon, Navbar},
   setup(){
     const touch=(type:String)=>{
       if(type==='receive'){
-        openCart()
+
       }else{
-        openCart()
+
       }
     }
     return {touch}

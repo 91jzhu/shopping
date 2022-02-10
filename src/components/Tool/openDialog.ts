@@ -13,10 +13,7 @@ const openDialog = ({leftFunc,rightFunc,title,leftIcon,rightIcon,good,count}:Dia
                 leftIcon,
                 good,
                 rightIcon,
-                count:1,
-                // 'onUpdate:count':(val:Number)=>{
-                //     count=val
-                // },
+                count,
                 'onUpdate:visible':(val:Boolean)=>{
                     if(!val){
                         app.unmount()

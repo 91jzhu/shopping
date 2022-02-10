@@ -27,7 +27,6 @@
 import Icon from "./Icon.vue";
 import {onMounted, ref} from "vue";
 import {openToast} from "./openToast";
-
 export default {
   components: {Icon},
   props: {

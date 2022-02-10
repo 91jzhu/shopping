@@ -1,4 +1,12 @@
 <template>
+  <Dialog v-model:visible="visible"
+          :title="params.title"
+          :good="params.good"
+          v-model:count="params.count"
+          :left-icon="params.leftIcon"
+          :right-icon="params.rightIcon"
+          :left-func="params.leftFunc"
+          :right-func="params.rightFunc"/>
   <div class="good" @click.stop="touch">
     <div class="wrapper">
       <Icon :name="name" class="goodIcon"/>
@@ -29,21 +37,35 @@ export default {
     price: String
   },
   setup(props, context) {
+    const visible=ref(false)
+    const params=ref({
+      title: '放到购物车或收藏',
+      leftIcon: 'collect',
+      rightIcon: 'car',
+      good:props.name,
+      count:1,
+      leftFunc:()=>{},// 收藏
+      rightFunc: (context,count) => {
+        context.emit('update:visible',false)
+        addCar({name: props.name, price: props.price,count})
+      }
+    })
     const touch = (e: PointerEvent) => {
-      openDialog({
-        title: '放到购物车或收藏',
-        leftIcon: 'collect',
-        rightIcon: 'car',
-        good:props.name,
-        count:1,
-        leftFunc:()=>{},// 收藏
-        rightFunc: (context,count) => {
-          context.emit('update:visible',false)
-          addCar({name: props.name, price: props.price,count})
-        }
-      })
+      visible.value=true
+      // openDialog({
+      //   title: '放到购物车或收藏',
+      //   leftIcon: 'collect',
+      //   rightIcon: 'car',
+      //   good:props.name,
+      //   count:1,
+      //   leftFunc:()=>{},// 收藏
+      //   rightFunc: (context,count) => {
+      //     context.emit('update:visible',false)
+      //     addCar({name: props.name, price: props.price,count})
+      //   }
+      // })
     }
-    return {touch}
+    return {touch,params,visible}
   }
 }
 </script>

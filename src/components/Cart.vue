@@ -1,4 +1,13 @@
 <template>
+  <Dialog v-model:visible="dialogVisible"
+          :count="count"
+          :title="params.title"
+          :left-icon="params.leftIcon"
+          :right-icon="params.rightIcon"
+          :left-func="params.leftFunc"
+          :right-func="params.rightFunc"
+          @update:count="countChange"
+          @update:delete="deleteCart"/>
   <div class="cart" v-if="visible" @click.stop="touch">
     <Icon :name="name" class="cartIcon"/>
     <div class="wrapper">
@@ -14,13 +23,13 @@
 </template>
 <script lang="ts">
 import Icon from "./Tool/Icon.vue";
-import {openDialog} from "./Tool/openDialog";
 import {ref} from "vue";
+import Dialog from "./Tool/Dialog.vue";
 import {deleteCar} from "../store/store";
 
 export default {
   name: "Cart.vue",
-  components: {Icon},
+  components: {Dialog, Icon},
   props: {
     name: String,
     price: String,
@@ -29,22 +38,31 @@ export default {
   },
   setup(props, context) {
     const visible = ref(true)
-    const touch = () => {
-      openDialog({
-        title: '确定要删除商品吗',
-        leftIcon: 'cancel',
-        rightIcon: 'confirm',
-        leftFunc: () => {
-        },
-        rightFunc: (context) => {
-          context.emit('update:visible', false)
-          visible.value = false
-          deleteCar({name: props.name, count: props.count})
-          location.reload()
-        }
-      })
+    const countChange = (val) => {
+      context.emit('update:count', val)
     }
-    return {touch, visible}
+    const dialogVisible = ref(false)
+    const params = ref({
+      title: '确定要删除商品吗',
+      leftIcon: 'delete',
+      rightIcon: 'confirm',
+      leftFunc: (context) => {
+        context.emit('update:visible', false)
+        visible.value = false
+        deleteCar({name: props.name, count: props.count})
+        location.reload()
+      },
+      rightFunc: () => {
+      }
+    })
+    const touch = () => {
+      dialogVisible.value = true
+    }
+    const deleteCart = () => {
+      deleteCar({name: props.name})
+      location.reload()
+    }
+    return {touch, visible, countChange, dialogVisible, params, deleteCart}
   }
 }
 </script>

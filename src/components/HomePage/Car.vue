@@ -6,8 +6,13 @@
         <Cart v-for="item in cars"
               :key="item.name"
               :name="item.name"
+              :price="item.price"
               :count="item.count"
-              :expect="item.expect"/>
+              @update:count="(val)=>{
+                item.count=val
+                modifyCount({name:item.name,count:val})
+              }"
+              :expect="item.expect"></Cart>
       </div>
       <div class="replace" v-else>购物车空空如也</div>
     </div>
@@ -26,7 +31,7 @@
 import {computed, onMounted, onUpdated, ref, toRefs, watch, watchEffect} from 'vue';
 import Navbar from '../Navbar.vue'
 import Cart from '../Cart.vue'
-import {carItem, fetchCar} from '../../store/store';
+import {carItem, fetchCar, modifyCount} from '../../store/store';
 export default {
   components: {Cart, Navbar},
   setup() {
@@ -41,7 +46,7 @@ export default {
         }
       }
     })
-    return {carList, visible, carItem, amount, cars}
+    return {carList, visible, carItem, amount, cars,modifyCount}
   }
 }
 </script>

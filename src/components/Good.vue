@@ -20,23 +20,27 @@ import Icon from './Tool/Icon.vue'
 import {openDialog} from "./Tool/openDialog";
 import {addCar} from "../store/store";
 import {ref} from "vue";
+import Dialog from "./Tool/Dialog.vue";
 
 export default {
-  components: {Icon},
+  components: {Dialog, Icon},
   props: {
     name: String,
     price: String
   },
   setup(props, context) {
-    // const active=ref(false)
     const touch = (e: PointerEvent) => {
-      // active.value=true
       openDialog({
         title: '放到购物车或收藏',
         leftIcon: 'collect',
         rightIcon: 'car',
-        leftFunc: () => addCar({name: props.name, price: props.price}),//todo
-        rightFunc: () => {}
+        good:props.name,
+        count:1,
+        leftFunc:()=>{},// 收藏
+        rightFunc: (context,count) => {
+          context.emit('update:visible',false)
+          addCar({name: props.name, price: props.price,count})
+        }
       })
     }
     return {touch}

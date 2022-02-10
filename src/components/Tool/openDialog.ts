@@ -2,7 +2,7 @@ import {createApp, h, render} from "vue";
 import Dialog from "./Dialog.vue";
 import {DialogType} from "../../type";
 
-const openDialog = ({leftFunc,rightFunc,title,leftIcon,rightIcon}:DialogType) => {
+const openDialog = ({leftFunc,rightFunc,title,leftIcon,rightIcon,good,count}:DialogType) => {
     const div = document.createElement('div')
     document.body.appendChild(div)
     const app = createApp({
@@ -11,7 +11,12 @@ const openDialog = ({leftFunc,rightFunc,title,leftIcon,rightIcon}:DialogType) =>
                 visible:true,
                 title,
                 leftIcon,
+                good,
                 rightIcon,
+                count:1,
+                // 'onUpdate:count':(val:Number)=>{
+                //     count=val
+                // },
                 'onUpdate:visible':(val:Boolean)=>{
                     if(!val){
                         app.unmount()

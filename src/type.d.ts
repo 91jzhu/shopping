@@ -21,6 +21,8 @@ type DialogType={
     rightFunc:Function,
     title:String,
     leftIcon:String,
-    rightIcon:String
+    rightIcon:String,
+    good:String,
+    count:Number
 }
 export {Add,Remove,DialogType,Car}

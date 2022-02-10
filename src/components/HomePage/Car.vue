@@ -28,10 +28,11 @@
 </template>
 
 <script lang="ts">
-import {computed, onMounted, onUpdated, ref, toRefs, watch, watchEffect} from 'vue';
+import {computed, onBeforeUpdate, onMounted, onUpdated, ref, toRefs, watch, watchEffect} from 'vue';
 import Navbar from '../Navbar.vue'
 import Cart from '../Cart.vue'
 import {carItem, fetchCar, modifyCount} from '../../store/store';
+import {Car} from "../../type";
 export default {
   components: {Cart, Navbar},
   setup() {
@@ -39,12 +40,22 @@ export default {
     const visible = ref(true)
     const amount = ref(0)
     const cars = ref(fetchCar('carItem'))
+    const calcAmount=()=>{
+      cars.value.forEach((item:Partial<Car>)=>{
+        amount.value+=Number(item.price!.slice(1))*item.count
+      })
+    }
     onMounted(() => {
       if (carList.value) {
+        calcAmount()
         if ((carList.value as HTMLDivElement).children.length === 0) {
           visible.value = false
         }
       }
+    })
+    onBeforeUpdate(()=>{
+      amount.value=0
+      calcAmount()
     })
     return {carList, visible, carItem, amount, cars,modifyCount}
   }
@@ -82,7 +93,7 @@ export default {
       border-radius: 12px;
       display: flex;
       flex-wrap: wrap;
-
+      justify-content: center;
     }
 
     .replace {

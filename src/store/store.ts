@@ -23,7 +23,6 @@ const modifyCount=({name,count}: Partial<Car>)=>{
     const tmp = fetchCar('carItem')
     const result = tmp.find((item: Partial<Add>) => item.name === name)
     result.count=count
-    console.log(result);
     localStorage.setItem('carItem', JSON.stringify(tmp))
 }
 

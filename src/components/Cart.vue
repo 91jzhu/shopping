@@ -52,8 +52,7 @@ export default {
         deleteCar({name: props.name, count: props.count})
         location.reload()
       },
-      rightFunc: () => {
-      }
+      rightFunc: () => {}
     })
     const touch = () => {
       dialogVisible.value = true
@@ -78,6 +77,7 @@ export default {
   padding: 18px 0;
   width: 92%;
   height: 50%;
+  margin-bottom: 12px;
 
   .cartIcon {
     width: 112px;

@@ -33,7 +33,7 @@ export default {
     const carList = ref(null)
     const visible = ref(true)
     const amount = ref(0)
-    const cars=ref(fetchCar('carItem'))
+    const cars = ref(fetchCar('carItem'))
     onMounted(() => {
       if (carList.value) {
         if ((carList.value as HTMLDivElement).children.length === 0) {

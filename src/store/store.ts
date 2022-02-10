@@ -1,35 +1,35 @@
 import {openToast} from "../components/Tool/openToast";
 import {Add, Car, Remove} from "../type";
 import {randomNum} from "../lib/randomNum";
-import { ref} from "vue";
+import {ref} from "vue";
 
 const carItem = JSON.parse(localStorage.getItem('carItem')!) || ref<String[]>([])
-const fetchCar=(key:string)=>{
+const fetchCar = (key: string) => {
     return JSON.parse(localStorage.getItem(key)!) || ref<String[]>([])
 }
-const addCar = ({name,price}:Partial<Add>) => {
-    const tmp=fetchCar('carItem')
-    const result=tmp.find((item:Partial<Add>)=> item.name===name)
-    if(result){
+const addCar = ({name, price}: Partial<Add>) => {
+    const tmp = fetchCar('carItem')
+    const result = tmp.find((item: Partial<Add>) => item.name === name)
+    if (result) {
         result.count++
-    }else{
-        tmp.push({name,price,count:1,expect:randomNum(1,5)})
+    } else {
+        tmp.push({name, price, count: 1, expect: randomNum(1, 5)})
     }
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: '添加成功，宝贝在购物车等您'})
 }
-const deleteCar = ({name,count}:Partial<Car>) => {
-    const tmp=fetchCar('carItem')
-    const result=tmp.find((item:Partial<Add>)=> item.name===name)
-    if(result){
-        if(count!==1){
-            result.count-=1
-        }else{
-            tmp.splice(tmp.indexOf(result),1)
+const deleteCar = ({name, count}: Partial<Car>) => {
+    const tmp = fetchCar('carItem')
+    const result = tmp.find((item: Partial<Add>) => item.name === name)
+    if (result) {
+        if (count !== 1) {
+            result.count -= 1
+        } else {
+            tmp.splice(tmp.indexOf(result), 1)
         }
     }
     localStorage.setItem('carItem', JSON.stringify(tmp))
-    openToast({tip:'删除成功'})
+    openToast({tip: '删除成功'})
 }
 
 
@@ -74,5 +74,5 @@ const deleteCar = ({name,count}:Partial<Car>) => {
 //     localStorage.setItem('carItem', JSON.stringify(tmp))
 // }
 
-export {carItem,fetchCar,addCar,deleteCar}
+export {carItem, fetchCar, addCar, deleteCar}
 // , deleteCar,addCollect,deleteCollect

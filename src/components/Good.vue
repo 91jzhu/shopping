@@ -33,9 +33,9 @@ export default {
       // active.value=true
       openDialog({
         title: '放到购物车或收藏',
-        leftIcon: 'car',
-        rightIcon: 'collect',
-        leftFunc: () => addCar({name: props.name, price: props.price}),
+        leftIcon: 'collect',
+        rightIcon: 'car',
+        leftFunc: () => addCar({name: props.name, price: props.price}),//todo
         rightFunc: () => {}
       })
     }

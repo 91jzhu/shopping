@@ -17,6 +17,7 @@ import Icon from "./Tool/Icon.vue";
 import {openDialog} from "./Tool/openDialog";
 import {ref} from "vue";
 import {deleteCar} from "../store/store";
+
 export default {
   name: "Cart.vue",
   components: {Icon},
@@ -37,13 +38,13 @@ export default {
         },
         rightFunc: (context) => {
           context.emit('update:visible', false)
-          deleteCar({name:props.name,count:props.count})
           visible.value = false
+          deleteCar({name: props.name, count: props.count})
           location.reload()
         }
       })
     }
-    return {touch, visible,}
+    return {touch, visible}
   }
 }
 </script>
@@ -59,36 +60,43 @@ export default {
   padding: 18px 0;
   width: 92%;
   height: 50%;
+
   .cartIcon {
-    width:112px;
-    height:88px;
+    width: 112px;
+    height: 88px;
   }
-  .wrapper{
-    width:70%;
-    height:88px;
+
+  .wrapper {
+    width: 70%;
+    height: 88px;
     display: flex;
     flex-direction: column;
+
     .display {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: start;
+
       .expect {
         font-size: 20px;
         display: flex;
         justify-content: center;
-        padding:4px 0;
+        padding: 4px 0;
         align-items: center;
       }
     }
-    .pc{
-      flex:1;
+
+    .pc {
+      flex: 1;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       .price {
         font-size: 24px;
       }
+
       .count {
         border: 1px solid #aeaeae;
         border-radius: 8px;
@@ -97,7 +105,7 @@ export default {
         justify-content: center;
         align-items: center;
         margin-right: 38px;
-        padding:8px;
+        padding: 8px;
       }
     }
   }

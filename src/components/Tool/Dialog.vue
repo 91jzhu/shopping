@@ -3,11 +3,17 @@
     <div class="diaWrapper" v-show="props.visible" @click.stop="close" ref="overload">
       <div class="content">
         <h3>{{title}}</h3>
+        <div class="count">
+          <h4>购买数量</h4>
+          <Icon name="minus" class="icon"/>
+          <div>{{count}}</div>
+          <Icon name="plus" class="icon"/>
+        </div>
         <div class="select">
-          <div class="toCar" @click.stop="addGood" ref="carIcon">
+          <div class="collect" @click.stop="addGood" ref="carIcon">
             <Icon :name="leftIcon"/>
           </div>
-          <div class="collect" @click.stop="collectGood" ref="collectIcon">
+          <div class="toCar" @click.stop="collectGood" ref="collectIcon">
             <Icon :name="rightIcon"/>
           </div>
         </div>
@@ -33,6 +39,7 @@ export default {
     const overload = ref(null)
     const carIcon = ref(null)
     const collectIcon = ref(null)
+    const count=ref(1)
     const emitClose = () => {
       context.emit('update:visible', false)
     }
@@ -53,7 +60,7 @@ export default {
         emitClose()
       }
     }
-    return {props, close, overload, carIcon,collectIcon, addGood, collectGood}
+    return {props, close, overload, carIcon,collectIcon, addGood, collectGood,count}
   }
 }
 </script>
@@ -69,17 +76,44 @@ export default {
   z-index: 2;
   .content {
     position: absolute;
-    height: 20%;
+    height: 30%;
     width: 70%;
     border-radius: 24px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: ghostwhite;
+    background: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     box-shadow: 1px 1px 1px grey;
+    .count{
+      border:1px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon{
+        width:48px;
+        height:48px;
+        color:grey;
+      }
+      h4{
+        padding-right: 4px;
+        font-size:18px;
+      }
+      div{
+        border:1px solid grey;
+        border-radius: 8px;
+        background: #f1f1f1;
+        width:40px;
+        height:40px;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 4px;
+      }
+    }
     h3 {
       border-bottom: 1px solid grey;
       display: flex;

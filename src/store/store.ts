@@ -9,9 +9,12 @@ const fetchCar = (key: string) => {
 }
 const addCar = ({name, price,count}: Partial<Car>) => {
     const tmp = fetchCar('carItem')
-    // const result = tmp.find((item: Partial<Add>) => item.name === name)
-    console.log(fetchCar('carItem'));
-    tmp.push({name, price, count, expect: randomNum(1, 5)})
+    const result = tmp.find((item: Partial<Add>) => item.name === name)
+    if(result){
+        result.count+=count
+    }else{
+        tmp.push({name, price, count, expect: randomNum(1, 5)})
+    }
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: '添加成功，宝贝在购物车等您'})
 }

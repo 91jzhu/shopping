@@ -52,18 +52,6 @@ export default {
     })
     const touch = (e: PointerEvent) => {
       visible.value=true
-      // openDialog({
-      //   title: '放到购物车或收藏',
-      //   leftIcon: 'collect',
-      //   rightIcon: 'car',
-      //   good:props.name,
-      //   count:1,
-      //   leftFunc:()=>{},// 收藏
-      //   rightFunc: (context,count) => {
-      //     context.emit('update:visible',false)
-      //     addCar({name: props.name, price: props.price,count})
-      //   }
-      // })
     }
     return {touch,params,visible}
   }
@@ -81,7 +69,6 @@ export default {
   &.active {
     box-shadow: inset 2px 2px 1px #888888;
   }
-
   .wrapper {
     width: 92%;
     height:224px;
@@ -89,7 +76,6 @@ export default {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    //box-shadow: 1px 1px 1px grey;
     .goodIcon {
       width:100%;
       height:150px;
@@ -111,7 +97,6 @@ export default {
       display: flex;
       justify-content: flex-start;
       .price{
-        //border:1px solid red;
         width:26%;
         display: flex;
         justify-content: flex-end;
@@ -120,7 +105,6 @@ export default {
         font-weight: 500;
       }
       .customer{
-        //border:1px solid red;
         color:darkgrey;
         flex:1;
         font-size: 16px;

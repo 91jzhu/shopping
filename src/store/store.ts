@@ -1,7 +1,6 @@
 import {openToast} from "../components/Tool/openToast";
 import {Add, Car, Remove} from "../type";
 import {randomNum} from "../lib/randomNum";
-import {ref} from "vue";
 
 const carItem = JSON.parse(localStorage.getItem('carItem')!) || []
 const fetchCar = (key: string) => {
@@ -32,6 +31,24 @@ const deleteCar = ({name}: Partial<Car>) => {
     tmp.splice(tmp.indexOf(result), 1)
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: '删除成功'})
+}
+
+const clearCar=()=>{
+    const tmp = fetchCar('carItem')
+    tmp.length=0
+    localStorage.setItem('carItem', JSON.stringify(tmp))
+}
+
+const cash = JSON.parse(localStorage.getItem('cash')!) || 1000
+const changeCash=(price:Number)=>{
+    // @ts-ignore
+    const result=cash-price
+    if(result<0){
+        openToast({tip:'开心币不足，请稍等'})
+        return false
+    }
+    localStorage.setItem('cash',JSON.stringify(result))
+    openToast({tip:'结算成功'})
 }
 
 
@@ -76,5 +93,5 @@ const deleteCar = ({name}: Partial<Car>) => {
 //     localStorage.setItem('carItem', JSON.stringify(tmp))
 // }
 
-export {carItem, fetchCar, addCar, deleteCar,modifyCount}
+export {carItem, fetchCar, addCar, deleteCar,modifyCount,cash,changeCash,clearCar}
 // , deleteCar,addCollect,deleteCollect

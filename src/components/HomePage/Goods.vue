@@ -25,6 +25,7 @@ import Sports from '../TabContent/Sports.vue'
 import {ref} from 'vue'
 
 export default {
+  name:'Goods.vue',
   components: {Navbar, Tab, Tabs, Snacks,Pet,Sports},
   setup() {
     let selected = ref('零食')

@@ -21,7 +21,7 @@
         <span class="sum">合计:</span>
         <span class="money">{{ '$' + amount }}</span>
       </div>
-      <button class="btn">结算</button>
+      <button class="btn" @click.stop="settle">结算</button>
     </div>
     <Navbar/>
   </div>
@@ -31,7 +31,7 @@
 import {computed, onBeforeUpdate, onMounted, onUpdated, ref, toRefs, watch, watchEffect} from 'vue';
 import Navbar from '../Navbar.vue'
 import Cart from '../Cart.vue'
-import {carItem, fetchCar, modifyCount} from '../../store/store';
+import {carItem, changeCash, clearCar, fetchCar, modifyCount} from '../../store/store';
 import {Car} from "../../type";
 export default {
   components: {Cart, Navbar},
@@ -57,7 +57,14 @@ export default {
       amount.value=0
       calcAmount()
     })
-    return {carList, visible, carItem, amount, cars,modifyCount}
+    const settle=()=>{
+      if(!changeCash(amount.value))
+        return
+      cars.value=[]
+      visible.value=false
+      clearCar()
+    }
+    return {carList, visible, carItem, amount, cars,modifyCount,settle}
   }
 }
 </script>

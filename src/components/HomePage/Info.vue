@@ -9,6 +9,10 @@
           我要祝你今天非常开心</div>
       </pre>
     </div>
+    <div class="money">
+      <span>开心币: $</span>
+      <span>{{cash}}</span>
+    </div>
     <div class="function">
       <div class="receive" @click.stop="touch('receive')"><Icon name="receive"/>待收货</div>
       <div class="collects" @click.stop="touch('collect')"><Icon name="collects"/>我的收藏</div>
@@ -22,9 +26,10 @@
 import Navbar from "../Navbar.vue";
 import Icon from "../Tool/Icon.vue";
 import {ref} from "vue";
+import {cash} from "../../store/store";
 export default {
   name: "Info",
-  components: { Icon, Navbar},
+  components: {Icon, Navbar},
   setup(){
     const touch=(type:String)=>{
       if(type==='receive'){
@@ -33,7 +38,7 @@ export default {
 
       }
     }
-    return {touch}
+    return {touch,cash}
   }
 }
 </script>
@@ -75,6 +80,16 @@ export default {
       justify-content: center;
       align-items: center;
     }
+  }
+
+  .money{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid green;
+    margin-top: 24px;
+    padding:36px;
+    font-size: 28px;
   }
 
   .function {

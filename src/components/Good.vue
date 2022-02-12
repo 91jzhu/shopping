@@ -105,7 +105,7 @@ export default {
         font-weight: 500;
       }
       .customer{
-        color:darkgrey;
+         color:darkgrey;
         flex:1;
         font-size: 16px;
         line-height: 40px;

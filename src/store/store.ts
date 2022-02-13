@@ -6,22 +6,22 @@ const carItem = JSON.parse(localStorage.getItem('carItem')!) || []
 const fetchCar = (key: string) => {
     return JSON.parse(localStorage.getItem(key)!) || []
 }
-const addCar = ({name, price,count}: Partial<Car>) => {
+const addCar = ({name, price, count}: Partial<Car>) => {
     const tmp = fetchCar('carItem')
     const result = tmp.find((item: Partial<Add>) => item.name === name)
-    if(result){
-        result.count+=count
-    }else{
+    if (result) {
+        result.count += count
+    } else {
         tmp.push({name, price, count, expect: randomNum(1, 5)})
     }
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: '添加成功，宝贝在购物车等您'})
 }
 
-const modifyCount=({name,count}: Partial<Car>)=>{
+const modifyCount = ({name, count}: Partial<Car>) => {
     const tmp = fetchCar('carItem')
     const result = tmp.find((item: Partial<Add>) => item.name === name)
-    result.count=count
+    result.count = count
     localStorage.setItem('carItem', JSON.stringify(tmp))
 }
 
@@ -33,22 +33,23 @@ const deleteCar = ({name}: Partial<Car>) => {
     openToast({tip: '删除成功'})
 }
 
-const clearCar=()=>{
+const clearCar = () => {
     const tmp = fetchCar('carItem')
-    tmp.length=0
+    tmp.length = 0
     localStorage.setItem('carItem', JSON.stringify(tmp))
 }
 
 const cash = JSON.parse(localStorage.getItem('cash')!) || 1000
-const changeCash=(price:Number)=>{
+const changeCash = (price: Number) => {
     // @ts-ignore
     const result=cash-price
-    if(result<0){
-        openToast({tip:'开心币不足，请稍等'})
+    if (result < 0) {
+        openToast({tip: '开心币不足，请稍等'})
         return false
     }
-    localStorage.setItem('cash',JSON.stringify(result))
-    openToast({tip:'结算成功'})
+    localStorage.setItem('cash', JSON.stringify(result))
+    openToast({tip: '结算成功'})
+    return true
 }
 
 
@@ -93,5 +94,5 @@ const changeCash=(price:Number)=>{
 //     localStorage.setItem('carItem', JSON.stringify(tmp))
 // }
 
-export {carItem, fetchCar, addCar, deleteCar,modifyCount,cash,changeCash,clearCar}
+export {carItem, fetchCar, addCar, deleteCar, modifyCount, cash, changeCash, clearCar}
 // , deleteCar,addCollect,deleteCollect

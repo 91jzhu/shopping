@@ -36,10 +36,10 @@ export default {
     count: Number,
     expect: Number
   },
-  setup(props, context) {
+  setup(props, Context) {
     const visible = ref(true)
     const countChange = (val) => {
-      context.emit('update:count', val)
+      Context.emit('update:count', val)
     }
     const dialogVisible = ref(false)
     const params = ref({
@@ -50,7 +50,8 @@ export default {
         context.emit('update:visible', false)
         visible.value = false
         deleteCar({name: props.name, count: props.count})
-        location.reload()
+        Context.emit('update:delete',props.name)
+        // location.reload()
       },
       rightFunc: () => {}
     })
@@ -59,7 +60,7 @@ export default {
     }
     const deleteCart = () => {
       deleteCar({name: props.name})
-      location.reload()
+      // location.reload()
     }
     return {touch, visible, countChange, dialogVisible, params, deleteCart}
   }

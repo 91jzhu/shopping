@@ -42,7 +42,7 @@ export default {
     const carList = ref(null)
     const visible = ref(true)
     const amount = ref(0)
-    const cars = ref(fetchCar('carItem'))
+    const cars = ref(fetchCar())
     const calcAmount = () => {
       cars.value.forEach((item: Partial<Car>) => {
         amount.value += Number(item.price!.slice(1)) * Number(item.count)

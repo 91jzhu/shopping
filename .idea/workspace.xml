@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="删除功能完善">
-      <change afterPath="$PROJECT_DIR$/src/store/collectStore.ts" afterDir="false" />
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="初步完成收藏api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Good.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Good.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/carStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/carStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/carStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +134,8 @@
       <workItem from="1644563728112" duration="789000" />
       <workItem from="1644631143578" duration="3428000" />
       <workItem from="1644666269677" duration="622000" />
-      <workItem from="1644727108233" duration="14771000" />
+      <workItem from="1644727108233" duration="14791000" />
+      <workItem from="1644761269633" duration="1233000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1643812736433</created>
@@ -391,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644742042436</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="初步完成收藏api">
+      <created>1644743133368</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1644743133368</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +414,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="购物车商品准备使用 dialog 删除，重构 dialog" />
     <MESSAGE value="修正删除功能" />
     <MESSAGE value="条件渲染 修复商品删除滞后问题" />
     <MESSAGE value="重新设计购物车商品样式与功能" />
@@ -434,7 +438,8 @@
     <MESSAGE value="去掉 location.reload() 爽" />
     <MESSAGE value="dialog 样式完善" />
     <MESSAGE value="删除功能完善" />
-    <option name="LAST_COMMIT_MESSAGE" value="删除功能完善" />
+    <MESSAGE value="初步完成收藏api" />
+    <option name="LAST_COMMIT_MESSAGE" value="初步完成收藏api" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

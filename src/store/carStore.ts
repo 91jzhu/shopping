@@ -3,11 +3,11 @@ import {Add, Car} from "../type";
 import {randomNum} from "../lib/randomNum";
 
 const carItem = JSON.parse(localStorage.getItem('carItem')!) || []
-const fetchCar = (key: string) => {
-    return JSON.parse(localStorage.getItem(key)!) || []
+const fetchCar = () => {
+    return JSON.parse(localStorage.getItem('carItem')!) || []
 }
 const addCar = ({name, price, count}: Partial<Car>) => {
-    const tmp = fetchCar('carItem')
+    const tmp = fetchCar()
     const result = tmp.find((item: Partial<Add>) => item.name === name)
     if (result) {
         result.count += count
@@ -19,14 +19,14 @@ const addCar = ({name, price, count}: Partial<Car>) => {
 }
 
 const modifyCount = ({name, count}: Partial<Car>) => {
-    const tmp = fetchCar('carItem')
+    const tmp = fetchCar()
     const result = tmp.find((item: Partial<Add>) => item.name === name)
     result.count = count
     localStorage.setItem('carItem', JSON.stringify(tmp))
 }
 
 const deleteCar = ({name}: Partial<Car>) => {
-    const tmp = fetchCar('carItem')
+    const tmp = fetchCar()
     const result = tmp.find((item: Partial<Add>) => item.name === name)
     tmp.splice(tmp.indexOf(result), 1)
     localStorage.setItem('carItem', JSON.stringify(tmp))
@@ -34,12 +34,15 @@ const deleteCar = ({name}: Partial<Car>) => {
 }
 
 const clearCar = () => {
-    const tmp = fetchCar('carItem')
+    const tmp = fetchCar()
     tmp.length = 0
     localStorage.setItem('carItem', JSON.stringify(tmp))
 }
 
 const cash = JSON.parse(localStorage.getItem('cash')!) || 1000
+const fetchCash=()=>{
+    return JSON.parse(localStorage.getItem('cash')!) || 1000
+}
 const changeCash = (price: Number) => {
     // @ts-ignore
     const result=cash-price
@@ -52,4 +55,5 @@ const changeCash = (price: Number) => {
     return true
 }
 
-export {carItem, fetchCar, addCar, deleteCar, modifyCount, cash, changeCash, clearCar}
+export {carItem, fetchCar, addCar, deleteCar, modifyCount,
+    changeCash, clearCar,fetchCash}

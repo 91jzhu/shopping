@@ -26,11 +26,12 @@
 import Navbar from "../Navbar.vue";
 import Icon from "../Tool/Icon.vue";
 import {ref} from "vue";
-import {cash} from "../../store/carStore";
+import {fetchCash} from "../../store/carStore";
 export default {
   name: "Info",
   components: {Icon, Navbar},
   setup(){
+    const cash=ref(fetchCash())
     const touch=(type:String)=>{
       if(type==='receive'){
 

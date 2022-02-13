@@ -16,8 +16,8 @@
           </div>
         </div>
         <div class="select">
-          <span class="collect">收藏</span>
-          <span class="car">加入购物车</span>
+          <span class="collect" ref="carIcon" @click.stop="addGood">{{leftWord}}</span>
+          <span class="car" ref="collectIcon" @click.stop="collectGood">{{rightWord}}</span>
         </div>
       </div>
     </div>
@@ -35,8 +35,8 @@ export default {
     visible: Boolean,
     leftFunc: Function,
     rightFunc: Function,
-    leftIcon: String,
-    rightIcon: String,
+    leftWord: String,
+    rightWord: String,
     good: String,
     count: Number
   },
@@ -48,15 +48,12 @@ export default {
       if (props.count === 1) {
         context.emit('update:delete', false)
         emitClose()
-        console.log('delete');
         return
       }
       context.emit('update:count', props.count - 1)
-      console.log(props.count - 1);
     }
     const plus = () => {
       context.emit('update:count', props.count + 1)
-      console.log(props.count);
     }
     const emitClose = () => {
       context.emit('update:visible', false)

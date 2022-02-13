@@ -13,6 +13,7 @@
                 modifyCount({name:item.name,count:val})
               }"
               @update:delete="completeDelete"
+              @update:amount="updateAmount"
               :expect="item.expect"></Cart>
       </div>
       <div class="replace" v-else>购物车空空如也</div>
@@ -34,6 +35,7 @@ import Navbar from '../Navbar.vue'
 import Cart from '../Cart.vue'
 import {carItem, changeCash, clearCar, fetchCar, modifyCount} from '../../store/store';
 import {Car} from "../../type";
+
 export default {
   components: {Cart, Navbar},
   setup() {
@@ -41,41 +43,51 @@ export default {
     const visible = ref(true)
     const amount = ref(0)
     const cars = ref(fetchCar('carItem'))
-    const calcAmount=()=>{
-      cars.value.forEach((item:Partial<Car>)=>{
-        amount.value+=Number(item.price!.slice(1))*item.count
+    const calcAmount = () => {
+      cars.value.forEach((item: Partial<Car>) => {
+        amount.value += Number(item.price!.slice(1)) * Number(item.count)
       })
+    }
+    const recalcAmount=()=>{
+      amount.value = 0
+      calcAmount()
     }
     onMounted(() => {
-        if (carList.value) {
-          calcAmount()
-          if ((carList.value as HTMLDivElement).children.length === 0) {
-            visible.value = false
-          }
+      if (carList.value) {
+        calcAmount()
+        if ((carList.value as HTMLDivElement).children.length === 0) {
+          visible.value = false
         }
+      }
     })
-    onBeforeUpdate(()=>{
-      amount.value=0
-      calcAmount()
+    onBeforeUpdate(() => {
+      recalcAmount()
     })
-    const settle=()=>{
-      if(!changeCash(amount.value))
+    const settle = () => {
+      if (!changeCash(amount.value))
         return
-      cars.value=[]
-      visible.value=false
+      cars.value = []
+      visible.value = false
       clearCar()
     }
-    const completeDelete=(val:string)=>{
-      cars.value.forEach((item:Partial<Car>,index:number)=>{
-        if(item.name===val){
-          cars.value.splice(index,1)
+    const completeDelete = (val: string) => {
+      cars.value.forEach((item: Partial<Car>, index: number) => {
+        if (item.name === val) {
+          cars.value.splice(index, 1)
         }
       })
-      if(cars.value.length===0){
-        visible.value=false
+      if (cars.value.length === 0) {
+        visible.value = false
       }
     }
-    return {carList, visible, carItem, amount, cars,modifyCount,settle,completeDelete}
+    const updateAmount = () => {
+      recalcAmount()
+      visible.value = false
+    }
+    return {
+      carList, visible, carItem, amount,
+      cars, modifyCount, settle, completeDelete, updateAmount
+    }
   }
 }
 </script>

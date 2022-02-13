@@ -2,8 +2,9 @@
   <Dialog v-model:visible="dialogVisible"
           :count="count"
           :title="params.title"
-          :left-icon="params.leftIcon"
-          :right-icon="params.rightIcon"
+          :good="name"
+          :left-word="params.leftWord"
+          :right-word="params.rightWord"
           :left-func="params.leftFunc"
           :right-func="params.rightFunc"
           @update:count="countChange"
@@ -43,24 +44,26 @@ export default {
     }
     const dialogVisible = ref(false)
     const params = ref({
-      title: '确定要删除商品吗',
-      leftIcon: 'delete',
-      rightIcon: 'confirm',
+      title: '删除或增加商品',
+      leftWord: '删除',
+      rightWord: '完成',
       leftFunc: (context) => {
         context.emit('update:visible', false)
         visible.value = false
         deleteCar({name: props.name, count: props.count})
         Context.emit('update:delete',props.name)
-        // location.reload()
       },
-      rightFunc: () => {}
+      rightFunc: (context) => {
+        context.emit('update:visible', false)
+      }
     })
     const touch = () => {
       dialogVisible.value = true
     }
     const deleteCart = () => {
       deleteCar({name: props.name})
-      // location.reload()
+      visible.value=false
+      Context.emit('update:amount')
     }
     return {touch, visible, countChange, dialogVisible, params, deleteCart}
   }

@@ -3,8 +3,8 @@
           :title="params.title"
           :good="params.good"
           v-model:count="params.count"
-          :left-icon="params.leftIcon"
-          :right-icon="params.rightIcon"
+          :left-word="params.leftWord"
+          :right-word="params.rightWord"
           :left-func="params.leftFunc"
           :right-func="params.rightFunc"/>
   <div class="good" @click.stop="touch">
@@ -40,8 +40,8 @@ export default {
     const visible=ref(false)
     const params=ref({
       title: '放到购物车或收藏',
-      leftIcon: 'collect',
-      rightIcon: 'car',
+      leftWord: '收藏',
+      rightWord: '加入购物车',
       good:props.name,
       count:1,
       leftFunc:()=>{},// 收藏

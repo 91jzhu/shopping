@@ -26,7 +26,7 @@
 import Icon from "./Tool/Icon.vue";
 import {ref} from "vue";
 import Dialog from "./Tool/Dialog.vue";
-import {deleteCar} from "../store/store";
+import {deleteCar} from "../store/carStore";
 
 export default {
   name: "Cart.vue",

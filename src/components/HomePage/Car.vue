@@ -6,7 +6,7 @@
         <Cart v-for="item in cars"
               :key="item.name"
               :name="item.name"
-              :price="item.price"
+              :price="item['price']"
               :count="item.count"
               @update:count="(val)=>{
                 item.count=val
@@ -14,7 +14,7 @@
               }"
               @update:delete="completeDelete"
               @update:amount="updateAmount"
-              :expect="item.expect"></Cart>
+              :expect="item['expect']"></Cart>
       </div>
       <div class="replace" v-else>购物车空空如也</div>
     </div>
@@ -33,7 +33,7 @@
 import {computed, onBeforeUpdate, onMounted, onUpdated, ref, toRefs, watch, watchEffect} from 'vue';
 import Navbar from '../Navbar.vue'
 import Cart from '../Cart.vue'
-import {carItem, changeCash, clearCar, fetchCar, modifyCount} from '../../store/store';
+import {carItem, changeCash, clearCar, fetchCar, modifyCount} from '../../store/carStore';
 import {Car} from "../../type";
 
 export default {
@@ -48,7 +48,7 @@ export default {
         amount.value += Number(item.price!.slice(1)) * Number(item.count)
       })
     }
-    const recalcAmount=()=>{
+    const reCalcAmount=()=>{
       amount.value = 0
       calcAmount()
     }
@@ -61,7 +61,7 @@ export default {
       }
     })
     onBeforeUpdate(() => {
-      recalcAmount()
+      reCalcAmount()
     })
     const settle = () => {
       if (!changeCash(amount.value))
@@ -81,7 +81,7 @@ export default {
       }
     }
     const updateAmount = () => {
-      recalcAmount()
+      reCalcAmount()
       visible.value = false
     }
     return {

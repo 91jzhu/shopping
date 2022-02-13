@@ -26,7 +26,7 @@
 import Navbar from "../Navbar.vue";
 import Icon from "../Tool/Icon.vue";
 import {ref} from "vue";
-import {cash} from "../../store/store";
+import {cash} from "../../store/carStore";
 export default {
   name: "Info",
   components: {Icon, Navbar},

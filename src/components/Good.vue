@@ -26,7 +26,7 @@
 <script lang="ts">
 import Icon from './Tool/Icon.vue'
 import {openDialog} from "./Tool/openDialog";
-import {addCar} from "../store/store";
+import {addCar} from "../store/carStore";
 import {ref} from "vue";
 import Dialog from "./Tool/Dialog.vue";
 

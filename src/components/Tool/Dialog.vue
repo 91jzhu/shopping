@@ -3,20 +3,21 @@
     <div class="diaWrapper" v-if="props.visible" @click.stop="close" ref="overload">
       <div class="content">
         <h3>{{ title }}</h3>
-        <div class="count">
-          <Icon :name="good"/>
-          <h4>购买数量</h4>
-          <Icon name="minus" class="icon" @click.stop="minus"/>
-          <div>{{ count }}</div>
-          <Icon name="plus" class="icon" @click.stop="plus"/>
+        <div class="countWrapper">
+          <Icon :name="good" class="good"/>
+          <div class="line"/>
+          <div class="count">
+            <h4>购买数量</h4>
+            <div class="countBtn">
+              <Icon name="minus" class="icon" @click.stop="minus"/>
+              <div>{{ count }}</div>
+              <Icon name="plus" class="icon" @click.stop="plus"/>
+            </div>
+          </div>
         </div>
         <div class="select">
-          <div class="collect" @click.stop="addGood" ref="carIcon">
-            <Icon :name="leftIcon"/>
-          </div>
-          <div class="toCar" @click.stop="collectGood" ref="collectIcon">
-            <Icon :name="rightIcon"/>
-          </div>
+          <span class="collect">收藏</span>
+          <span class="car">加入购物车</span>
         </div>
       </div>
     </div>
@@ -97,7 +98,7 @@ export default {
 
   .content {
     position: absolute;
-    height: 30%;
+    height: 240px;
     width: 70%;
     border-radius: 24px;
     top: 50%;
@@ -106,58 +107,97 @@ export default {
     background: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     box-shadow: 1px 1px 1px grey;
-
-    .count {
-      border: 1px solid red;
+    h3 {
+      height:56px;
+      font-size: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
-
-      .icon {
-        width: 48px;
-        height: 48px;
-        color: grey;
-      }
-
-      h4 {
-        padding-right: 4px;
-        font-size: 18px;
-      }
-
-      div {
-        border: 1px solid grey;
-        border-radius: 8px;
-        background: #f1f1f1;
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 4px;
-      }
     }
 
-    h3 {
-      border-bottom: 1px solid grey;
+    .countWrapper {
+      border-top: 1px solid grey;
+      padding:12px 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-bottom: 12px;
+      position: relative;
+      height:100px;
+      .good{
+        width:72px;
+        height:72px;
+        margin:0 12px;
+      }
+      .line{
+        position: absolute;
+        height:88px;
+        top:50%;
+        margin-top: -44px;
+        left:88px;
+        border:1px solid grey;
+        transform: scaleX(0.5);
+      }
+      .count{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h4 {
+          font-size: 18px;
+          font-weight: 400;
+          padding:8px 0;
+        }
+        .countBtn{
+          width:100%;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          padding-bottom: 8px;
+          div {
+            border: 1px solid grey;
+            border-radius: 8px;
+            background: #f1f1f1;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 4px;
+          }
+          .icon {
+            width: 48px;
+            height: 48px;
+            color: grey;
+          }
+        }
+      }
     }
 
     .select {
+      flex:1;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
-      padding: 6px 14px 0 14px;
 
-      .toCar {
-      }
-
-      .collect {
+      span{
+        width:50%;
+        height:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 19px;
+        color:white;
+        font-weight: 600;
+        &.car{
+          background: #ff7204;
+          border-bottom-right-radius: 24px;
+        }
+        &.collect{
+          background: #ffba05;
+          border-bottom-left-radius: 24px;
+        }
       }
     }
   }

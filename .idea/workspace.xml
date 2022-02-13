@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="完成购物功能">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="去掉 location.reload() 爽">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/Dialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/Dialog.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +133,7 @@
       <workItem from="1644563728112" duration="789000" />
       <workItem from="1644631143578" duration="3428000" />
       <workItem from="1644666269677" duration="622000" />
-      <workItem from="1644727108233" duration="6671000" />
+      <workItem from="1644727108233" duration="11745000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1643812736433</created>
@@ -367,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644634583032</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="去掉 location.reload() 爽">
+      <created>1644734292345</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1644734292345</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +391,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="成功在购物车页面渲染出商品" />
     <MESSAGE value="购物车商品基础样式" />
     <MESSAGE value="解决添加商品更新滞后的问题" />
     <MESSAGE value="购物车商品准备使用 dialog 删除，重构 dialog" />
@@ -410,7 +415,8 @@
     <MESSAGE value="修复了重复选择商品时商品合并的问题" />
     <MESSAGE value="完成购物车金额实时更新" />
     <MESSAGE value="完成购物功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成购物功能" />
+    <MESSAGE value="去掉 location.reload() 爽" />
+    <option name="LAST_COMMIT_MESSAGE" value="去掉 location.reload() 爽" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -14,10 +14,24 @@
       <span>{{cash}}</span>
     </div>
     <div class="function">
-      <div class="receive" @click.stop="touch('receive')"><Icon name="receive"/>待收货</div>
-      <div class="collects" @click.stop="touch('collect')"><Icon name="collects"/>我的收藏</div>
+      <div class="receive">
+        <router-link to="/info/receive">
+          <Icon name="receive"/>
+          <span>待收货</span>
+        </router-link>
+      </div>
+      <div class="collects">
+        <router-link to="/info/collection">
+          <Icon name="collects"/>
+          <span>我的收藏</span>
+        </router-link>
+      </div>
     </div>
-    <button class="record">我的购买记录</button>
+    <div class="record">
+      <router-link to="/info/collection">
+        <span>我的购买记录</span>
+      </router-link>
+    </div>
     <Navbar/>
   </div>
 </template>
@@ -107,6 +121,13 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      a{
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     }
     .collects{
       height:100%;
@@ -115,6 +136,13 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      a{
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
   .record{

@@ -2,7 +2,6 @@ import {openToast} from "../components/Tool/openToast";
 import {Add, Car} from "../type";
 import {randomNum} from "../lib/randomNum";
 
-const carItem = JSON.parse(localStorage.getItem('carItem')!) || []
 const fetchCar = () => {
     return JSON.parse(localStorage.getItem('carItem')!) || []
 }
@@ -12,7 +11,7 @@ const addCar = ({name, price, count}: Partial<Car>) => {
     if (result) {
         result.count += count
     } else {
-        tmp.push({name, price, count, expect: randomNum(1, 5)})
+        tmp.push({name, price, count, expect: randomNum(1, 8)})
     }
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: '添加成功，宝贝在购物车等您'})
@@ -39,13 +38,13 @@ const clearCar = () => {
     localStorage.setItem('carItem', JSON.stringify(tmp))
 }
 
-const cash = JSON.parse(localStorage.getItem('cash')!) || 1000
+//
 const fetchCash=()=>{
     return JSON.parse(localStorage.getItem('cash')!) || 1000
 }
 const changeCash = (price: Number) => {
     // @ts-ignore
-    const result=cash-price
+    const result=fetchCash()-price
     if (result < 0) {
         openToast({tip: '开心币不足，请稍等'})
         return false
@@ -55,5 +54,4 @@ const changeCash = (price: Number) => {
     return true
 }
 
-export {carItem, fetchCar, addCar, deleteCar, modifyCount,
-    changeCash, clearCar,fetchCash}
+export {fetchCar, addCar, deleteCar, modifyCount, changeCash, clearCar,fetchCash}

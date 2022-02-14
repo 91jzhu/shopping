@@ -30,11 +30,12 @@
 </template>
 
 <script lang="ts">
-import {computed, onBeforeUpdate, onMounted, onUpdated, ref, toRefs, watch, watchEffect} from 'vue';
+import {onBeforeUpdate, onMounted,  ref} from 'vue';
 import Navbar from '../Navbar.vue'
 import Cart from '../Cart.vue'
-import {carItem, changeCash, clearCar, fetchCar, modifyCount} from '../../store/carStore';
+import {changeCash, clearCar, fetchCar, modifyCount} from '../../store/carStore';
 import {Car} from "../../type";
+import {addReceive} from "../../store/receiveStore";
 
 export default {
   components: {Cart, Navbar},
@@ -66,6 +67,7 @@ export default {
     const settle = () => {
       if (!changeCash(amount.value))
         return
+      addReceive(cars.value)
       cars.value = []
       visible.value = false
       clearCar()
@@ -85,7 +87,7 @@ export default {
       visible.value = false
     }
     return {
-      carList, visible, carItem, amount,
+      carList, visible, amount,
       cars, modifyCount, settle, completeDelete, updateAmount
     }
   }

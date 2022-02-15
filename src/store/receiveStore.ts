@@ -18,12 +18,12 @@ const addReceive=(res:[])=>{
     openToast({tip:'结算成功'})
 }
 
-const deleteReceive=({name,price,count}:Partial<Car>)=>{
+const deleteReceive=({name,price,count,createdAt}:Partial<Car>)=>{
     const tmp=fetchReceive()
     const result=tmp.find((item:Partial<Car>)=>item.name===name)
     tmp.splice(tmp.indexOf(result),1)
     localStorage.setItem('receiveItem',JSON.stringify(tmp))
-    addBuy({name,price,count})
+    addBuy({name,price,count,createdAt})
     openToast({tip:'收货成功'})
 }
 export {receiveItem,fetchReceive,addReceive,deleteReceive}

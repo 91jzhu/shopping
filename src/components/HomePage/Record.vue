@@ -1,13 +1,13 @@
 <template>
-
+  <div>record</div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  name: "Record.vue"
+  name: "Record.vue",
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="待收货页面初始化">
-      <change afterPath="$PROJECT_DIR$/src/C.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/data.ts" afterDir="false" />
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Good.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Good.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Rac.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Rac.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/carStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/carStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/collectStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/collectStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Record.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Record.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/data.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/receiveStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/receiveStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/type.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/type.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +143,7 @@
       <workItem from="1644727108233" duration="14791000" />
       <workItem from="1644761269633" duration="1751000" />
       <workItem from="1644802200160" duration="25257000" />
-      <workItem from="1644888349568" duration="13496000" />
+      <workItem from="1644888349568" duration="18056000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1643812736433</created>
@@ -429,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644894693017</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="收藏功能完成，准备制作购买记录图表">
+      <created>1644902700586</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1644902700586</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成购物车 replace 功能" />
     <MESSAGE value="replace 改用条件渲染" />
     <MESSAGE value="replace 基础样式" />
     <MESSAGE value="Car 页面基本完成" />
@@ -472,7 +474,8 @@
     <MESSAGE value="开心币正常使用" />
     <MESSAGE value="Rac 组件完成" />
     <MESSAGE value="待收货页面初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="待收货页面初始化" />
+    <MESSAGE value="收藏功能完成，准备制作购买记录图表" />
+    <option name="LAST_COMMIT_MESSAGE" value="收藏功能完成，准备制作购买记录图表" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

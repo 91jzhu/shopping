@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="record">
-      <router-link to="/info/collection">
+      <router-link to="/info/record">
         <span>我的购买记录</span>
       </router-link>
     </div>

@@ -21,6 +21,10 @@ const routes = [
         path: '/info/collection',
         component: () => import('../components/HomePage/Collection.vue'),
     },
+    {
+        path: '/info/record',
+        component: () => import('../components/HomePage/Record.vue'),
+    },
 ]
 
 const router = VueRouter.createRouter({

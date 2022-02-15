@@ -8,12 +8,17 @@
     </span>
   </header>
   <main v-if="visible">
-    <Rac v-for="receive in receives"
-          :key="receive.name"
-          :name="receive.name"
-          :count="receive.count"
-          :expect="receive['expect']"
-          @update:receive="receivesChange"/>
+    <Rac v-for="{name,count,expect,price} in receives"
+          :key="name"
+          :name="name"
+          :count="count"
+          :expect="expect"
+          :button-func="()=>deleteReceive({name,price,count})"
+          @update:receive="receivesChange">
+      <template v-slot:content>
+        确认收货
+      </template>
+    </Rac>
   </main>
   <div v-else class="replace">还没有商品，快去选购吧</div>
 </template>
@@ -21,8 +26,8 @@
 <script lang="ts">
 import Icon from "../Tool/Icon.vue";
 import Rac from "../Rac.vue";
-import {computed, onUpdated, ref, watch, watchEffect} from "vue";
-import {fetchReceive, receiveItem} from "../../store/receiveStore";
+import {ref, watchEffect} from "vue";
+import {deleteReceive, fetchReceive} from "../../store/receiveStore";
 import {Car} from "../../type";
 
 export default {
@@ -42,7 +47,7 @@ export default {
         visible.value=false
       }
     })
-    return {receives,visible,receivesChange}
+    return {receives,visible,receivesChange,deleteReceive}
   }
 }
 </script>

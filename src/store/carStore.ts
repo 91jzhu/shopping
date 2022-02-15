@@ -1,6 +1,7 @@
 import {openToast} from "../components/Tool/openToast";
 import {Add, Car} from "../type";
 import {randomNum} from "../lib/randomNum";
+import dayjs from "dayjs";
 
 const fetchCar = () => {
     return JSON.parse(localStorage.getItem('carItem')!) || []
@@ -11,7 +12,11 @@ const addCar = ({name, price, count}: Partial<Car>) => {
     if (result) {
         result.count += count
     } else {
-        tmp.push({name, price, count, expect: randomNum(1, 2)})
+        tmp.push({name,
+            price,
+            count,
+            expect: randomNum(1, 2),
+            createdAt:dayjs().format('YYYY年MM月DD日')})
     }
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: '添加成功，宝贝在购物车等您'})

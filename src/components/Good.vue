@@ -27,8 +27,9 @@
 import Icon from './Tool/Icon.vue'
 import {openDialog} from "./Tool/openDialog";
 import {addCar} from "../store/carStore";
-import {ref} from "vue";
+import {ref, toRefs} from "vue";
 import Dialog from "./Tool/Dialog.vue";
+import {collectOne} from "../store/collectStore";
 
 export default {
   components: {Dialog, Icon},
@@ -44,7 +45,10 @@ export default {
       rightWord: '加入购物车',
       good:props.name,
       count:1,
-      leftFunc:()=>{},// 收藏
+      leftFunc:()=>{
+        context.emit('update:visible',false)
+        collectOne({name:props.name,price:props.price})
+      },
       rightFunc: (context,count) => {
         context.emit('update:visible',false)
         addCar({name: props.name, price: props.price,count})

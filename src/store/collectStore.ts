@@ -1,7 +1,6 @@
 import {Add, Car} from "../type";
 import {openToast} from "../components/Tool/openToast";
 
-const collectItem = JSON.parse(localStorage.getItem('collectItem')!) || []
 const fetchCollect = () => {
     return JSON.parse(localStorage.getItem('collectItem')!) || []
 }

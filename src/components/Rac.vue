@@ -3,7 +3,8 @@
     <div class="content">
       <Icon :name="name" class="icon"/>
       <div class="line"/>
-      <div class="count">{{ count ? 'x' + count : 'x3' }}</div>
+      <div class="price" v-if="price">{{price}}</div>
+      <div class="count" v-if="count">{{ count ? 'x' + count : 'x3' }}</div>
       <div class="countDown" v-if="time">
         <span>还有 {{ time }} 天送达</span>
         <div class="pointWrapper">
@@ -13,7 +14,9 @@
         </div>
       </div>
       <div class="delivered" v-else>
-        <button @click.stop="receive">确认收货</button>
+        <button @click.stop="fun">
+          <slot name="content"/>
+        </button>
       </div>
     </div>
   </div>
@@ -21,16 +24,19 @@
 
 <script lang="ts">
 import Icon from "./Tool/Icon.vue";
-import {onBeforeUnmount, ref, toRef, watch} from "vue";
-import {deleteReceive} from "../store/receiveStore";
-
+import {onBeforeUnmount, ref, watch} from "vue";
 export default {
   name: "Rac.vue",
   components: {Icon},
   props: {
     name: String,
     count: Number,
-    expect: Number
+    expect: Number,
+    price:{
+      type:Number,
+      required:false
+    },
+    buttonFunc:Function
   },
   setup(props,context) {
     const time = ref(props.expect)
@@ -64,12 +70,12 @@ export default {
         window.clearInterval(timeId)
       }
     })
-    const receive=()=>{
-      deleteReceive(props.name)
+    const fun=()=>{
+      props.buttonFunc()
       context.emit('update:receive',props.name)
       visible.value=false
     }
-    return {time, first, second, third,visible,receive}
+    return {time, first, second, third,visible,fun}
   }
 }
 </script>
@@ -77,7 +83,6 @@ export default {
 <style scoped lang="scss">
 .wrapper {
   border: 1px solid red;
-
   .content {
     border: 1px solid blue;
     border-radius: 12px;
@@ -91,7 +96,6 @@ export default {
       height: 72px;
       margin-left: 12px;
     }
-
     .line {
       position: absolute;
       height: 72px;
@@ -101,7 +105,6 @@ export default {
       border: 1px solid grey;
       transform: scaleX(0.5);
     }
-
     .countDown {
       font-size: 18px;
       //border: 1px solid blue;
@@ -135,9 +138,12 @@ export default {
     }
 
     .delivered {
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      right:14px;
       font-size: 20px;
       display: flex;
-      margin-left: 40px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -161,6 +167,17 @@ export default {
       align-items: center;
       height: 72px;
       width: 32px;
+      margin-left: 24px;
+      padding: 0 6px;
+    }
+    .price{
+      border: 1px solid #aeaeae;
+      border-radius: 8px;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 72px;
       margin-left: 24px;
       padding: 0 6px;
     }

@@ -2,11 +2,11 @@ import {Add, Car} from "../type";
 import {openToast} from "../components/Tool/openToast";
 
 const collectItem = JSON.parse(localStorage.getItem('collectItem')!) || []
-const fetchReceive = (key: string) => {
-    return JSON.parse(localStorage.getItem(key)!) || []
+const fetchCollect = () => {
+    return JSON.parse(localStorage.getItem('collectItem')!) || []
 }
 const collectOne=({name,price}:Partial<Car>)=>{
-    const tmp = fetchReceive('collectItem')
+    const tmp = fetchCollect()
     const result = tmp.find((item: Partial<Add>) => item.name === name)
     if (result) {
         openToast({tip:'宝贝已在收藏夹'})
@@ -18,7 +18,7 @@ const collectOne=({name,price}:Partial<Car>)=>{
     openToast({tip:'收藏成功'})
 }
 const deleteOne=(name:string)=>{
-    const tmp = fetchReceive('collectItem')
+    const tmp = fetchCollect()
     const result = tmp.find((item: Partial<Add>) => item.name === name)
     if (result) {
         tmp.splice(tmp.indexOf(result),1)
@@ -30,4 +30,4 @@ const clearCollect=()=>{
     localStorage.setItem('collectItem',JSON.stringify([]))
     openToast({tip:'收藏夹已清空'})
 }
-export {fetchReceive,collectOne,deleteOne,clearCollect}
+export {fetchCollect,collectOne,deleteOne,clearCollect}

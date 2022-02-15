@@ -11,7 +11,7 @@ const addCar = ({name, price, count}: Partial<Car>) => {
     if (result) {
         result.count += count
     } else {
-        tmp.push({name, price, count, expect: randomNum(1, 8)})
+        tmp.push({name, price, count, expect: randomNum(1, 2)})
     }
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: '添加成功，宝贝在购物车等您'})

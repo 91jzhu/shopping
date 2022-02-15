@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper" v-if="visible">
     <div class="content">
-      <Icon name="cake" class="icon"/>
+      <Icon :name="name" class="icon"/>
       <div class="line"/>
       <div class="count">{{ count ? 'x' + count : 'x3' }}</div>
       <div class="countDown" v-if="time">
@@ -21,7 +21,8 @@
 
 <script lang="ts">
 import Icon from "./Tool/Icon.vue";
-import {onBeforeUnmount, ref, watch} from "vue";
+import {onBeforeUnmount, ref, toRef, watch} from "vue";
+import {deleteReceive} from "../store/receiveStore";
 
 export default {
   name: "Rac.vue",
@@ -31,8 +32,8 @@ export default {
     count: Number,
     expect: Number
   },
-  setup(props) {
-    const time = ref(8)
+  setup(props,context) {
+    const time = ref(props.expect)
     const visible=ref(true)
     const first = ref<HTMLDivElement>(null)
     const second = ref<HTMLDivElement>(null)
@@ -64,6 +65,8 @@ export default {
       }
     })
     const receive=()=>{
+      deleteReceive(props.name)
+      context.emit('update:receive',props.name)
       visible.value=false
     }
     return {time, first, second, third,visible,receive}

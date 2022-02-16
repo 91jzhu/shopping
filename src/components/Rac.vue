@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" v-if="visible">
+  <div class="RacWrapper" v-if="visible">
     <div class="content">
       <Icon :name="name" class="icon"/>
       <div class="line"/>
@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import Icon from "./Tool/Icon.vue";
-import {onBeforeUnmount, ref, watch} from "vue";
+import {onBeforeUnmount, onMounted, ref, watch} from "vue";
 export default {
   name: "Rac.vue",
   components: {Icon},
@@ -33,7 +33,7 @@ export default {
     count: Number,
     expect: Number,
     price:{
-      type:Number,
+      type:String,
       required:false
     },
     buttonFunc:Function
@@ -81,8 +81,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.wrapper {
-  border: 1px solid red;
+.RacWrapper {
+  width:100vw;
+  overflow: hidden;
   .content {
     border: 1px solid blue;
     border-radius: 12px;

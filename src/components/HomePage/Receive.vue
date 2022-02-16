@@ -9,12 +9,18 @@
     </span>
     </header>
     <main v-if="visible">
-      <Rac v-for="{name,count,expect,price,createdAt} in receives"
-           :key="name"
-           :name="name"
-           :count="count"
-           :expect="expect"
-           :button-func="()=>deleteReceive({name,price,count,createdAt})"
+      <Rac v-for="receive in receives"
+           :key="receive.name"
+           :name="receive.name"
+           :count="receive.count"
+           :expect="receive.expect"
+           :button-func="()=>deleteReceive(
+               {
+               name:receive.name,
+               price:receive.price,
+               count:receive.count,
+               createdAt:receive.createdAt
+               })"
            @update:receive="receivesChange">
         <template v-slot:content>
           确认收货

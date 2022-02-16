@@ -9,11 +9,11 @@
     </span>
     </header>
     <main v-if="visible">
-      <Rac v-for="{name,price} in collects"
-           :key="name"
-           :name="name"
-           :price="price"
-           :button-func="()=>deleteCollect(name)">
+      <Rac v-for="collect in collects"
+           :key="collect.name"
+           :name="collect.name"
+           :price="collect.price"
+           :button-func="()=>deleteCollect(collect.name)">
         <template v-slot:content>
           取消收藏
         </template>
@@ -37,10 +37,12 @@ export default {
     const collects = ref(fetchCollect())
     const visible = ref(true)
     const deleteCollect = (name: string) => {
-      collects.value.forEach((item: Partial<Car>, index: number) => {
-        collects.value.splice(index, 1)
-      })
       deleteOne(name)
+      collects.value.forEach((item: Partial<Car>, index: number) => {
+        if(item.name===name){
+          collects.value.splice(index, 1)
+        }
+      })
     }
     watchEffect(() => {
       if (collects.value.length === 0) {

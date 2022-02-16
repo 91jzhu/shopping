@@ -24,5 +24,10 @@ const addBuy = ({name, price, count, createdAt}: Partial<Car>) => {
     tmp.sort((a:Data, b:Data) => a.createdAt < b.createdAt ? 1 : -1)
     localStorage.setItem('data', JSON.stringify(tmp))
 }
+const fetchBuyEd=(createdAt:string)=>{
+    const tmp=fetchData()
+    const result=tmp.find((item:Partial<Car>)=>item.createdAt===createdAt)
+    return result.buyEd
+}
 
-export {addBuy}
+export {addBuy,fetchBuyEd}

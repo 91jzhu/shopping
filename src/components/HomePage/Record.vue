@@ -8,8 +8,14 @@
       购买记录
     </span>
     </header>
-
-    // 下拉菜单，选择日期
+    <DropDown title="请选择日期">
+      <DropDownItem>2022年02月17日</DropDownItem>
+      <DropDownItem>2022年02月16日</DropDownItem>
+      <DropDownItem>2022年02月15日</DropDownItem>
+      <DropDownItem>2022年02月14日</DropDownItem>
+      <DropDownItem>2022年02月13日</DropDownItem>
+      <DropDownItem>2022年02月12日</DropDownItem>
+    </DropDown>
 
     <div class="chartWrapper">
       <div class="chart" ref="chartRef"/>
@@ -23,10 +29,12 @@ import * as echarts from 'echarts';
 import {fetchBuyEd} from "../../store/data";
 import {Car} from "../../type";
 import Icon from "../Tool/Icon.vue";
+import DropDown from "../Tool/DropDown.vue";
+import DropDownItem from "../Tool/DropDown-Item.vue";
 
 export default {
   name: "Record.vue",
-  components: {Icon},
+  components: {DropDownItem, DropDown, Icon},
   setup() {
     const chartRef = ref(null)
     const source = ref([])

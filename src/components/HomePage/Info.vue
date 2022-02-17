@@ -41,10 +41,12 @@ import Navbar from "../Navbar.vue";
 import Icon from "../Tool/Icon.vue";
 import {ref} from "vue";
 import {fetchCash} from "../../store/carStore";
+import DropDown from "../Tool/DropDown.vue";
+import DropDownItem from "../Tool/DropDown-Item.vue";
 
 export default {
   name: "Info",
-  components: {Icon, Navbar},
+  components: {DropDownItem, DropDown, Icon, Navbar},
   setup(){
     const cash=ref(fetchCash())
     const touch=(type:String)=>{

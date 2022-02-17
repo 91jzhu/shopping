@@ -1,13 +1,16 @@
 <template>
   <div class="itemWrapper">
-    <slot/>
-    <div class="line"/>
+    {{date}}
   </div>
 </template>
 
 <script lang="ts">
+import {onMounted, ref} from "vue";
 export default {
-  name: "DropDown-Item"
+  name: "DropDown-Item",
+  props:{
+    date:String
+  }
 }
 </script>
 

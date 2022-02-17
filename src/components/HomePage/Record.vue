@@ -8,13 +8,13 @@
       购买记录
     </span>
     </header>
-    <DropDown title="请选择日期">
-      <DropDownItem>2022年02月17日</DropDownItem>
-      <DropDownItem>2022年02月16日</DropDownItem>
-      <DropDownItem>2022年02月15日</DropDownItem>
-      <DropDownItem>2022年02月14日</DropDownItem>
-      <DropDownItem>2022年02月13日</DropDownItem>
-      <DropDownItem>2022年02月12日</DropDownItem>
+    <DropDown title="请选择日期" @update:date="x">
+      <DropDownItem date="2022年02月17日"/>
+      <DropDownItem date="2022年02月16日"/>
+      <DropDownItem date="2022年02月15日"/>
+      <DropDownItem date="2022年02月14日"/>
+      <DropDownItem date="2022年02月13日"/>
+      <DropDownItem date="2022年02月12日"/>
     </DropDown>
 
     <div class="chartWrapper">
@@ -112,7 +112,10 @@ export default {
         })
       }
     })
-    return {chartRef}
+    const x=(val)=>{
+      console.log(val);
+    }
+    return {chartRef,x}
   }
 }
 </script>

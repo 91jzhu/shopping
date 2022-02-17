@@ -1,10 +1,11 @@
 <template>
   <div class="wrapper">
-    <div class="titleWrapper" @click.stop='toggle'>
-      <div class="title">{{ title }}</div>
+    <div class="titleWrapper">
+      <div class="title" @click.stop='toggle'>{{ title }}</div>
       <div class="contentWrapper" v-if="visible">
-        <div class="content">
-          <component v-for="child in defaults" :is="child"></component>
+        <div class="content" @click="x">
+          <component v-for="child in defaults"
+                     :is="child" :data-date="child.props.date"/>
         </div>
       </div>
     </div>
@@ -23,12 +24,17 @@ export default {
   },
   setup(props, context) {
     const defaults = context.slots.default()
-    console.log(defaults)
+    // defaults.forEach(item=>{
+    //   console.log(item.props.date)
+    // })
     const visible = ref(true)
     const toggle = () => {
       visible.value = !visible.value
     }
-    return {visible, toggle, defaults}
+    const x=(e)=>{
+      console.log(e.target.dataset.date);
+    }
+    return {visible, toggle, defaults,x}
   }
 }
 </script>

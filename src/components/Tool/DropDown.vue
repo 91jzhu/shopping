@@ -15,14 +15,13 @@
 <script lang="ts">
 import {ref} from "vue";
 import Dialog from "./Dialog.vue";
-import dayjs from "dayjs";
 import {fetchBuy} from "../../store/data";
 
 export default {
   name: "DropDown",
   components: {Dialog},
   setup(props, {emit,slots}) {
-    const defaults = slots.default()
+    const defaults = slots.default()[0].children
     const visible = ref(true)
     const title=ref(fetchBuy().createdAt.replace('年','-').replace('月','-').replace('日',''))
     const toggle = () => {

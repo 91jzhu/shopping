@@ -5,11 +5,13 @@
 </template>
 
 <script lang="ts">
-import {onMounted, ref} from "vue";
 export default {
   name: "DropDown-Item",
   props:{
     date:String
+  },
+  setup(props){
+    console.log(props.date)
   }
 }
 </script>

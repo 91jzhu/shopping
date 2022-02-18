@@ -31,7 +31,15 @@ const fetchBuy = () => {
 }
 const changeBuy=(createdAt:string)=>{
     const tmp=fetchData()
-    return tmp.find((item:Data)=>item.createdAt===createdAt).buyEd||[]
+    return tmp.find((item:Data)=>item.createdAt===createdAt).buyEd
+}
+const getDates=()=>{
+    const tmp=fetchData()
+    const result:string[]=[]
+    tmp.forEach((item:Data)=>{
+        result.push(item.createdAt)
+    })
+    return result
 }
 
-export {addBuy, fetchBuy,changeBuy,Data}
+export {addBuy, fetchBuy,changeBuy,Data,getDates}

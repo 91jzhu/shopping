@@ -1,21 +1,23 @@
 <template>
   <div class="wrapper">
     <header>
+<!--      <DropDownItem :date="'2022年02月17日'"/>-->
+<!--      <DropDownItem :date="'2022年02月16日'"/>-->
+<!--      <DropDownItem :date="'2022年02月15日'"/>-->
+<!--      <DropDownItem :date="'2022年02月14日'"/>-->
+<!--      <DropDownItem :date="'2022年02月13日'"/>-->
+<!--      <DropDownItem :date="'2022年02月12日'"/>-->
       <router-link to="/info">
         <Icon name="back"/>
       </router-link>
       <span>
       购买记录
-    </span>
+      </span>
     </header>
+
     <DropDown @update:date="changeDate"
               @update:chart="changeChart">
-      <DropDownItem date="2022年02月17日"/>
-      <DropDownItem date="2022年02月16日"/>
-      <DropDownItem date="2022年02月15日"/>
-      <DropDownItem date="2022年02月14日"/>
-      <DropDownItem date="2022年02月13日"/>
-      <DropDownItem date="2022年02月12日"/>
+      <DropDownItem v-for="date in dates" :date="date" :key="date"/>
     </DropDown>
 
     <div class="chartWrapper">
@@ -25,44 +27,47 @@
 </template>
 
 <script lang="ts">
-import {onMounted, reactive, ref, watchEffect} from "vue";
+import {onMounted, reactive, ref} from "vue";
 import * as echarts from 'echarts';
-import {changeBuy, Data, fetchBuy} from "../../store/data";
+import {changeBuy, Data, fetchBuy, getDates} from "../../store/data";
 import {Car} from "../../type";
 import Icon from "../Tool/Icon.vue";
 import DropDown from "../Tool/DropDown.vue";
 import DropDownItem from "../Tool/DropDown-Item.vue";
 import {EChartsType} from "echarts";
+
 export default {
   components: {DropDownItem, DropDown, Icon},
   setup() {
     const chartRef = ref(null)
     const source = reactive([])
-    const text=ref('')
-    const myChart=ref<EChartsType>(null)
+    const text = ref('')
+    const myChart = ref<EChartsType>(null)
+    const dates = reactive<string[]>(getDates())
+    console.log(dates);
     onMounted(() => {
-      text.value=fetchBuy().createdAt
+      text.value = fetchBuy().createdAt
       initSource()
       if (chartRef.value) {
         myChart.value = echarts.init(chartRef.value);
         setOption()
       }
     })
-    const initSource=()=>{
+    const initSource = () => {
       fetchBuy().buyEd.forEach((item: Partial<Car>) => {
         source.push([item.name, item.price])
       })
     }
-    const changeText=(newText:string)=>{
-      text.value=newText
+    const changeText = (newText: string) => {
+      text.value = newText
     }
-    const changeSource=(arr)=>{
-      source.length=0
-      arr.forEach((item:Data)=>{
-        source.push([item.name,item.price])
+    const changeSource = (arr) => {
+      source.length = 0
+      arr.forEach((item: Data) => {
+        source.push([item.name, item.price])
       })
     }
-    const setOption=()=>{
+    const setOption = () => {
       myChart.value.setOption({
         dataset: [
           {
@@ -76,16 +81,16 @@ export default {
             }
           }
         ],
-        title:{
-          show:true,
-          text:`${text.value}消费情况`,
-          top:'top',
-          left:'center',
-          textStyle:{
-            color:'grey',
-            fontSize:22,
-            fontStyle:'oblique',
-            width:100
+        title: {
+          show: true,
+          text: `${text.value}消费情况`,
+          top: 'top',
+          left: 'center',
+          textStyle: {
+            color: 'grey',
+            fontSize: 22,
+            fontStyle: 'oblique',
+            width: 100
           }
         },
         grid: {
@@ -125,20 +130,20 @@ export default {
         },
         series: {
           type: 'bar',
-          encode: { x: 'name', y: 'price' },
+          encode: {x: 'name', y: 'price'},
           datasetIndex: 1,
         }
       })
     }
-    const changeDate=(val:string)=>{
+    const changeDate = (val: string) => {
       console.log('changeDate');
     }
-    const changeChart=(val:string)=>{
+    const changeChart = (val: string) => {
       changeSource(changeBuy(val))
       changeText(val)
       setOption()
     }
-    return {chartRef, changeDate,changeChart}
+    return {chartRef, changeDate, changeChart, dates}
   }
 }
 </script>

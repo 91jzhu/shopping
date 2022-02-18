@@ -4,14 +4,14 @@
       <div class="photo">
         <Icon name="user" class="pic"/>
       </div>
-      <pre>
-        <div class="bless">我不会祝你今天开心
-          我要祝你今天非常开心</div>
-      </pre>
+      <div class="bless">
+        <span>我不会祝你今天开心</span>
+        <span>我要祝你今天非常开心</span>
+      </div>
     </div>
     <div class="money">
       <span>开心币: $</span>
-      <span>{{cash}}</span>
+      <span>{{ cash }}</span>
     </div>
     <div class="function">
       <div class="receive">
@@ -47,16 +47,16 @@ import DropDownItem from "../Tool/DropDown-Item.vue";
 export default {
   name: "Info",
   components: {DropDownItem, DropDown, Icon, Navbar},
-  setup(){
-    const cash=ref(fetchCash())
-    const touch=(type:String)=>{
-      if(type==='receive'){
+  setup() {
+    const cash = ref(fetchCash())
+    const touch = (type: String) => {
+      if (type === 'receive') {
 
-      }else{
+      } else {
 
       }
     }
-    return {touch,cash}
+    return {touch, cash}
   }
 }
 </script>
@@ -65,33 +65,30 @@ export default {
 .infoWrapper {
   height: calc(100% - 38px);
   border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .user {
-    height: 40%;
-    border: 1px solid red;
-    position: relative;
+    //border:1px solid blue;
     .photo {
-      position: absolute;
-      top:0;
-      left:0;
-      height: 60%;
-      width:100%;
-      border: 1px solid red;
+      width: 100%;
+      padding: 16px 0;
+      //border: 1px solid grey;
       display: flex;
       justify-content: center;
       align-items: center;
+
       .pic {
-        width: 70%;
-        height: 90%;
+        width:128px;
+        height:128px;
       }
     }
+
     .bless {
-      position: absolute;
-      bottom: 0;
-      left:0;
-      width:100%;
-      height:40%;
-      border:1px solid red;
+      padding: 16px 0;
+      border: 1px solid grey;
+      border-radius: 24px;
       font-size: 24px;
       display: flex;
       flex-wrap: wrap;
@@ -100,31 +97,35 @@ export default {
     }
   }
 
-  .money{
+  .money {
     display: flex;
     justify-content: center;
     align-items: center;
-    border:1px solid green;
-    margin-top: 24px;
-    padding:36px;
+    border: 1px solid grey;
+    margin-top: 12px;
+    padding: 36px;
     font-size: 28px;
+    border-radius: 24px;
   }
 
   .function {
-    border:1px solid blue;
-    margin-top: 24px;
-    height:16%;
+    border: 1px solid grey;
+    margin-top: 12px;
+    border-radius: 24px;
+    padding: 18px 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    .receive{
-      height:100%;
-      border:1px solid red;
+
+    .receive {
+      height: 100%;
+      //border:1px solid red;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      a{
+
+      a {
         text-decoration: none;
         display: flex;
         flex-direction: column;
@@ -132,14 +133,16 @@ export default {
         align-items: center;
       }
     }
-    .collects{
-      height:100%;
-      border:1px solid red;
+
+    .collects {
+      height: 100%;
+      //border:1px solid red;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      a{
+
+      a {
         text-decoration: none;
         display: flex;
         flex-direction: column;
@@ -148,15 +151,24 @@ export default {
       }
     }
   }
-  .record{
-    height:10%;
-    width:100%;
-    border:none;
-    margin-top: 24px;
+
+  .record {
+    height: 10%;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 24px;
     font-size: 24px;
-    &:active{
-      background: orange;
-      opacity: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 48px;
+
+    a {
+      text-decoration: none;
+
+      span {
+
+      }
     }
   }
 }

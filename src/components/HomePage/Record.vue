@@ -7,6 +7,15 @@
       <span>
       购买记录
       </span>
+
+
+
+      <Toggle :selected="selected">
+        <ToggleItem content="单日"/>
+        <ToggleItem content="总览"/>
+      </Toggle>
+
+
     </header>
     <DropDown @update:date="changeDate"
               @update:chart="changeChart">
@@ -27,16 +36,18 @@ import Icon from "../Tool/Icon.vue";
 import DropDown from "../Tool/DropDown.vue";
 import DropDownItem from "../Tool/DropDown-Item.vue";
 import {EChartsType} from "echarts";
+import Toggle from "../Tool/Toggle.vue";
+import ToggleItem from "../Tool/ToggleItem.vue";
 
 export default {
-  components: {DropDownItem, DropDown, Icon},
+  components: {ToggleItem, Toggle, DropDownItem, DropDown, Icon},
   setup() {
     const chartRef = ref(null)
     const source = reactive([])
     const text = ref('')
     const myChart = ref<EChartsType>(null)
     const dates = reactive<string[]>(getDates())
-    console.log(dates);
+    const selected=ref('单日')
     onMounted(() => {
       text.value = fetchBuy().createdAt
       initSource()
@@ -135,7 +146,7 @@ export default {
       changeText(val)
       setOption()
     }
-    return {chartRef, changeDate, changeChart, dates}
+    return {chartRef, changeDate, changeChart, dates,selected}
   }
 }
 </script>
@@ -151,20 +162,18 @@ export default {
   header {
     border-bottom: 1px solid grey;
     display: flex;
-
+    justify-content: space-between;
+    align-items: center;
     a {
       display: inline-block;
       padding: 4px 8px;
-      //border:1px solid red;
     }
 
     span {
-      //border:1px solid red;
-      flex: 1;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding-left: 19vw;
+      //padding-left: 19vw;
       font-size: 24px;
     }
   }

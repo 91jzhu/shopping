@@ -10,7 +10,7 @@
 
 
 
-      <Toggle :selected="selected">
+      <Toggle v-model:selected="selected">
         <ToggleItem content="单日"/>
         <ToggleItem content="总览"/>
       </Toggle>
@@ -47,7 +47,7 @@ export default {
     const text = ref('')
     const myChart = ref<EChartsType>(null)
     const dates = reactive<string[]>(getDates())
-    const selected=ref('单日')
+    const selected=ref('总览')
     onMounted(() => {
       text.value = fetchBuy().createdAt
       initSource()
@@ -167,13 +167,13 @@ export default {
     a {
       display: inline-block;
       padding: 4px 8px;
+      margin-right: 48px;
     }
 
     span {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      //padding-left: 19vw;
       font-size: 24px;
     }
   }

@@ -7,15 +7,10 @@
       <span>
       购买记录
       </span>
-
-
-
       <Toggle v-model:selected="selected">
         <ToggleItem content="单日"/>
         <ToggleItem content="总览"/>
       </Toggle>
-
-
     </header>
     <DropDown @update:date="changeDate"
               @update:chart="changeChart">

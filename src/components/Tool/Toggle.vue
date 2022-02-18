@@ -1,26 +1,31 @@
 <template>
   <div class="toggleWrapper">
-    <component v-for="(child, index) in childs" :is="child" :ref="el => childrenRef[index] = el" @click="onClick(index)"/>
-    <div class="border" ref="border"/>
+    <component
+      v-for="(child, index) in childs"
+      :is="child"
+      :ref="el => childrenRef[index] = el"
+      @click="onClick(index)"
+    />
+    <div class="border" ref="border" />
   </div>
 </template>
 
 <script lang="ts">
-import {ref} from "vue";
+import { ref } from "vue";
 export default {
-  props:{
-    selected:String
+  props: {
+    selected: String
   },
-  setup(props, {slots}) {
+  setup(props, { slots }) {
     const childs = slots.default()
-    const childrenRef=ref([])
+    const childrenRef = ref([])
     const selectedChildRef = ref(null)
-    const border=ref(null)
+    const border = ref(null)
     const onClick = (index) => {
       selectedChildRef.value = childrenRef.value[index]
       console.log(selectedChildRef.value)
     }
-    return {childs, onClick,childrenRef,border}
+    return { childs, onClick, childrenRef, border }
   }
 }
 </script>

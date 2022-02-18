@@ -8,7 +8,8 @@
       购买记录
     </span>
     </header>
-    <DropDown title="请选择日期" @update:date="x">
+    <DropDown @update:date="changeDate"
+              @update:chart="changeChart">
       <DropDownItem date="2022年02月17日"/>
       <DropDownItem date="2022年02月16日"/>
       <DropDownItem date="2022年02月15日"/>
@@ -24,98 +25,120 @@
 </template>
 
 <script lang="ts">
-import {onMounted, ref} from "vue";
+import {onMounted, reactive, ref, watchEffect} from "vue";
 import * as echarts from 'echarts';
-import {fetchBuyEd} from "../../store/data";
+import {changeBuy, Data, fetchBuy} from "../../store/data";
 import {Car} from "../../type";
 import Icon from "../Tool/Icon.vue";
 import DropDown from "../Tool/DropDown.vue";
 import DropDownItem from "../Tool/DropDown-Item.vue";
-
+import {EChartsType} from "echarts";
 export default {
-  name: "Record.vue",
   components: {DropDownItem, DropDown, Icon},
   setup() {
     const chartRef = ref(null)
-    const source = ref([])
+    const source = reactive([])
+    const text=ref('')
+    const myChart=ref<EChartsType>(null)
     onMounted(() => {
-      fetchBuyEd('2022年02月16日').forEach((item: Partial<Car>) => {
-        source.value.push([item.name, item.price])
-      })
+      text.value=fetchBuy().createdAt
+      initSource()
       if (chartRef.value) {
-        const myChart = echarts.init(chartRef.value);
-        myChart.setOption({
-          dataset: [
-            {
-              dimensions: ['name', 'score'],
-              source: source.value,
-            },
-            {
-              transform: {
-                type: 'sort',
-                config: {dimension: 'score', order: 'desc'}
-              }
-            }
-          ],
-          title:{
-            show:true,
-            text:'2022年02月16日消费情况',
-            top:'top',
-            left:'center',
-            textStyle:{
-              color:'grey',
-              fontSize:22,
-              fontStyle:'oblique',
-              width:100
-            }
-          },
-          grid: {
-            left: '2%',
-            right: '1%',
-            containLabel: true
-          },
-          xAxis: {
-            type: 'category',
-            axisLabel: {
-              interval: 0,
-              rotate: 30,
-              margin: 16,
-              fontSize: 20
-            },
-            axisTick: {
-              show: false,
-              alignWithLabel: true
-            }
-          },
-          tooltip: {},
-          legend: {},
-          yAxis: {
-            axisLabel: {
-              fontSize: 18,
-              showMinLabel: false,
-            }
-          },
-          label: {
-            show: true,		//开启显示
-            position: 'top',	//在上方显示
-            fontSize: 18,
-            textStyle: {	    //数值样式
-              color: 'black',
-              fontSize: 18
-            }
-          },
-          series: {
-            type: 'bar',
-            encode: {x: 'name', y: 'score'},
-            datasetIndex: 1,
-          }
-        })
+        myChart.value = echarts.init(chartRef.value);
+        setOption()
       }
     })
-    const x=(val)=>{
-      console.log(val);
+    const initSource=()=>{
+      fetchBuy().buyEd.forEach((item: Partial<Car>) => {
+        source.push([item.name, item.price])
+      })
     }
-    return {chartRef,x}
+    const changeText=(newText:string)=>{
+      text.value=newText
+    }
+    const changeSource=(arr)=>{
+      source.length=0
+      arr.forEach((item:Data)=>{
+        source.push([item.name,item.price])
+      })
+    }
+    const setOption=()=>{
+      myChart.value.setOption({
+        dataset: [
+          {
+            dimensions: ['name', 'price'],
+            source,
+          },
+          {
+            transform: {
+              type: 'sort',
+              config: {dimension: 'price', order: 'desc'}
+            }
+          }
+        ],
+        title:{
+          show:true,
+          text:`${text.value}消费情况`,
+          top:'top',
+          left:'center',
+          textStyle:{
+            color:'grey',
+            fontSize:22,
+            fontStyle:'oblique',
+            width:100
+          }
+        },
+        grid: {
+          left: '2%',
+          right: '1%',
+          containLabel: true
+        },
+        xAxis: {
+          type: 'category',
+          axisLabel: {
+            interval: 0,
+            rotate: 30,
+            margin: 16,
+            fontSize: 20
+          },
+          axisTick: {
+            show: false,
+            alignWithLabel: true
+          }
+        },
+        tooltip: {},
+        legend: {},
+        yAxis: {
+          axisLabel: {
+            fontSize: 18,
+            showMinLabel: false,
+          }
+        },
+        label: {
+          show: true,		//开启显示
+          position: 'top',	//在上方显示
+          fontSize: 18,
+          textStyle: {	    //数值样式
+            color: 'black',
+            fontSize: 18
+          }
+        },
+        series: {
+          type: 'bar',
+          encode: { x: 'name', y: 'price' },
+          datasetIndex: 1,
+        }
+      })
+    }
+    const changeDate=(val:string)=>{
+      console.log('changeDate');
+    }
+    const changeChart=(val:string)=>{
+      changeSource(changeBuy(val))
+      changeText(val)
+      setOption()
+    }
+    return {chartRef, changeDate,changeChart}
   }
 }
 </script>

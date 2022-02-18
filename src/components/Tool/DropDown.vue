@@ -3,7 +3,7 @@
     <div class="titleWrapper">
       <div class="title" @click.stop='toggle'>{{ title }}</div>
       <div class="contentWrapper" v-if="visible">
-        <div class="content" @click="x">
+        <div class="content" @click="changeChart">
           <component v-for="child in defaults"
                      :is="child" :data-date="child.props.date"/>
         </div>
@@ -15,26 +15,25 @@
 <script lang="ts">
 import {ref} from "vue";
 import Dialog from "./Dialog.vue";
+import dayjs from "dayjs";
+import {fetchBuy} from "../../store/data";
 
 export default {
   name: "DropDown",
   components: {Dialog},
-  props: {
-    title: String
-  },
-  setup(props, context) {
-    const defaults = context.slots.default()
-    // defaults.forEach(item=>{
-    //   console.log(item.props.date)
-    // })
+  setup(props, {emit,slots}) {
+    const defaults = slots.default()
     const visible = ref(true)
+    const title=ref(fetchBuy().createdAt.replace('年','-').replace('月','-').replace('日',''))
     const toggle = () => {
       visible.value = !visible.value
     }
-    const x=(e)=>{
-      console.log(e.target.dataset.date);
+    const changeChart=(e)=>{
+      const str=e.target.dataset.date
+      title.value=str.replace('年','-').replace('月','-').replace('日','')
+      emit('update:chart',str)
     }
-    return {visible, toggle, defaults,x}
+    return {visible, toggle, defaults,changeChart,title}
   }
 }
 </script>
@@ -53,12 +52,12 @@ export default {
     .title {
       font-size: 24px;
       color:#9f9d9e;
-      padding: 4px 8px;
+      padding: 4px 2px;
       display: inline-block;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 12px;
+      left: 4px;
     }
 
     .contentWrapper {

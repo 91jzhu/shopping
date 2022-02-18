@@ -1,9 +1,10 @@
 import {Car} from "../type";
 
-interface Data{
-    createdAt:string,
-    buyEd:[]
+interface Data {
+    createdAt: string,
+    buyEd: []
 }
+
 const fetchData = () => {
     return JSON.parse(localStorage.getItem('data')!) || []
 }
@@ -21,13 +22,16 @@ const addBuy = ({name, price, count, createdAt}: Partial<Car>) => {
             result.buyEd.push(obj)
         }
     }
-    tmp.sort((a:Data, b:Data) => a.createdAt < b.createdAt ? 1 : -1)
+    tmp.sort((a: Data, b: Data) => a.createdAt < b.createdAt ? 1 : -1)
     localStorage.setItem('data', JSON.stringify(tmp))
 }
-const fetchBuyEd=(createdAt:string)=>{
+const fetchBuy = () => {
+    const tmp = fetchData()
+    return tmp.find((item: Data) => item.buyEd !== [])
+}
+const changeBuy=(createdAt:string)=>{
     const tmp=fetchData()
-    const result=tmp.find((item:Partial<Car>)=>item.createdAt===createdAt)
-    return result.buyEd
+    return tmp.find((item:Data)=>item.createdAt===createdAt).buyEd||[]
 }
 
-export {addBuy,fetchBuyEd}
+export {addBuy, fetchBuy,changeBuy,Data}

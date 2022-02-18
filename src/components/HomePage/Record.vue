@@ -1,12 +1,6 @@
 <template>
   <div class="wrapper">
     <header>
-<!--      <DropDownItem :date="'2022年02月17日'"/>-->
-<!--      <DropDownItem :date="'2022年02月16日'"/>-->
-<!--      <DropDownItem :date="'2022年02月15日'"/>-->
-<!--      <DropDownItem :date="'2022年02月14日'"/>-->
-<!--      <DropDownItem :date="'2022年02月13日'"/>-->
-<!--      <DropDownItem :date="'2022年02月12日'"/>-->
       <router-link to="/info">
         <Icon name="back"/>
       </router-link>
@@ -14,12 +8,10 @@
       购买记录
       </span>
     </header>
-
     <DropDown @update:date="changeDate"
               @update:chart="changeChart">
       <DropDownItem v-for="date in dates" :date="date" :key="date"/>
     </DropDown>
-
     <div class="chartWrapper">
       <div class="chart" ref="chartRef"/>
     </div>
@@ -178,13 +170,12 @@ export default {
   }
 
   .chartWrapper {
-    //border:1px solid blue;
     .chart {
       border: 1px solid grey;
       border-top-left-radius: 24px;
       border-top-right-radius: 24px;
       padding-top: 12px;
-      height: 72vh;
+      height: 68vh;
     }
   }
 

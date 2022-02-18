@@ -10,15 +10,12 @@ export default {
   props:{
     date:String
   },
-  setup(props){
-    console.log(props.date)
-  }
 }
 </script>
 
 <style scoped lang="scss">
 .itemWrapper {
-  padding: 18px 26px;
+  padding: 20px 26px;
   font-size: 20px;
   white-space: nowrap;
   position: relative;

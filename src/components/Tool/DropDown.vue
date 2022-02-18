@@ -39,10 +39,10 @@ export default {
 
 <style scoped lang="scss">
 .wrapper {
-  border: 1px solid red;
-
   .titleWrapper {
-    border: 1px solid green;
+    border: 1px solid grey;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
     height: 100%;
     position: relative;
     display: flex;
@@ -60,20 +60,22 @@ export default {
     }
 
     .contentWrapper {
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, .3),
-                  0 1px 3px rgba(0,0,0,.3);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, .2),
+                  -1px 1px 3px rgba(0,0,0,.2),
+                  1px -1px 3px rgba(0,0,0,.2);
       border-radius: 8px;
       display: inline-block;
       position: relative;
       margin-left: 160px;
+      padding:8px 0;
       width:210px;
-      height:120px;
+      height:140px;
       &::before {
         content: "";
         width: 0;
         height: 0;
         position: absolute;
-        top: 54px;
+        top: 70px;
         right: 200px;
         border-bottom: 10px solid white;
         border-right: 10px solid white;
@@ -84,14 +86,14 @@ export default {
       }
       &::after{
         content: "";
-        top:54px;
+        top:70px;
         width: 12px;
         height: 20px;
         position: absolute;
         background: white;
       }
       .content{
-        max-height: 100px;
+        max-height: 140px;
         overflow-y:auto;
         &::-webkit-scrollbar {
           display: none;

@@ -12,136 +12,25 @@
         <ToggleItem content="总览"/>
       </Toggle>
     </header>
-    <DropDown @update:date="changeDate"
-              @update:chart="changeChart">
-      <DropDownItem v-for="date in dates" :date="date" :key="date"/>
-    </DropDown>
-    <div class="chartWrapper">
-      <div class="chart" ref="chartRef"/>
-    </div>
+    <Single v-if="selected==='单日'"/>
+    <Overview v-if="selected==='总览'"/>
   </div>
 </template>
 
 <script lang="ts">
-import {onMounted, reactive, ref} from "vue";
-import * as echarts from 'echarts';
-import {changeBuy, Data, fetchBuy, getDates} from "../../store/data";
-import {Car} from "../../type";
+import {ref} from "vue";
 import Icon from "../Tool/Icon.vue";
 import DropDown from "../Tool/DropDown.vue";
 import DropDownItem from "../Tool/DropDown-Item.vue";
-import {EChartsType} from "echarts";
 import Toggle from "../Tool/Toggle.vue";
 import ToggleItem from "../Tool/ToggleItem.vue";
-
+import Single from "../../display/Single.vue";
+import Overview from "../../display/Overview.vue";
 export default {
-  components: {ToggleItem, Toggle, DropDownItem, DropDown, Icon},
+  components: {Overview, Single, ToggleItem, Toggle, DropDownItem, DropDown, Icon},
   setup() {
-    const chartRef = ref(null)
-    const source = reactive([])
-    const text = ref('')
-    const myChart = ref<EChartsType>(null)
-    const dates = reactive<string[]>(getDates())
-    const selected=ref('总览')
-    onMounted(() => {
-      text.value = fetchBuy().createdAt
-      initSource()
-      if (chartRef.value) {
-        myChart.value = echarts.init(chartRef.value);
-        setOption()
-      }
-    })
-    const initSource = () => {
-      fetchBuy().buyEd.forEach((item: Partial<Car>) => {
-        source.push([item.name, item.price])
-      })
-    }
-    const changeText = (newText: string) => {
-      text.value = newText
-    }
-    const changeSource = (arr) => {
-      source.length = 0
-      arr.forEach((item: Data) => {
-        source.push([item.name, item.price])
-      })
-    }
-    const setOption = () => {
-      myChart.value.setOption({
-        dataset: [
-          {
-            dimensions: ['name', 'price'],
-            source,
-          },
-          {
-            transform: {
-              type: 'sort',
-              config: {dimension: 'price', order: 'desc'}
-            }
-          }
-        ],
-        title: {
-          show: true,
-          text: `${text.value}消费情况`,
-          top: 'top',
-          left: 'center',
-          textStyle: {
-            color: 'grey',
-            fontSize: 22,
-            fontStyle: 'oblique',
-            width: 100
-          }
-        },
-        grid: {
-          left: '2%',
-          right: '1%',
-          containLabel: true
-        },
-        xAxis: {
-          type: 'category',
-          axisLabel: {
-            interval: 0,
-            rotate: 30,
-            margin: 16,
-            fontSize: 20
-          },
-          axisTick: {
-            show: false,
-            alignWithLabel: true
-          }
-        },
-        tooltip: {},
-        legend: {},
-        yAxis: {
-          axisLabel: {
-            fontSize: 18,
-            showMinLabel: false,
-          }
-        },
-        label: {
-          show: true,		//开启显示
-          position: 'top',	//在上方显示
-          fontSize: 18,
-          textStyle: {	    //数值样式
-            color: 'black',
-            fontSize: 18
-          }
-        },
-        series: {
-          type: 'bar',
-          encode: {x: 'name', y: 'price'},
-          datasetIndex: 1,
-        }
-      })
-    }
-    const changeDate = (val: string) => {
-      console.log('changeDate');
-    }
-    const changeChart = (val: string) => {
-      changeSource(changeBuy(val))
-      changeText(val)
-      setOption()
-    }
-    return {chartRef, changeDate, changeChart, dates,selected}
+    const selected=ref('单日')
+    return {selected}
   }
 }
 </script>
@@ -172,16 +61,5 @@ export default {
       font-size: 24px;
     }
   }
-
-  .chartWrapper {
-    .chart {
-      border: 1px solid grey;
-      border-top-left-radius: 24px;
-      border-top-right-radius: 24px;
-      padding-top: 12px;
-      height: 68vh;
-    }
-  }
-
 }
 </style>

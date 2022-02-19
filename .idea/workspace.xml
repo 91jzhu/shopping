@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="toggle 组件完成,使用了事件委托和 getBoundingClientRect,学到了动态组件绑定 ref 的方法,数组存下来,使用时用下标选择">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="底部导航栏样式优化，svg 调整">
+      <change afterPath="$PROJECT_DIR$/src/display/Overview.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/display/Single.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Record.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Record.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/DropDown-Item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/DropDown-Item.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/data.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,14 +145,7 @@
       <workItem from="1645069501092" duration="22314000" />
       <workItem from="1645149334021" duration="26101000" />
       <workItem from="1645195874274" duration="1037000" />
-      <workItem from="1645239432453" duration="4038000" />
-    </task>
-    <task id="LOCAL-00002" summary="tab 切换完成">
-      <created>1643899830845</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1643899830845</updated>
+      <workItem from="1645239432453" duration="16903000" />
     </task>
     <task id="LOCAL-00003" summary="完成商品页面的商品">
       <created>1643965706395</created>
@@ -487,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645189306617</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="底部导航栏样式优化，svg 调整">
+      <created>1645243805991</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1645243805991</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +508,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="渲染商品列表" />
     <MESSAGE value="改用 for 渲染列表，没达到想要的效果" />
     <MESSAGE value="重新制作 dialog" />
     <MESSAGE value="car 页面可以改变商品数量" />
@@ -530,7 +532,8 @@
     <MESSAGE value="下拉菜单样式微调" />
     <MESSAGE value="toggle 有点问题" />
     <MESSAGE value="toggle 组件完成,使用了事件委托和 getBoundingClientRect,学到了动态组件绑定 ref 的方法,数组存下来,使用时用下标选择" />
-    <option name="LAST_COMMIT_MESSAGE" value="toggle 组件完成,使用了事件委托和 getBoundingClientRect,学到了动态组件绑定 ref 的方法,数组存下来,使用时用下标选择" />
+    <MESSAGE value="底部导航栏样式优化，svg 调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="底部导航栏样式优化，svg 调整" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

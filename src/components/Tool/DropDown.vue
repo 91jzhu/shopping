@@ -15,35 +15,33 @@
 <script lang="ts">
 import {ref} from "vue";
 import Dialog from "./Dialog.vue";
-import {fetchBuy} from "../../store/data";
-
 export default {
-  name: "DropDown",
   components: {Dialog},
+  props:{
+    title:String
+  },
   setup(props, {emit,slots}) {
     const defaults = slots.default()[0].children
     const visible = ref(true)
-    const title=ref(fetchBuy().createdAt.replace('年','-').replace('月','-').replace('日',''))
     const toggle = () => {
       visible.value = !visible.value
     }
     const changeChart=(e)=>{
       const str=e.target.dataset.date
-      title.value=str.replace('年','-').replace('月','-').replace('日','')
+      const string=str.replace('年','-').replace('月','-').replace('日','')
+      emit('update:title',string)
       emit('update:chart',str)
     }
-    return {visible, toggle, defaults,changeChart,title}
+    return {visible, toggle, defaults,changeChart}
   }
 }
 </script>
 
 <style scoped lang="scss">
 .wrapper {
+  flex:1;
   .titleWrapper {
-    border: 1px solid grey;
-    border-bottom-left-radius: 24px;
-    border-bottom-right-radius: 24px;
-    height: 100%;
+    height:100%;
     position: relative;
     display: flex;
     align-items: center;
@@ -95,6 +93,10 @@ export default {
       .content{
         max-height: 140px;
         overflow-y:auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         &::-webkit-scrollbar {
           display: none;
         }

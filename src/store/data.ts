@@ -41,5 +41,13 @@ const getDates=()=>{
     })
     return result
 }
+const getMonths=()=>{
+    const tmp=fetchData()
+    const result:string[]=[]
+    tmp.forEach((item:Data)=>{
+        result.push(item.createdAt.slice(0,8))
+    })
+    return result
+}
 
-export {addBuy, fetchBuy,changeBuy,Data,getDates}
+export {addBuy, fetchBuy,changeBuy,Data,getDates,getMonths}

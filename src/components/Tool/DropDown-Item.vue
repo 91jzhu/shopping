@@ -1,6 +1,7 @@
 <template>
   <div class="itemWrapper">
     {{date}}
+    <div class="line"/>
   </div>
 </template>
 
@@ -21,12 +22,12 @@ export default {
   position: relative;
   .line{
     position: absolute;
-    width:320px;
+    width:300px;
     height:2px;
     transform: scale(0.5);
     background: grey;
     left:50%;
-    margin-left: -160px;
+    margin-left: -150px;
     bottom:0;
   }
 }

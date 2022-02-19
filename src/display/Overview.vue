@@ -31,7 +31,6 @@ export default {
   setup() {
     const chartRef = ref(null)
     const months=ref([...new Set(getMonths())])
-    console.log(months.value);
     onMounted(() => {
       if (chartRef.value) {
         const myChart = echarts.init(chartRef.value)

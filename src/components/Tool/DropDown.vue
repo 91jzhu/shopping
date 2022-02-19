@@ -28,7 +28,10 @@ export default {
     }
     const changeChart=(e)=>{
       const str=e.target.dataset.date
-      const string=str.replace('年','-').replace('月','-').replace('日','')
+      let string=str
+      if(str.includes('日')){
+        string=str.replace('年','-').replace('月','-').replace('日','')
+      }
       emit('update:title',string)
       emit('update:chart',str)
     }

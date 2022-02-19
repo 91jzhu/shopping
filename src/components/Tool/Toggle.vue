@@ -45,7 +45,8 @@ export default {
     border-radius: 36px;
     width: 64px;
     height: 50px;
-    border: 1px solid red;
+    border: 1px solid green;
+    background: sandybrown;
     transition: left 250ms;
   }
 }

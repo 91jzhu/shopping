@@ -141,7 +141,7 @@ export default {
 
   .btnWrapper {
     position: fixed;
-    bottom: 38px;
+    bottom: 58px;
     left: 0;
     width: 100%;
     height: 64px;

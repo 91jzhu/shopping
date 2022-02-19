@@ -7,7 +7,7 @@
     <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="toggle 组件完成,使用了事件委托和 getBoundingClientRect,学到了动态组件绑定 ref 的方法,数组存下来,使用时用下标选择">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Record.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Record.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,6 +142,7 @@
       <workItem from="1645069501092" duration="22314000" />
       <workItem from="1645149334021" duration="26101000" />
       <workItem from="1645195874274" duration="1037000" />
+      <workItem from="1645239432453" duration="4038000" />
     </task>
     <task id="LOCAL-00002" summary="tab 切换完成">
       <created>1643899830845</created>

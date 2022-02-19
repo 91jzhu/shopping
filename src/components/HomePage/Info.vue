@@ -16,12 +16,14 @@
     <div class="function">
       <div class="receive">
         <router-link to="/info/receive">
+          <span class="mount">{{receiveMount}}</span>
           <Icon name="receive"/>
           <span>待收货</span>
         </router-link>
       </div>
       <div class="collects">
         <router-link to="/info/collection">
+          <span class="mount">{{collectMount}}</span>
           <Icon name="collects"/>
           <span>我的收藏</span>
         </router-link>
@@ -43,20 +45,17 @@ import {ref} from "vue";
 import {fetchCash} from "../../store/carStore";
 import DropDown from "../Tool/DropDown.vue";
 import DropDownItem from "../Tool/DropDown-Item.vue";
+import {getReceiveMount} from "../../store/receiveStore";
+import {getCollectMount} from "../../store/collectStore";
 
 export default {
   name: "Info",
   components: {DropDownItem, DropDown, Icon, Navbar},
   setup() {
     const cash = ref(fetchCash())
-    const touch = (type: String) => {
-      if (type === 'receive') {
-
-      } else {
-
-      }
-    }
-    return {touch, cash}
+    const receiveMount=ref(getReceiveMount())
+    const collectMount=ref(getCollectMount())
+    return {cash,receiveMount,collectMount}
   }
 }
 </script>
@@ -86,6 +85,7 @@ export default {
     }
 
     .bless {
+      background: #f5f5f5;
       padding: 16px 0;
       border: 1px solid grey;
       border-radius: 24px;
@@ -98,6 +98,7 @@ export default {
   }
 
   .money {
+    background: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,6 +110,7 @@ export default {
   }
 
   .function {
+    background: #f5f5f5;
     border: 1px solid grey;
     margin-top: 12px;
     border-radius: 24px;
@@ -131,6 +133,22 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+        .mount{
+            border:1px solid red;
+            position: absolute;
+            top:-5%;
+            right:-5%;
+            width:24px;
+            height:24px;
+            background: #f87209;
+            color:#fefbee;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+        }
       }
     }
 
@@ -148,11 +166,28 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+        .mount{
+          border:1px solid red;
+          position: absolute;
+          top:-5%;
+          right:-5%;
+          width:24px;
+          height:24px;
+          display: flex;
+          background: #f87209;
+          color:#fefbee;
+          font-size: 18px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100%;
+        }
       }
     }
   }
 
   .record {
+    background: #f5f5f5;
     height: 10%;
     width: 100%;
     border: 1px solid grey;

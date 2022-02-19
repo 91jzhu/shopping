@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="完成两个图表">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="修复了下拉菜单的小问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tool/Toggle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/Toggle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/receiveStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/receiveStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,14 +144,7 @@
       <workItem from="1645069501092" duration="22314000" />
       <workItem from="1645149334021" duration="26101000" />
       <workItem from="1645195874274" duration="1037000" />
-      <workItem from="1645239432453" duration="18290000" />
-    </task>
-    <task id="LOCAL-00004" summary="使用 reactive 模拟 vuex">
-      <created>1644059910278</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1644059910278</updated>
+      <workItem from="1645239432453" duration="21129000" />
     </task>
     <task id="LOCAL-00005" summary="数据持久化">
       <created>1644060711105</created>
@@ -486,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645261701495</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="修复了下拉菜单的小问题">
+      <created>1645263208099</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1645263208099</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +507,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="重新制作 dialog" />
     <MESSAGE value="car 页面可以改变商品数量" />
     <MESSAGE value="goods 页面可以选择商品数量" />
     <MESSAGE value="修复了重复选择商品时商品合并的问题" />
@@ -529,7 +531,8 @@
     <MESSAGE value="toggle 组件完成,使用了事件委托和 getBoundingClientRect,学到了动态组件绑定 ref 的方法,数组存下来,使用时用下标选择" />
     <MESSAGE value="底部导航栏样式优化，svg 调整" />
     <MESSAGE value="完成两个图表" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成两个图表" />
+    <MESSAGE value="修复了下拉菜单的小问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复了下拉菜单的小问题" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

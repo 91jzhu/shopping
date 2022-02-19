@@ -91,7 +91,6 @@ export default {
   }
 
   .replace {
-    border: 1px solid red;
     position: absolute;
     top: 50%;
     left: 50%;

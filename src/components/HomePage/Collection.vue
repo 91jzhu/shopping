@@ -6,7 +6,7 @@
       </router-link>
       <span>
       收藏夹
-    </span>
+      </span>
     </header>
     <main v-if="visible">
       <Rac v-for="collect in collects"
@@ -81,7 +81,6 @@ export default {
   }
 
   .replace {
-    border: 1px solid red;
     position: absolute;
     top: 50%;
     left: 50%;

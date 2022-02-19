@@ -26,4 +26,8 @@ const deleteReceive=({name,price,count,createdAt}:Partial<Car>)=>{
     addBuy({name,price,count,createdAt})
     openToast({tip:'收货成功'})
 }
-export {receiveItem,fetchReceive,addReceive,deleteReceive}
+const getReceiveMount=()=>{
+    const tmp=fetchReceive()
+    return tmp.length
+}
+export {receiveItem,fetchReceive,addReceive,deleteReceive,getReceiveMount}

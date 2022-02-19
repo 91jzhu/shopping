@@ -29,4 +29,8 @@ const clearCollect=()=>{
     localStorage.setItem('collectItem',JSON.stringify([]))
     openToast({tip:'收藏夹已清空'})
 }
-export {fetchCollect,collectOne,deleteOne,clearCollect}
+const getCollectMount=()=>{
+    const tmp=fetchCollect()
+    return tmp.length
+}
+export {fetchCollect,collectOne,deleteOne,clearCollect,getCollectMount}

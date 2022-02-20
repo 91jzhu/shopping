@@ -43,6 +43,7 @@ import Icon from "./Tool/Icon.vue";
     height: 48px;
     padding:4px 0;
     background:white;
+    color:grey;
     .active{
       display: none;
     }

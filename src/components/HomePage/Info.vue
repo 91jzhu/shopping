@@ -9,10 +9,6 @@
         <span>我要祝你今天非常开心</span>
       </div>
     </div>
-    <div class="money">
-      <span>开心币: $</span>
-      <span>{{ cash }}</span>
-    </div>
     <div class="function">
       <div class="receive">
         <router-link to="/info/receive">
@@ -28,6 +24,10 @@
           <span>我的收藏</span>
         </router-link>
       </div>
+    </div>
+    <div class="money">
+      <span>开心币: $</span>
+      <span>{{ cash }}</span>
     </div>
     <div class="record">
       <router-link to="/info/record">
@@ -67,7 +67,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  background: rgb(224,234,236);
+  background: linear-gradient(0deg, rgba(224,234,236,1) 0%, rgba(231,223,221,1) 100%);;
   .user {
     //border:1px solid blue;
     .photo {
@@ -85,7 +86,7 @@ export default {
     }
 
     .bless {
-      background: #f5f5f5;
+      background: #ffffff;
       padding: 16px 0;
       border: 1px solid grey;
       border-radius: 24px;
@@ -98,7 +99,7 @@ export default {
   }
 
   .money {
-    background: #f5f5f5;
+    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +111,7 @@ export default {
   }
 
   .function {
-    background: #f5f5f5;
+    background: #ffffff;
     border: 1px solid grey;
     margin-top: 12px;
     border-radius: 24px;
@@ -187,7 +188,7 @@ export default {
   }
 
   .record {
-    background: #f5f5f5;
+    background: #ffffff;
     height: 10%;
     width: 100%;
     border: 1px solid grey;
@@ -200,7 +201,7 @@ export default {
 
     a {
       text-decoration: none;
-
+      color:black;
       span {
 
       }

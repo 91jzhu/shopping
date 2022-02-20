@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="添加显示商品的小功能">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="修复一些问题和完成购物车界面样式">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,14 +144,7 @@
       <workItem from="1645149334021" duration="26101000" />
       <workItem from="1645195874274" duration="1037000" />
       <workItem from="1645239432453" duration="21338000" />
-      <workItem from="1645349807106" duration="6746000" />
-    </task>
-    <task id="LOCAL-00006" summary="优化数据持久化代码">
-      <created>1644062198967</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1644062198967</updated>
+      <workItem from="1645349807106" duration="8246000" />
     </task>
     <task id="LOCAL-00007" summary="为商品添加价格，准备制作购物车页面">
       <created>1644130370847</created>
@@ -488,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645268882906</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="修复一些问题和完成购物车界面样式">
+      <created>1645357738729</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1645357738729</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +507,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="goods 页面可以选择商品数量" />
     <MESSAGE value="修复了重复选择商品时商品合并的问题" />
     <MESSAGE value="完成购物车金额实时更新" />
     <MESSAGE value="完成购物功能" />
@@ -531,7 +531,8 @@
     <MESSAGE value="完成两个图表" />
     <MESSAGE value="修复了下拉菜单的小问题" />
     <MESSAGE value="添加显示商品的小功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加显示商品的小功能" />
+    <MESSAGE value="修复一些问题和完成购物车界面样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复一些问题和完成购物车界面样式" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

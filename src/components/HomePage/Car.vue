@@ -158,16 +158,15 @@ export default {
         box-shadow: 2px 2px 10px lightgrey;
         border-radius: 32px;
         padding:10px 24px;
-        animation: swing 1.8s;
+        animation: swing 1.5s;
         transform-origin: 30px 30px;
       }
       @keyframes swing {
         0%{}
-        30%{transform: rotate(60deg)}
-        50%{transform: rotate(90deg)}
-        70%{transform: rotate(70deg)}
-        80%{transform: rotate(90deg)}
-        90%{transform: rotate()}
+        50%{transform: rotate(70deg)}
+        70%{transform: rotate(90deg)}
+        80%{transform: rotate(70deg)}
+        100%{transform: rotate(90deg)}
       }
     }
   }

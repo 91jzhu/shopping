@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="修复了下拉菜单的小问题">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="添加显示商品的小功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/receiveStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/receiveStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,14 +142,8 @@
       <workItem from="1645069501092" duration="22314000" />
       <workItem from="1645149334021" duration="26101000" />
       <workItem from="1645195874274" duration="1037000" />
-      <workItem from="1645239432453" duration="21129000" />
-    </task>
-    <task id="LOCAL-00005" summary="数据持久化">
-      <created>1644060711105</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1644060711105</updated>
+      <workItem from="1645239432453" duration="21338000" />
+      <workItem from="1645349807106" duration="6746000" />
     </task>
     <task id="LOCAL-00006" summary="优化数据持久化代码">
       <created>1644062198967</created>
@@ -489,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645263208099</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="添加显示商品的小功能">
+      <created>1645268882906</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1645268882906</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +506,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="car 页面可以改变商品数量" />
     <MESSAGE value="goods 页面可以选择商品数量" />
     <MESSAGE value="修复了重复选择商品时商品合并的问题" />
     <MESSAGE value="完成购物车金额实时更新" />
@@ -532,7 +530,8 @@
     <MESSAGE value="底部导航栏样式优化，svg 调整" />
     <MESSAGE value="完成两个图表" />
     <MESSAGE value="修复了下拉菜单的小问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复了下拉菜单的小问题" />
+    <MESSAGE value="添加显示商品的小功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加显示商品的小功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

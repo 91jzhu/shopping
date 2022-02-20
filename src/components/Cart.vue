@@ -63,7 +63,7 @@ export default {
     const deleteCart = () => {
       deleteCar({name: props.name})
       visible.value=false
-      Context.emit('update:amount')
+      Context.emit('update:amount',props.name)
     }
     return {touch, visible, countChange, dialogVisible, params, deleteCart}
   }
@@ -73,7 +73,6 @@ export default {
 .cart {
   background: white;
   border-radius: 12px;
-  border: 1px solid blue;
   display: flex;
   justify-content: space-between;
   align-items: center;

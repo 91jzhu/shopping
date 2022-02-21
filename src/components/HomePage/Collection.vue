@@ -72,11 +72,9 @@ export default {
     a {
       display: inline-block;
       padding: 4px 8px;
-      //border:1px solid red;
     }
 
     span {
-      //border:1px solid red;
       flex: 1;
       display: flex;
       justify-content: flex-start;
@@ -93,6 +91,7 @@ export default {
     width: 80vw;
     transform: translate(-50%, -50%);
     font-size: 24px;
+    color:grey;
     display: flex;
     flex-direction: column;
     justify-content: center;

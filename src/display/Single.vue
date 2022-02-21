@@ -1,5 +1,5 @@
 <template>
-  <div class="singleWrapper">
+  <div class="singleWrapper" v-if="visible">
     <DropDown v-model:title="title"
               @update:date="changeDate"
               @update:chart="changeChart">
@@ -8,6 +8,10 @@
     <div class="chartWrapper">
       <div class="chart" ref="chartRef"/>
     </div>
+  </div>
+  <div class="replace" v-else>
+    <Icon name="chart"/>
+    <span>买点东西再来吧</span>
   </div>
 </template>
 
@@ -19,16 +23,22 @@ import * as echarts from "echarts";
 import {Car} from "../type";
 import DropDown from "../components/Tool/DropDown.vue";
 import DropDownItem from "../components/Tool/DropDown-Item.vue";
+import Icon from "../components/Tool/Icon.vue";
 export default {
-  components: {DropDownItem, DropDown},
+  components: {Icon, DropDownItem, DropDown},
   setup(){
     const chartRef = ref(null)
-    const title=ref(fetchBuy().createdAt.replace('年','-').replace('月','-').replace('日',''))
+    const title=ref(fetchBuy()?.createdAt.replace('年','-').replace('月','-').replace('日',''))
     const source = reactive([])
     const text = ref('')
     const myChart = ref<EChartsType>(null)
     const dates = reactive<string[]>(getDates())
+    const visible=ref(true)
     onMounted(() => {
+      if(!fetchBuy()){
+        visible.value=false
+        return
+      }
       text.value = fetchBuy().createdAt
       initSource()
       if (chartRef.value) {
@@ -135,7 +145,7 @@ export default {
       changeText(val)
       setOption()
     }
-    return {chartRef, changeDate, changeChart, dates,title}
+    return {chartRef, changeDate, changeChart, dates,title,visible}
   }
 }
 </script>
@@ -154,6 +164,20 @@ export default {
       padding-top: 12px;
       height: 64vh;
     }
+  }
+}
+.replace{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  color:grey;
+  .icon{
+    width:112px;
+    height:112px;
+    margin-bottom: 12px;
   }
 }
 </style>

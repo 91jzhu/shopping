@@ -85,7 +85,7 @@ export default {
   width:100vw;
   overflow: hidden;
   .content {
-    border: 1px solid blue;
+    border: 2px solid #fb6700;
     border-radius: 12px;
     margin: 8px;
     padding: 10px 0;

@@ -48,9 +48,7 @@ import DropDownItem from "../Tool/DropDown-Item.vue";
 import {getReceiveMount} from "../../store/receiveStore";
 import {getCollectMount} from "../../store/collectStore";
 import Toast from "../Tool/Toast.vue";
-
 export default {
-  name: "Info",
   components: {Toast, DropDownItem, DropDown, Icon, Navbar},
   setup() {
     const cash = ref(fetchCash())
@@ -64,18 +62,15 @@ export default {
 <style scoped lang="scss">
 .infoWrapper {
   height: calc(100% - 38px);
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: rgb(224,234,236);
   background: linear-gradient(0deg, rgba(224,234,236,1) 0%, rgba(231,223,221,1) 100%);;
   .user {
-    //border:1px solid blue;
     .photo {
       width: 100%;
       padding: 16px 0;
-      //border: 1px solid grey;
       display: flex;
       justify-content: center;
       align-items: center;

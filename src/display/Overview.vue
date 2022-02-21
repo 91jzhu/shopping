@@ -1,11 +1,15 @@
 <template>
-  <div class="overviewWrapper">
+  <div class="overviewWrapper" v-if="visible">
     <DropDown v-model:title="months[0]">
       <DropDownItem v-for="month in months" :date="month" :key="month"/>
     </DropDown>
     <div class="chart-Wrapper">
       <div class="overviewChart" ref="chartRef"/>
     </div>
+  </div>
+  <div class="replace" v-else>
+    <Icon name="chart"/>
+    <span>买点东西再来吧</span>
   </div>
 </template>
 
@@ -16,6 +20,7 @@ import dayjs from "dayjs";
 import DropDown from "../components/Tool/DropDown.vue";
 import DropDownItem from "../components/Tool/DropDown-Item.vue";
 import {getMonths} from "../store/data";
+import Icon from "../components/Tool/Icon.vue";
 
 const produceDate=()=>{
   const res=[]
@@ -27,11 +32,15 @@ const produceDate=()=>{
   return res
 }
 export default {
-  components: {DropDownItem, DropDown},
+  components: {Icon, DropDownItem, DropDown},
   setup() {
     const chartRef = ref(null)
     const months=ref([...new Set(getMonths())])
+    const visible=ref(true)
     onMounted(() => {
+      if(months.value.length===0){
+        visible.value=false
+      }
       if (chartRef.value) {
         const myChart = echarts.init(chartRef.value)
         myChart.setOption({
@@ -120,7 +129,7 @@ export default {
         })
       }
     })
-    return {chartRef,months}
+    return {chartRef,months,visible}
   }
 }
 </script>
@@ -140,6 +149,20 @@ export default {
       padding-top: 12px;
       height: 64vh;
     }
+  }
+}
+.replace{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  color:grey;
+  .icon{
+    width:112px;
+    height:112px;
+    margin-bottom: 12px;
   }
 }
 </style>

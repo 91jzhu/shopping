@@ -5,6 +5,8 @@
 </template>
 
 <style lang="scss">
+
+
 * {
   margin: 0;
   padding: 0;
@@ -22,3 +24,10 @@
   align-items: center;
 }
 </style>
+<script lang="ts">
+import Icon from "./components/Tool/Icon.vue";
+
+export default {
+  components: {Icon}
+}
+</script>

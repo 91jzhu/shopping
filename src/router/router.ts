@@ -1,6 +1,11 @@
 import * as VueRouter from 'vue-router'
+import Front from "../Front.vue";
 
 const routes = [
+    {
+        path:'/',
+        component:Front
+    },
     {
         path: '/goods',
         component: () => import('../components/HomePage/Goods.vue'),
@@ -34,11 +39,18 @@ const routes = [
         path: '/info/record',
         component: () => import('../components/HomePage/Record.vue'),
     },
+
 ]
 
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHistory(),
     routes,
+})
+router.beforeEach((to,from)=>{
+    const result=routes.some((url)=>url.path===to.path)
+    if(!result){
+        router.push('/')
+    }
 })
 
 export {router}

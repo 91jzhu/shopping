@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="replace 样式优化">
-      <change afterPath="$PROJECT_DIR$/content.js" afterDir="false" />
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="shopping 基本完成">
+      <change afterPath="$PROJECT_DIR$/src/Front.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/display/Overview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/Overview.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/display/Single.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/Single.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +22,8 @@
       <list>
         <option value="package.json" />
         <option value="TypeScript File" />
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -63,7 +62,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/新建草稿文件" value="Vue" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../coms-ui" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -148,14 +147,7 @@
       <workItem from="1645195874274" duration="1037000" />
       <workItem from="1645239432453" duration="21338000" />
       <workItem from="1645349807106" duration="8280000" />
-      <workItem from="1645410590357" duration="16922000" />
-    </task>
-    <task id="LOCAL-00009" summary="成功在购物车页面渲染出商品">
-      <created>1644149579273</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1644149579273</updated>
+      <workItem from="1645410590357" duration="22385000" />
     </task>
     <task id="LOCAL-00010" summary="购物车商品基础样式">
       <created>1644151879823</created>
@@ -493,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645437425455</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="shopping 基本完成">
+      <created>1645443662346</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1645443662346</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成购物功能" />
     <MESSAGE value="去掉 location.reload() 爽" />
     <MESSAGE value="dialog 样式完善" />
     <MESSAGE value="删除功能完善" />
@@ -536,7 +534,8 @@
     <MESSAGE value="修复一些问题和完成购物车界面样式" />
     <MESSAGE value="info 页面样式完善" />
     <MESSAGE value="replace 样式优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="replace 样式优化" />
+    <MESSAGE value="shopping 基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="shopping 基本完成" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -23,10 +23,11 @@ import Snacks from '../TabContent/Snacks.vue'
 import Pet from '../TabContent/Pet.vue'
 import Sports from '../TabContent/Sports.vue'
 import {ref} from 'vue'
+import Toast from "../Tool/Toast.vue";
 
 export default {
   name:'Goods.vue',
-  components: {Navbar, Tab, Tabs, Snacks,Pet,Sports},
+  components: {Toast, Navbar, Tab, Tabs, Snacks,Pet,Sports},
   setup() {
     let selected = ref('零食')
     return {selected}

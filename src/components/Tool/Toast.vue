@@ -1,33 +1,33 @@
 <template>
-  <div class="wrapper" v-if="active">
-    <div class="slot">
-      <slot name="tip"/>
+  <teleport to="body">
+    <div class="wrapper" v-if="active">
+      <div class="slot">
+        <slot name="tip"/>
+      </div>
     </div>
-  </div>
+  </teleport>
 </template>
 
 <script lang="ts">
-
-import {onMounted, watchEffect} from "vue";
+import {watchEffect} from "vue";
 
 export default {
-  name: "Toast.vue",
   props: {
     active: Boolean,
     delay: {
       type: Number,
       required: false,
-      default: 2000
+      default: 1200
     }
   },
   setup(props, context) {
-      watchEffect(()=>{
-        if(props.active){
-          setTimeout(()=>{
-            context.emit('update:active',false)
-          },props.delay)
-        }
-      },props.active)
+    watchEffect(() => {
+      if (props.active) {
+        setTimeout(() => {
+          context.emit('update:active', false)
+        }, props.delay)
+      }
+    }, props.active)
   }
 }
 </script>
@@ -36,17 +36,18 @@ export default {
 .wrapper {
   position: fixed;
   z-index: 2;
-  bottom: 60px;
+  bottom: 70px;
   left: 50%;
-  width: 32%;
-  height: 6%;
   transform: translateX(-50%);
-  background: white;
+  padding:12px 24px;
   border-radius: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(240,240,240,.7);
+  font-size: 20px;
   .slot {
+
   }
 }
 </style>

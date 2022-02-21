@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="修复一些问题和完成购物车界面样式">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="info 页面样式完善">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Goods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Goods.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/Toast.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/Toast.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/carStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/carStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,14 +150,8 @@
       <workItem from="1645149334021" duration="26101000" />
       <workItem from="1645195874274" duration="1037000" />
       <workItem from="1645239432453" duration="21338000" />
-      <workItem from="1645349807106" duration="8246000" />
-    </task>
-    <task id="LOCAL-00007" summary="为商品添加价格，准备制作购物车页面">
-      <created>1644130370847</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1644130370848</updated>
+      <workItem from="1645349807106" duration="8280000" />
+      <workItem from="1645410590357" duration="11996000" />
     </task>
     <task id="LOCAL-00008" summary="将价格用法变更为 props">
       <created>1644145896713</created>
@@ -489,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645357738729</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="info 页面样式完善">
+      <created>1645359152434</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1645359152434</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +514,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修复了重复选择商品时商品合并的问题" />
     <MESSAGE value="完成购物车金额实时更新" />
     <MESSAGE value="完成购物功能" />
     <MESSAGE value="去掉 location.reload() 爽" />
@@ -532,7 +538,8 @@
     <MESSAGE value="修复了下拉菜单的小问题" />
     <MESSAGE value="添加显示商品的小功能" />
     <MESSAGE value="修复一些问题和完成购物车界面样式" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复一些问题和完成购物车界面样式" />
+    <MESSAGE value="info 页面样式完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="info 页面样式完善" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

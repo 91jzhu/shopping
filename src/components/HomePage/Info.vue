@@ -47,10 +47,11 @@ import DropDown from "../Tool/DropDown.vue";
 import DropDownItem from "../Tool/DropDown-Item.vue";
 import {getReceiveMount} from "../../store/receiveStore";
 import {getCollectMount} from "../../store/collectStore";
+import Toast from "../Tool/Toast.vue";
 
 export default {
   name: "Info",
-  components: {DropDownItem, DropDown, Icon, Navbar},
+  components: {Toast, DropDownItem, DropDown, Icon, Navbar},
   setup() {
     const cash = ref(fetchCash())
     const receiveMount=ref(getReceiveMount())

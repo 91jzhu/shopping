@@ -43,9 +43,10 @@ import {changeCash, clearCar, fetchCar, modifyCount} from '../../store/carStore'
 import {Car} from "../../type";
 import {addReceive} from "../../store/receiveStore";
 import Icon from "../Tool/Icon.vue";
+import Toast from "../Tool/Toast.vue";
 
 export default {
-  components: {Icon, Cart, Navbar},
+  components: {Toast, Icon, Cart, Navbar},
   setup() {
     const carList = ref(null)
     const visible = ref(true)

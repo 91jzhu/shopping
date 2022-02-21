@@ -15,11 +15,11 @@ const addCar = ({name, price, count}: Partial<Car>) => {
         tmp.push({name,
             price,
             count,
-            expect: randomNum(1, 2),
+            expect: randomNum(3, 5),
             createdAt:dayjs().format('YYYY年MM月DD日')})
     }
     localStorage.setItem('carItem', JSON.stringify(tmp))
-    openToast({tip: '添加成功，宝贝在购物车等您'})
+    openToast({tip: '添加成功'})
 }
 
 const modifyCount = ({name, count}: Partial<Car>) => {

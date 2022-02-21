@@ -27,7 +27,11 @@
         </template>
       </Rac>
     </main>
-    <div v-else class="replace">还没有商品，快去选购吧</div>
+    <div v-else class="replace">
+      <Icon name="null" class="icon"/>
+      <span>还没有商品，快去选购吧</span>
+      <router-link to="/goods">点我去选购</router-link>
+    </div>
   </div>
 </template>
 
@@ -72,11 +76,9 @@ export default {
     a {
       display: inline-block;
       padding: 4px 8px;
-      //border:1px solid red;
     }
 
     span {
-      //border:1px solid red;
       flex: 1;
       display: flex;
       justify-content: flex-start;
@@ -96,10 +98,26 @@ export default {
     left: 50%;
     width: 80vw;
     transform: translate(-50%, -50%);
-    font-size: 20px;
     display: flex;
+    flex-direction: column;
+    color:grey;
     justify-content: center;
     align-items: center;
+    font-size: 24px;
+    .icon{
+      width:112px;
+      height:112px;
+      margin-bottom: 12px;
+    }
+    a{
+      text-decoration: none;
+      color:sandybrown;
+      border:1px solid lightgrey;
+      box-shadow: 1px 1px 2px lightgrey;
+      margin-top: 8px;
+      padding:12px 18px;
+      border-radius: 24px;
+    }
   }
 }
 </style>

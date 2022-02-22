@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="shopping 基本完成">
-      <change afterPath="$PROJECT_DIR$/src/Front.vue" afterDir="false" />
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="添加全局前置守卫">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display/Overview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/Overview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/data.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,14 +145,8 @@
       <workItem from="1645195874274" duration="1037000" />
       <workItem from="1645239432453" duration="21338000" />
       <workItem from="1645349807106" duration="8280000" />
-      <workItem from="1645410590357" duration="22385000" />
-    </task>
-    <task id="LOCAL-00010" summary="购物车商品基础样式">
-      <created>1644151879823</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1644151879823</updated>
+      <workItem from="1645410590357" duration="25963000" />
+      <workItem from="1645497648512" duration="4392000" />
     </task>
     <task id="LOCAL-00011" summary="解决添加商品更新滞后的问题">
       <created>1644208111752</created>
@@ -492,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645443662346</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="添加全局前置守卫">
+      <created>1645449040043</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1645449040043</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,7 +509,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="去掉 location.reload() 爽" />
     <MESSAGE value="dialog 样式完善" />
     <MESSAGE value="删除功能完善" />
     <MESSAGE value="初步完成收藏api" />
@@ -535,7 +533,8 @@
     <MESSAGE value="info 页面样式完善" />
     <MESSAGE value="replace 样式优化" />
     <MESSAGE value="shopping 基本完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="shopping 基本完成" />
+    <MESSAGE value="添加全局前置守卫" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加全局前置守卫" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

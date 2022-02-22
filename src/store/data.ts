@@ -50,4 +50,14 @@ const getMonths=()=>{
     return result
 }
 
-export {addBuy, fetchBuy,changeBuy,Data,getDates,getMonths}
+const getPrice=(createdAt:string)=>{
+    const tmp=fetchData()
+    const result=tmp.find((item)=>item.createdAt===createdAt)?.buyEd
+    let sum=0
+    result?.forEach((item)=>{
+        sum+=item.price
+    })
+    return sum
+}
+
+export {addBuy, fetchBuy,changeBuy,Data,getDates,getMonths,getPrice}

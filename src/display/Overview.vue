@@ -19,17 +19,21 @@ import {onMounted, ref} from "vue";
 import dayjs from "dayjs";
 import DropDown from "../components/Tool/DropDown.vue";
 import DropDownItem from "../components/Tool/DropDown-Item.vue";
-import {getMonths} from "../store/data";
+import {getMonths, getPrice} from "../store/data";
 import Icon from "../components/Tool/Icon.vue";
 
 const produceDate=()=>{
   const res=[]
   const oneDay=86400000
-  for(let i=0;i<6;i++){
-    res.push(dayjs(Date.now()-i*oneDay).format('YYYY-MM-DD'))
+  for(let i=0;i<5;i++){
+    res.push(dayjs(Date.now()-i*oneDay).format('YYYY年MM月DD日'))
   }
   res.sort((a,b)=>a>b?1:-1)
   return res
+}
+const format=(arr)=> arr.map(item=>item.slice(5).replace('月','-').replace('日',''))
+const data=()=>{
+  return produceDate().map((date)=> getPrice(date))
 }
 export default {
   components: {Icon, DropDownItem, DropDown},
@@ -38,7 +42,7 @@ export default {
     const months=ref([...new Set(getMonths())])
     const visible=ref(true)
     onMounted(() => {
-      if(months.value.length===0){
+      if(months.value.length===0||data()?.every(item=>!item)){
         visible.value=false
       }
       if (chartRef.value) {
@@ -59,12 +63,12 @@ export default {
           grid:{
             containLabel:true,
             left:'4%',
-            right:'-10%',
+            right:'',
             bottom:'4%',
           },
           xAxis: {
             type: 'category',
-            data:produceDate(),
+            data:format(produceDate()),
             axisLabel: {
               color: '#7c7e86',
               fontSize: 16,
@@ -99,7 +103,7 @@ export default {
               showAllSymbol: true,
               symbol: 'emptyCircle',
               symbolSize: 15,
-              data: [8, 6, 9, 7, 11]
+              data: data()
             },
             {
               name: 'bar',
@@ -123,7 +127,7 @@ export default {
                   fontSize: 20
                 }
               },
-              data: [8, 6, 9, 7, 11]
+              data: data()
             },
           ]
         })

@@ -12,7 +12,8 @@ const addCar = ({name, price, count}: Partial<Car>) => {
     if (result) {
         result.count += count
     } else {
-        tmp.push({name,
+        tmp.push({
+            name,
             price,
             count,
             expect: randomNum(3, 5),

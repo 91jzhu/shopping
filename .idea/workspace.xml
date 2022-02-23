@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="修复小问题">
-      <change afterPath="$PROJECT_DIR$/deplosh.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Front.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Front.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/carStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/carStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/data.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,14 +171,7 @@
       <workItem from="1645410590357" duration="25963000" />
       <workItem from="1645497648512" duration="4890000" />
       <workItem from="1645504355181" duration="13000" />
-      <workItem from="1645604266170" duration="1705000" />
-    </task>
-    <task id="LOCAL-00012" summary="购物车商品准备使用 dialog 删除，重构 dialog">
-      <created>1644209815442</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1644209815442</updated>
+      <workItem from="1645604266170" duration="2330000" />
     </task>
     <task id="LOCAL-00013" summary="修正删除功能">
       <created>1644216328754</created>
@@ -516,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645502111316</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="修复小问题">
+      <created>1645606112961</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1645606112962</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

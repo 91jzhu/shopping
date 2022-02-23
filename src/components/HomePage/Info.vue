@@ -132,7 +132,6 @@ export default {
         align-items: center;
         position: relative;
         .mount{
-            border:1px solid red;
             position: absolute;
             top:-5%;
             right:-5%;
@@ -151,7 +150,6 @@ export default {
 
     .collects {
       height: 100%;
-      //border:1px solid red;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -165,7 +163,6 @@ export default {
         align-items: center;
         position: relative;
         .mount{
-          border:1px solid red;
           position: absolute;
           top:-5%;
           right:-5%;

@@ -52,9 +52,9 @@ const getMonths=()=>{
 
 const getPrice=(createdAt:string)=>{
     const tmp=fetchData()
-    const result=tmp.find((item)=>item.createdAt===createdAt)?.buyEd
+    const result=tmp.find((item:any)=>item.createdAt===createdAt)?.buyEd
     let sum=0
-    result?.forEach((item)=>{
+    result?.forEach((item:any)=>{
         sum+=item.price
     })
     return sum

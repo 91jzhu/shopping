@@ -46,7 +46,7 @@ const routes = [
 ]
 
 const router = VueRouter.createRouter({
-    history: VueRouter.createWebHistory(),
+    history: VueRouter.createWebHashHistory(),
     routes,
 })
 router.beforeEach((to,from)=>{

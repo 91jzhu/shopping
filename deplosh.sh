@@ -15,7 +15,6 @@ git commit -m 'deploy'
 
 # 部署到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-git remote add orgin git@github.com:91jzhu/shopping-website.git
 # 部署到 https://<USERNAME>.github.io/<REPO>
  git push -f origin master
 

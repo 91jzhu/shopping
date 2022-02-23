@@ -129,7 +129,7 @@ export default {
   }
 
   .settle {
-    height: calc(100vh - 155px);
+    height: calc(100vh - 200px);
     overflow-y: auto;
 
     &::-webkit-scrollbar {
@@ -195,7 +195,7 @@ export default {
     width: 100%;
     height: 64px;
     background: #ffffff;
-    box-shadow: 0 -1px 1px #dee1e6;
+    box-shadow: 0 1px 1px #dee1e6;
 
     .amount {
       position: absolute;

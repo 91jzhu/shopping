@@ -96,6 +96,7 @@
         500 人付款
       </template>
     </Good>
+    <div class="bottom">已经到底部啦</div>
   </div>
 </template>
 
@@ -109,7 +110,7 @@ export default {
 
 <style scoped lang="scss">
 .sports {
-  max-height: calc(100vh - 87px);
+  max-height: calc(100vh - 110px);
   overflow-y: auto;
   width: 100%;
   display: flex;
@@ -117,6 +118,14 @@ export default {
   //border:1px solid red;
   &::-webkit-scrollbar {
     display: none;
+  }
+  .bottom{
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color:grey;
   }
 }
 </style>

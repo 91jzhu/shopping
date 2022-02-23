@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="添加meta viewport">
-      <change afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deplosh.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deplosh.sh" afterDir="false" />
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="购物车 css">
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Snacks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Snacks.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,14 +167,7 @@
       <workItem from="1645410590357" duration="25963000" />
       <workItem from="1645497648512" duration="4890000" />
       <workItem from="1645504355181" duration="13000" />
-      <workItem from="1645604266170" duration="21156000" />
-    </task>
-    <task id="LOCAL-00017" summary="replace 改用条件渲染">
-      <created>1644232540567</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1644232540567</updated>
+      <workItem from="1645604266170" duration="21492000" />
     </task>
     <task id="LOCAL-00018" summary="replace 基础样式">
       <created>1644232831861</created>
@@ -514,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645626154030</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="购物车 css">
+      <created>1645626812452</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1645626812452</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="待收货页面初始化" />
     <MESSAGE value="收藏功能完成，准备制作购买记录图表" />
     <MESSAGE value="收集确认收货的数据并整合，排序，准备确定图表" />
     <MESSAGE value="图表组件初步完成" />
@@ -557,7 +554,8 @@
     <MESSAGE value="字体颜色" />
     <MESSAGE value="添加meta viewport" />
     <MESSAGE value="数据展示重做" />
-    <option name="LAST_COMMIT_MESSAGE" value="数据展示重做" />
+    <MESSAGE value="购物车 css" />
+    <option name="LAST_COMMIT_MESSAGE" value="购物车 css" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

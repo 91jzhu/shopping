@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="改用hash模式">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="字体颜色">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deplosh.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deplosh.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,14 +168,7 @@
       <workItem from="1645410590357" duration="25963000" />
       <workItem from="1645497648512" duration="4890000" />
       <workItem from="1645504355181" duration="13000" />
-      <workItem from="1645604266170" duration="4278000" />
-    </task>
-    <task id="LOCAL-00014" summary="条件渲染 修复商品删除滞后问题">
-      <created>1644218846623</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1644218846623</updated>
+      <workItem from="1645604266170" duration="6780000" />
     </task>
     <task id="LOCAL-00015" summary="重新设计购物车商品样式与功能">
       <created>1644226119223</created>
@@ -514,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645606687874</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="字体颜色">
+      <created>1645608828006</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1645608828006</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +531,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="初步完成收藏api" />
     <MESSAGE value="开心币正常使用" />
     <MESSAGE value="Rac 组件完成" />
     <MESSAGE value="待收货页面初始化" />
@@ -557,7 +555,8 @@
     <MESSAGE value="添加全局前置守卫" />
     <MESSAGE value="修复小问题" />
     <MESSAGE value="改用hash模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="改用hash模式" />
+    <MESSAGE value="字体颜色" />
+    <option name="LAST_COMMIT_MESSAGE" value="字体颜色" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

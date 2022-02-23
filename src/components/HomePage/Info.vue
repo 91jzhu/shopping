@@ -131,6 +131,7 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
+        color:black;
         .mount{
             position: absolute;
             top:-5%;
@@ -154,7 +155,6 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
       a {
         text-decoration: none;
         display: flex;
@@ -162,6 +162,8 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
+        color:black;
+
         .mount{
           position: absolute;
           top:-5%;

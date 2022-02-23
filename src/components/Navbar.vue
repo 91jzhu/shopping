@@ -29,10 +29,11 @@ import Icon from "./Tool/Icon.vue";
   position: fixed;
   left: 0;
   bottom: 0;
-  width:100vw;
+  width: 100vw;
   display: flex;
   justify-content: space-evenly;
   border-top: 1px solid grey;
+
   a {
     text-decoration: none;
     display: flex;
@@ -41,18 +42,22 @@ import Icon from "./Tool/Icon.vue";
     align-items: center;
     width: 33.3333%;
     height: 48px;
-    padding:4px 0;
-    background:white;
-    color:grey;
-    .active{
+    padding: 4px 0;
+    background: white;
+    color: grey;
+
+    .active {
       display: none;
     }
-    &.router-link-active{
+
+    &.router-link-active {
       color: #fc5a00;
-      .icon{
+
+      .icon {
         display: none;
       }
-      .active{
+
+      .active {
         display: block;
       }
     }

@@ -9,24 +9,25 @@
 
 <script lang="ts">
 import {ref} from "vue";
+
 export default {
   props: {
     selected: String
   },
-  setup(props, {slots,emit}) {
+  setup(props, {slots, emit}) {
     const childs = slots.default()
     const border = ref<HTMLDivElement>(null)
-    const wrapper=ref<HTMLDivElement>(null)
-    const checked=ref(false)
+    const wrapper = ref<HTMLDivElement>(null)
+    const checked = ref(false)
     const toggle = (e) => {
-      const {left:Eleft,width}=e.target.getBoundingClientRect()
-      const {left:Wleft}=wrapper.value.getBoundingClientRect()
-      const lastLeft=Eleft-Wleft
-      border.value.style.left=lastLeft+'px'
-      border.value.style.width=width+'px'
-      emit('update:selected',e.target.textContent)
+      const {left: Eleft, width} = e.target.getBoundingClientRect()
+      const {left: Wleft} = wrapper.value.getBoundingClientRect()
+      const lastLeft = Eleft - Wleft
+      border.value.style.left = lastLeft + 'px'
+      border.value.style.width = width + 'px'
+      emit('update:selected', e.target.textContent)
     }
-    return {childs, toggle, border,wrapper,checked}
+    return {childs, toggle, border, wrapper, checked}
   }
 }
 </script>
@@ -37,6 +38,7 @@ export default {
   border-radius: 36px;
   position: relative;
   margin-right: 8px;
+
   .border {
     position: absolute;
     top: 0;

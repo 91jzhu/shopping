@@ -39,13 +39,14 @@ export default {
   bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
-  padding:12px 24px;
+  padding: 12px 24px;
   border-radius: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(240,240,240,.7);
+  background: rgba(240, 240, 240, .7);
   font-size: 20px;
+
   .slot {
 
   }

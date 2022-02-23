@@ -26,10 +26,11 @@ import Toggle from "../Tool/Toggle.vue";
 import ToggleItem from "../Tool/ToggleItem.vue";
 import Single from "../../display/Single.vue";
 import Overview from "../../display/Overview.vue";
+
 export default {
   components: {Overview, Single, ToggleItem, Toggle, DropDownItem, DropDown, Icon},
   setup() {
-    const selected=ref('单日')
+    const selected = ref('单日')
     return {selected}
   }
 }
@@ -48,6 +49,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     a {
       display: inline-block;
       padding: 4px 8px;

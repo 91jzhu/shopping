@@ -16,8 +16,8 @@
           </div>
         </div>
         <div class="select">
-          <span class="collect" ref="carIcon" @click.stop="addGood">{{leftWord}}</span>
-          <span class="car" ref="collectIcon" @click.stop="collectGood">{{rightWord}}</span>
+          <span class="collect" ref="carIcon" @click.stop="addGood">{{ leftWord }}</span>
+          <span class="car" ref="collectIcon" @click.stop="collectGood">{{ rightWord }}</span>
         </div>
       </div>
     </div>
@@ -28,6 +28,7 @@
 import Icon from "./Icon.vue";
 import {onMounted, ref} from "vue";
 import {openToast} from "./openToast";
+
 export default {
   components: {Icon},
   props: {
@@ -105,8 +106,9 @@ export default {
     display: flex;
     flex-direction: column;
     box-shadow: 1px 1px 1px grey;
+
     h3 {
-      height:56px;
+      height: 56px;
       font-size: 20px;
       display: flex;
       justify-content: center;
@@ -115,42 +117,48 @@ export default {
 
     .countWrapper {
       border-top: 1px solid grey;
-      padding:12px 0;
+      padding: 12px 0;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
-      height:100px;
-      .good{
-        width:72px;
-        height:72px;
-        margin:0 12px;
+      height: 100px;
+
+      .good {
+        width: 72px;
+        height: 72px;
+        margin: 0 12px;
       }
-      .line{
+
+      .line {
         position: absolute;
-        height:88px;
-        top:50%;
+        height: 88px;
+        top: 50%;
         margin-top: -44px;
-        left:88px;
-        border:1px solid grey;
+        left: 88px;
+        border: 1px solid grey;
         transform: scaleX(0.5);
       }
-      .count{
-        flex:1;
+
+      .count {
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
+
         h4 {
           font-size: 18px;
           font-weight: 400;
-          padding:8px 0;
+          padding: 8px 0;
         }
-        .countBtn{
-          width:100%;
+
+        .countBtn {
+          width: 100%;
           display: flex;
           justify-content: space-evenly;
           align-items: center;
           padding-bottom: 8px;
+
           div {
             border: 1px solid grey;
             border-radius: 8px;
@@ -163,6 +171,7 @@ export default {
             align-items: center;
             margin: 0 4px;
           }
+
           .icon {
             width: 48px;
             height: 48px;
@@ -173,25 +182,27 @@ export default {
     }
 
     .select {
-      flex:1;
+      flex: 1;
       display: flex;
       justify-content: space-around;
       align-items: center;
 
-      span{
-        width:50%;
-        height:100%;
+      span {
+        width: 50%;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 19px;
-        color:white;
+        color: white;
         font-weight: 600;
-        &.car{
+
+        &.car {
           background: #ff7204;
           border-bottom-right-radius: 24px;
         }
-        &.collect{
+
+        &.collect {
           background: #ffba05;
           border-bottom-left-radius: 24px;
         }

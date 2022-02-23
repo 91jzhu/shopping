@@ -6,15 +6,16 @@
 
 <script lang="ts">
 export default {
-  props:{
-    name:String
+  props: {
+    name: String
   },
 }
 </script>
 
 <style>
 .icon {
-  width: 4rem; height: 4rem;
+  width: 4rem;
+  height: 4rem;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;

@@ -30,32 +30,36 @@ export default {
   }
 }
 </script>
-<style  scoped lang="scss">
+<style scoped lang="scss">
 .tabsWrapper {
   width: 33.33333%;
+
   .titleWrapper {
     width: 100%;
     position: relative;
+
     .title {
       cursor: pointer;
       display: inline-block;
       text-align: center;
-      color:grey;
-      width:33.33333%;
+      color: grey;
+      width: 33.33333%;
       padding: 8px 0;
       font-size: 24px;
       position: relative;
+
       &.selected {
-        color:black;
+        color: black;
         font-weight: 600;
         transform: translateY(4%);
-        &::after{
+
+        &::after {
           display: block;
           content: "";
           position: absolute;
-          width:60px;
-          height:2px;
-          left:50%;
+          width: 60px;
+          height: 2px;
+          left: 50%;
           margin-left: -30px;
           background: black;
         }
@@ -66,7 +70,8 @@ export default {
   .contentWrapper {
     ::v-deep .content {
       display: none;
-      &.selected{
+
+      &.selected {
         display: block;
       }
     }

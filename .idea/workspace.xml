@@ -4,9 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="字体颜色">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="添加meta viewport">
+      <change afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deplosh.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deplosh.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Front.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Front.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Good.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Good.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Goods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Goods.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Record.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Record.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Rac.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Rac.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Pet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Pet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Snacks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Snacks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Sports.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Sports.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/Dialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/Dialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/DropDown-Item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/DropDown-Item.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/Icon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/Icon.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/Tab.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/Tab.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/Tabs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/Toast.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/Toast.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/Toggle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/Toggle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/ToggleItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/ToggleItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/openDialog.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/openDialog.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/openToast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/openToast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display/Overview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/Overview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display/Single.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/Single.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/randomNum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/randomNum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/carStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/carStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/collectStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/collectStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/receiveStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/receiveStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/type.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/type.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +54,8 @@
       <list>
         <option value="package.json" />
         <option value="TypeScript File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -58,7 +94,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/新建草稿文件" value="Vue" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/JZHU/money-note-1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Screen" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,7 +102,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="settings.editor.splitter.proportion" value="0.24610336" />
     <property name="ts.external.directory.path" value="C:\Project\shopping\node_modules\typescript\lib" />
     <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
@@ -168,14 +204,7 @@
       <workItem from="1645410590357" duration="25963000" />
       <workItem from="1645497648512" duration="4890000" />
       <workItem from="1645504355181" duration="13000" />
-      <workItem from="1645604266170" duration="6780000" />
-    </task>
-    <task id="LOCAL-00015" summary="重新设计购物车商品样式与功能">
-      <created>1644226119223</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1644226119223</updated>
+      <workItem from="1645604266170" duration="20533000" />
     </task>
     <task id="LOCAL-00016" summary="完成购物车 replace 功能">
       <created>1644232398256</created>
@@ -513,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645608828006</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="添加meta viewport">
+      <created>1645612090787</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1645612090787</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="开心币正常使用" />
     <MESSAGE value="Rac 组件完成" />
     <MESSAGE value="待收货页面初始化" />
     <MESSAGE value="收藏功能完成，准备制作购买记录图表" />
@@ -556,7 +591,8 @@
     <MESSAGE value="修复小问题" />
     <MESSAGE value="改用hash模式" />
     <MESSAGE value="字体颜色" />
-    <option name="LAST_COMMIT_MESSAGE" value="字体颜色" />
+    <MESSAGE value="添加meta viewport" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加meta viewport" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

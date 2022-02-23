@@ -15,43 +15,45 @@
 <script lang="ts">
 import {ref} from "vue";
 import Dialog from "./Dialog.vue";
+
 export default {
   components: {Dialog},
-  props:{
-    title:String
+  props: {
+    title: String
   },
-  setup(props, {emit,slots}) {
+  setup(props, {emit, slots}) {
     const defaults = slots.default()[0].children
     const visible = ref(true)
     const toggle = () => {
       visible.value = !visible.value
     }
-    const changeChart=(e)=>{
-      const str=e.target.dataset.date
-      let string=str
-      if(str.includes('日')){
-        string=str.replace('年','-').replace('月','-').replace('日','')
+    const changeChart = (e) => {
+      const str = e.target.dataset.date
+      let string = str
+      if (str.includes('日')) {
+        string = str.replace('年', '-').replace('月', '-').replace('日', '')
       }
-      emit('update:title',string)
-      emit('update:chart',str)
+      emit('update:title', string)
+      emit('update:chart', str)
     }
-    return {visible, toggle, defaults,changeChart}
+    return {visible, toggle, defaults, changeChart}
   }
 }
 </script>
 
 <style scoped lang="scss">
 .wrapper {
-  flex:1;
+  flex: 1;
+
   .titleWrapper {
-    height:100%;
+    height: 100%;
     position: relative;
     display: flex;
     align-items: center;
 
     .title {
       font-size: 24px;
-      color:#9f9d9e;
+      color: #9f9d9e;
       padding: 4px 2px;
       display: inline-block;
       position: absolute;
@@ -62,15 +64,16 @@ export default {
 
     .contentWrapper {
       box-shadow: 1px 1px 3px rgba(0, 0, 0, .2),
-                  -1px 1px 3px rgba(0,0,0,.2),
-                  1px -1px 3px rgba(0,0,0,.2);
+      -1px 1px 3px rgba(0, 0, 0, .2),
+      1px -1px 3px rgba(0, 0, 0, .2);
       border-radius: 8px;
       display: inline-block;
       position: relative;
       margin-left: 160px;
-      padding:8px 0;
-      width:210px;
-      height:140px;
+      padding: 8px 0;
+      width: 210px;
+      height: 140px;
+
       &::before {
         content: "";
         width: 0;
@@ -85,21 +88,24 @@ export default {
         transform: rotate(135deg);
         box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
       }
-      &::after{
+
+      &::after {
         content: "";
-        top:70px;
+        top: 70px;
         width: 12px;
         height: 20px;
         position: absolute;
         background: white;
       }
-      .content{
+
+      .content {
         max-height: 140px;
-        overflow-y:auto;
+        overflow-y: auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+
         &::-webkit-scrollbar {
           display: none;
         }

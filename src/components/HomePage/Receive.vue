@@ -65,10 +65,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.wrapper{
-  height:100vh;
+.wrapper {
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
+
   header {
     border-bottom: 1px solid grey;
     display: flex;
@@ -100,22 +101,24 @@ export default {
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    color:grey;
+    color: grey;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    .icon{
-      width:112px;
-      height:112px;
+
+    .icon {
+      width: 112px;
+      height: 112px;
       margin-bottom: 12px;
     }
-    a{
+
+    a {
       text-decoration: none;
-      color:sandybrown;
-      border:1px solid lightgrey;
+      color: sandybrown;
+      border: 1px solid lightgrey;
       box-shadow: 1px 1px 2px lightgrey;
       margin-top: 8px;
-      padding:12px 18px;
+      padding: 12px 18px;
       border-radius: 24px;
     }
   }

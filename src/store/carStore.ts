@@ -17,7 +17,8 @@ const addCar = ({name, price, count}: Partial<Car>) => {
             price,
             count,
             expect: randomNum(3, 5),
-            createdAt:dayjs().format('YYYY年MM月DD日')})
+            createdAt: dayjs().format('YYYY年MM月DD日')
+        })
     }
     localStorage.setItem('carItem', JSON.stringify(tmp))
     openToast({tip: '添加成功'})
@@ -45,12 +46,12 @@ const clearCar = () => {
 }
 
 //
-const fetchCash=()=>{
+const fetchCash = () => {
     return JSON.parse(localStorage.getItem('cash')!) || 1000
 }
 const changeCash = (price: Number) => {
     // @ts-ignore
-    const result=fetchCash()-price
+    const result = fetchCash() - price
     if (result < 0) {
         openToast({tip: '开心币不足，请稍等'})
         return false
@@ -60,4 +61,4 @@ const changeCash = (price: Number) => {
     return true
 }
 
-export {fetchCar, addCar, deleteCar, modifyCount, changeCash, clearCar,fetchCash}
+export {fetchCar, addCar, deleteCar, modifyCount, changeCash, clearCar, fetchCash}

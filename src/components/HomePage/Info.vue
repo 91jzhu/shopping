@@ -12,14 +12,14 @@
     <div class="function">
       <div class="receive">
         <router-link to="/info/receive">
-          <span class="mount">{{receiveMount}}</span>
+          <span class="mount">{{ receiveMount }}</span>
           <Icon name="receive"/>
           <span>待收货</span>
         </router-link>
       </div>
       <div class="collects">
         <router-link to="/info/collection">
-          <span class="mount">{{collectMount}}</span>
+          <span class="mount">{{ collectMount }}</span>
           <Icon name="collects"/>
           <span>我的收藏</span>
         </router-link>
@@ -48,13 +48,14 @@ import DropDownItem from "../Tool/DropDown-Item.vue";
 import {getReceiveMount} from "../../store/receiveStore";
 import {getCollectMount} from "../../store/collectStore";
 import Toast from "../Tool/Toast.vue";
+
 export default {
   components: {Toast, DropDownItem, DropDown, Icon, Navbar},
   setup() {
     const cash = ref(fetchCash())
-    const receiveMount=ref(getReceiveMount())
-    const collectMount=ref(getCollectMount())
-    return {cash,receiveMount,collectMount}
+    const receiveMount = ref(getReceiveMount())
+    const collectMount = ref(getCollectMount())
+    return {cash, receiveMount, collectMount}
   }
 }
 </script>
@@ -65,8 +66,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: rgb(224,234,236);
-  background: linear-gradient(0deg, rgba(224,234,236,1) 0%, rgba(231,223,221,1) 100%);;
+  background: rgb(224, 234, 236);
+  background: linear-gradient(0deg, rgba(224, 234, 236, 1) 0%, rgba(231, 223, 221, 1) 100%);;
+
   .user {
     .photo {
       width: 100%;
@@ -76,8 +78,8 @@ export default {
       align-items: center;
 
       .pic {
-        width:128px;
-        height:128px;
+        width: 128px;
+        height: 128px;
       }
     }
 
@@ -131,20 +133,21 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
-        color:black;
-        .mount{
-            position: absolute;
-            top:-5%;
-            right:-5%;
-            width:24px;
-            height:24px;
-            background: #f87209;
-            color:#fefbee;
-            font-size: 18px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 100%;
+        color: black;
+
+        .mount {
+          position: absolute;
+          top: -5%;
+          right: -5%;
+          width: 24px;
+          height: 24px;
+          background: #f87209;
+          color: #fefbee;
+          font-size: 18px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100%;
         }
       }
     }
@@ -155,6 +158,7 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       a {
         text-decoration: none;
         display: flex;
@@ -162,17 +166,17 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
-        color:black;
+        color: black;
 
-        .mount{
+        .mount {
           position: absolute;
-          top:-5%;
-          right:-5%;
-          width:24px;
-          height:24px;
+          top: -5%;
+          right: -5%;
+          width: 24px;
+          height: 24px;
           display: flex;
           background: #f87209;
-          color:#fefbee;
+          color: #fefbee;
           font-size: 18px;
           justify-content: center;
           align-items: center;
@@ -196,7 +200,8 @@ export default {
 
     a {
       text-decoration: none;
-      color:black;
+      color: black;
+
       span {
 
       }

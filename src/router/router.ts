@@ -3,28 +3,28 @@ import Front from "../Front.vue";
 
 const routes = [
     {
-        path:'/',
-        component:Front
+        path: '/',
+        component: Front
     },
     {
         path: '/goods',
         component: () => import('../components/HomePage/Goods.vue'),
-        meta:{
-            index:1
+        meta: {
+            index: 1
         }
     },
     {
         path: '/car',
         component: () => import('../components/HomePage/Car.vue'),
-        meta:{
-            index:2
+        meta: {
+            index: 2
         }
     },
     {
         path: '/info',
         component: () => import('../components/HomePage/Info.vue'),
-        meta:{
-            index:3
+        meta: {
+            index: 3
         }
     },
     {
@@ -40,8 +40,8 @@ const routes = [
         component: () => import('../components/HomePage/Record.vue'),
     },
     {
-        path:"/:catchAll(.*)",
-        redirect:'/'
+        path: "/:catchAll(.*)",
+        redirect: '/'
     }
 ]
 
@@ -49,9 +49,9 @@ const router = VueRouter.createRouter({
     history: VueRouter.createWebHashHistory(),
     routes,
 })
-router.beforeEach((to,from)=>{
-    const result=routes.some((url)=>url.path===to.path)
-    if(!result){
+router.beforeEach((to, from) => {
+    const result = routes.some((url) => url.path === to.path)
+    if (!result) {
         router.push('/')
     }
 })

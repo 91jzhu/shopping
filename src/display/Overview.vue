@@ -1,6 +1,7 @@
 <template>
   <div class="overviewWrapper" v-if="visible">
-    <DropDown v-model:title="months[0]">
+    <DropDown v-model:title="months[0]"
+              @update:chart="changeChart">
       <DropDownItem v-for="month in months" :date="month" :key="month"/>
     </DropDown>
     <div class="chart-Wrapper">
@@ -15,125 +16,152 @@
 
 <script lang="ts">
 import * as echarts from "echarts";
-import {onMounted, ref} from "vue";
+import {onMounted, onUpdated, reactive, ref, watchEffect} from "vue";
 import dayjs from "dayjs";
 import DropDown from "../components/Tool/DropDown.vue";
 import DropDownItem from "../components/Tool/DropDown-Item.vue";
-import {getMonths, getPrice} from "../store/data";
+import {Data, getDates, getMonth, getMonths, getPrice, initPrice} from "../store/data";
 import Icon from "../components/Tool/Icon.vue";
 
-const produceDate=()=>{
-  const res=[]
-  const oneDay=86400000
-  for(let i=0;i<5;i++){
-    res.push(dayjs(Date.now()-i*oneDay).format('YYYY年MM月DD日'))
-  }
-  res.sort((a,b)=>a>b?1:-1)
-  return res
-}
-const format=(arr)=> arr.map(item=>item.slice(5).replace('月','-').replace('日',''))
-const data=()=>{
-  return produceDate().map((date)=> getPrice(date))
-}
 export default {
   components: {Icon, DropDownItem, DropDown},
   setup() {
     const chartRef = ref(null)
-    const months=ref([...new Set(getMonths())])
-    const visible=ref(true)
+    const months = reactive([...new Set(getMonths())])
+    const visible = ref(true)
+    const text = ref('')
+    const data = reactive(initPrice(months[0]))
+    const xAxis = reactive([])
+    const changeChart = (val) => {
+      const tmp = getMonth(val)
+      tmp.sort((a: Data, b: Data) => a.createdAt > b.createdAt ? 1 : -1)
+      xAxis.length = 0
+      data.length = 0
+      tmp.forEach((item) => {
+        xAxis.push(item.createdAt.slice(8, 10).replace('月', '-'))
+        data.push(getPrice(item.createdAt))
+      })
+      text.value = val
+    }
+    changeChart(months[0])
     onMounted(() => {
-      if(months.value.length===0||data()?.every(item=>!item)){
-        visible.value=false
-      }
-      if (chartRef.value) {
-        const myChart = echarts.init(chartRef.value)
-        myChart.setOption({
-          title: {
-            show: true,
-            text: '2022年2月消费情况',
-            top: 'top',
-            left: 'center',
-            textStyle: {
-              color: 'grey',
-              fontSize: 22,
-              fontStyle: 'oblique',
-              width: 100
-            }
-          },
-          grid:{
-            containLabel:true,
-            left:'4%',
-            right:'',
-            bottom:'4%',
-          },
-          xAxis: {
-            type: 'category',
-            data:format(produceDate()),
-            axisLabel: {
-              color: '#7c7e86',
-              fontSize: 16,
-            },
-            axisTick: {
-              show: false
-            },
-            axisLine: {
-              lineStyle: {
-                color: '#ccc'
-              }
-            }
-          },
-          yAxis: {
-            splitLine: {show: true},
-            axisLine: {
-              lineStyle: {
-                color: '#ccc'
+      watchEffect(() => {
+        if (months.length === 0 || data?.every(item => !item)) {
+          visible.value = false
+        }
+        if (chartRef.value) {
+          const myChart = echarts.init(chartRef.value)
+          myChart.setOption({
+            title: {
+              show: true,
+              text: text.value+'消费情况',
+              top: 'top',
+              left: 'center',
+              textStyle: {
+                color: 'grey',
+                fontSize: 22,
+                fontStyle: 'oblique',
+                width: 100
               }
             },
-            axisLabel: {
-              showMinLabel: false,
-              color: '#7c7e86',
-              fontSize: 18,
+            grid: {
+              containLabel: true,
+              left: '4%',
+              right: '4%',
+              bottom: '4%',
             },
-          },
-          series: [
-            {
-              name: 'line',
-              type: 'line',
-              smooth: true,
-              showAllSymbol: true,
-              symbol: 'emptyCircle',
-              symbolSize: 15,
-              data: data()
-            },
-            {
-              name: 'bar',
-              type: 'bar',
-              barWidth: 16,
-              itemStyle: {
-                borderRadius: 12,
-                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                  {offset: 0, color: '#83bff6'},
-                  {offset: 0.5, color: '#188df0'},
-                  {offset: 1, color: '#188df0'}
-                ])
+            xAxis: {
+              type: 'category',
+              data: xAxis,
+              axisLabel: {
+                color: '#7c7e86',
+                fontSize: 16,
+                showMinLabel: true,
+                showMaxLabel: true,
               },
-              label: {
-                show: true,		//开启显示
-                position: 'top',	//在上方显示
-                distance:12,
-                formatter:'${c}',
-                textStyle: {	    //数值样式
-                  color: 'black',
-                  fontSize: 20
+              axisTick: {
+                show: false
+              },
+              axisLine: {
+                lineStyle: {
+                  color: '#ccc'
+                }
+              }
+            },
+            yAxis: {
+              splitLine: {show: true},
+              axisLine: {
+                lineStyle: {
+                  color: '#ccc'
                 }
               },
-              data: data()
+              axisLabel: {
+                showMinLabel: false,
+                color: '#7c7e86',
+                fontSize: 18,
+              },
             },
-          ]
-        })
-      }
+            series: [
+              {
+                name: 'bar',
+                type: 'bar',
+                barWidth: 12,
+                barCategoryGap:'40%',
+                data,
+                itemStyle: {
+                  normal: {
+                    barBorderRadius: 16,
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                      {offset: 0, color: '#83bff6'},
+                      {offset: 0.5, color: '#188df0'},
+                      {offset: 1, color: '#188df0'}
+                    ]),
+                    label: {
+                      show: true,
+                      position: 'top',
+                      color: 'orange',
+                      fontSize: 18,
+                      fontWeight: 'bold',
+                      backgroundColor: '#eee',
+                      borderColor: '#777',
+                      borderWidth: 1,
+                      borderRadius: 12,
+                      padding: [10,3,4,3],
+                      formatter: [
+                        '{a|支出}',
+                        '{c|{c}}'
+                      ].join('\n'),
+                      rich: {
+                        a: {
+                          align: 'center',
+                          color: 'black',
+                          fontSize: 18,
+                        },
+                        hr: {
+                          borderColor: 'black',
+                          width: '100%',
+                          borderWidth: 0.5,
+                          height: 1
+                        },
+                        c: {
+                          align: 'center',
+                          color: '#ff8811',
+                          textBorderColor: '#000',
+                          textBorderWidth: 1,
+                          fontSize: 22,
+                          lineHeight:32
+                        }
+                      }
+                    },
+                  },
+                },
+              },
+            ]
+          })
+        }
+      })
     })
-    return {chartRef,months,visible}
+    return {chartRef, months, visible, changeChart}
   }
 }
 </script>
@@ -146,6 +174,8 @@ export default {
   justify-content: flex-end;
 
   .chart-Wrapper {
+    width:100vw;
+    overflow: auto;
     .overviewChart {
       border: 1px solid grey;
       border-top-left-radius: 24px;
@@ -155,17 +185,19 @@ export default {
     }
   }
 }
-.replace{
-  height:100%;
+
+.replace {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 28px;
-  color:grey;
-  .icon{
-    width:112px;
-    height:112px;
+  color: grey;
+
+  .icon {
+    width: 112px;
+    height: 112px;
     margin-bottom: 12px;
   }
 }

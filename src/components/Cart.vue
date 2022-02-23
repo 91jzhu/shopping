@@ -51,7 +51,7 @@ export default {
         context.emit('update:visible', false)
         visible.value = false
         deleteCar({name: props.name, count: props.count})
-        Context.emit('update:delete',props.name)
+        Context.emit('update:delete', props.name)
       },
       rightFunc: (context) => {
         context.emit('update:visible', false)
@@ -62,8 +62,8 @@ export default {
     }
     const deleteCart = () => {
       deleteCar({name: props.name})
-      visible.value=false
-      Context.emit('update:amount',props.name)
+      visible.value = false
+      Context.emit('update:amount', props.name)
     }
     return {touch, visible, countChange, dialogVisible, params, deleteCart}
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="itemWrapper">
-    {{date}}
+    {{ date }}
     <div class="line"/>
   </div>
 </template>
@@ -8,8 +8,8 @@
 <script lang="ts">
 export default {
   name: "DropDown-Item",
-  props:{
-    date:String
+  props: {
+    date: String
   },
 }
 </script>
@@ -20,15 +20,16 @@ export default {
   font-size: 20px;
   white-space: nowrap;
   position: relative;
-  .line{
+
+  .line {
     position: absolute;
-    width:300px;
-    height:2px;
+    width: 300px;
+    height: 2px;
     transform: scale(0.5);
     background: grey;
-    left:50%;
+    left: 50%;
     margin-left: -150px;
-    bottom:0;
+    bottom: 0;
   }
 }
 </style>

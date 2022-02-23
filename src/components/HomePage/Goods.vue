@@ -26,8 +26,8 @@ import {ref} from 'vue'
 import Toast from "../Tool/Toast.vue";
 
 export default {
-  name:'Goods.vue',
-  components: {Toast, Navbar, Tab, Tabs, Snacks,Pet,Sports},
+  name: 'Goods.vue',
+  components: {Toast, Navbar, Tab, Tabs, Snacks, Pet, Sports},
   setup() {
     let selected = ref('零食')
     return {selected}
@@ -46,7 +46,6 @@ export default {
 
   }
 }
-
 
 
 </style>

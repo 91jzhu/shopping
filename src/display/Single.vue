@@ -24,19 +24,20 @@ import {Car} from "../type";
 import DropDown from "../components/Tool/DropDown.vue";
 import DropDownItem from "../components/Tool/DropDown-Item.vue";
 import Icon from "../components/Tool/Icon.vue";
+
 export default {
   components: {Icon, DropDownItem, DropDown},
-  setup(){
+  setup() {
     const chartRef = ref(null)
-    const title=ref(fetchBuy()?.createdAt.replace('年','-').replace('月','-').replace('日',''))
+    const title = ref(fetchBuy()?.createdAt.replace('年', '-').replace('月', '-').replace('日', ''))
     const source = reactive([])
     const text = ref('')
     const myChart = ref<EChartsType>(null)
     const dates = reactive<string[]>(getDates())
-    const visible=ref(true)
+    const visible = ref(true)
     onMounted(() => {
-      if(!fetchBuy()){
-        visible.value=false
+      if (!fetchBuy()) {
+        visible.value = false
         return
       }
       text.value = fetchBuy().createdAt
@@ -48,7 +49,7 @@ export default {
     })
     const initSource = () => {
       fetchBuy().buyEd.forEach((item: Partial<Car>) => {
-        source.push([item.name,item.price])
+        source.push([item.name, item.price])
       })
     }
     const changeText = (newText: string) => {
@@ -87,7 +88,7 @@ export default {
           }
         },
         grid: {
-          bottom:'4%',
+          bottom: '4%',
           left: '2%',
           right: '1%',
           containLabel: true
@@ -108,13 +109,13 @@ export default {
         tooltip: {},
         legend: {},
         yAxis: {
-          name:'($)',
-          nameLocation:'end',
-          nameTextStyle:{
-            fontSize:20,
-            align:'right',
-            verticalAlign:'bottom',
-            padding:[0,4,8,0],
+          name: '($)',
+          nameLocation: 'end',
+          nameTextStyle: {
+            fontSize: 20,
+            align: 'right',
+            verticalAlign: 'bottom',
+            padding: [0, 4, 8, 0],
           },
           axisLabel: {
             fontSize: 18,
@@ -145,17 +146,18 @@ export default {
       changeText(val)
       setOption()
     }
-    return {chartRef, changeDate, changeChart, dates,title,visible}
+    return {chartRef, changeDate, changeChart, dates, title, visible}
   }
 }
 </script>
 
 <style scoped lang="scss">
-.singleWrapper{
-  flex:1;
+.singleWrapper {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   .chartWrapper {
     .chart {
       border: 1px solid grey;
@@ -166,17 +168,19 @@ export default {
     }
   }
 }
-.replace{
-  height:100%;
+
+.replace {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 28px;
-  color:grey;
-  .icon{
-    width:112px;
-    height:112px;
+  color: grey;
+
+  .icon {
+    width: 112px;
+    height: 112px;
     margin-bottom: 12px;
   }
 }

@@ -2,7 +2,7 @@
   <div class="carWrapper">
     <div class="header">
       <span class="name">购物车</span>
-      <span class="mount">({{ mount?mount:0 }})</span>
+      <span class="mount">({{ mount ? mount : 0 }})</span>
     </div>
     <div class="settle">
       <div class="carList" ref="carList" v-if="visible">
@@ -52,15 +52,15 @@ export default {
     const visible = ref(true)
     const amount = ref(0)
     const cars = ref(fetchCar())
-    const mount=computed(()=>cars.value.length)
+    const mount = computed(() => cars.value.length)
     const calcAmount = () => {
-      amount.value=0
+      amount.value = 0
       cars.value.forEach((item: Partial<Car>) => {
         amount.value += Number(item.price!.slice(1)) * Number(item.count)
       })
     }
     onMounted(() => {
-      watchEffect(()=>{
+      watchEffect(() => {
         if (carList.value) {
           calcAmount()
           if ((carList.value as HTMLDivElement).children.length === 0) {
@@ -69,11 +69,11 @@ export default {
         }
       })
     })
-    watch(()=>cars.value,()=>{
-      if(cars.value.length===0){
-        visible.value=false
+    watch(() => cars.value, () => {
+      if (cars.value.length === 0) {
+        visible.value = false
       }
-    },{deep:true})
+    }, {deep: true})
     const settle = () => {
       if (!changeCash(amount.value))
         return
@@ -88,16 +88,16 @@ export default {
         }
       })
     }
-    const updateAmount = (name:string) => {
-      cars.value.forEach((item:Partial<Car>,index:number)=>{
-        if(item.name===name){
-          cars.value.splice(index,1)
+    const updateAmount = (name: string) => {
+      cars.value.forEach((item: Partial<Car>, index: number) => {
+        if (item.name === name) {
+          cars.value.splice(index, 1)
         }
       })
       calcAmount()
     }
     return {
-      carList, visible, amount,mount,
+      carList, visible, amount, mount,
       cars, modifyCount, settle, completeDelete, updateAmount,
     }
   }
@@ -106,9 +106,10 @@ export default {
 <style scoped lang="scss">
 .carWrapper {
   background: #f6f6f6;
+
   .header {
-    background: rgb(217,228,224);
-    background: radial-gradient(circle, rgba(217,228,224,1) 0%, rgba(239,232,222,1) 100%);
+    background: rgb(217, 228, 224);
+    background: radial-gradient(circle, rgba(217, 228, 224, 1) 0%, rgba(239, 232, 222, 1) 100%);
     height: 72px;
     display: flex;
     justify-content: flex-start;
@@ -116,8 +117,11 @@ export default {
     align-items: center;
     font-size: 24px;
     font-weight: 600;
-    .name{}
-    .mount{
+
+    .name {
+    }
+
+    .mount {
       margin-left: 4px;
       font-weight: 400;
       font-size: 18px;
@@ -149,25 +153,37 @@ export default {
       justify-content: center;
       align-items: center;
       font-size: 36px;
-      .icon{
-        width:112px;
-        height:112px;
+
+      .icon {
+        width: 112px;
+        height: 112px;
       }
-      span{
-        margin:12px 0 64px 0;
+
+      span {
+        margin: 12px 0 64px 0;
         border: 1px solid lightgrey;
         box-shadow: 2px 2px 10px lightgrey;
         border-radius: 32px;
-        padding:10px 24px;
+        padding: 10px 24px;
         animation: swing 1.5s;
         transform-origin: 30px 30px;
       }
+
       @keyframes swing {
-        0%{}
-        50%{transform: rotate(70deg)}
-        70%{transform: rotate(90deg)}
-        80%{transform: rotate(70deg)}
-        100%{transform: rotate(90deg)}
+        0% {
+        }
+        50% {
+          transform: rotate(70deg)
+        }
+        70% {
+          transform: rotate(90deg)
+        }
+        80% {
+          transform: rotate(70deg)
+        }
+        100% {
+          transform: rotate(90deg)
+        }
       }
     }
   }
@@ -193,7 +209,7 @@ export default {
       .money {
         margin-left: 4px;
         font-size: 28px;
-        color:#fb4e02;
+        color: #fb4e02;
       }
     }
 
@@ -201,13 +217,13 @@ export default {
       font-size: 18px;
       color: white;
       position: absolute;
-      padding:12px 36px;
+      padding: 12px 36px;
       top: 50%;
       transform: translateY(-50%);
       right: 20px;
       border: none;
-      background: rgb(255,137,5);
-      background: linear-gradient(90deg, rgba(255,137,5,1) 0%, rgba(255,85,4,1) 100%);
+      background: rgb(255, 137, 5);
+      background: linear-gradient(90deg, rgba(255, 137, 5, 1) 0%, rgba(255, 85, 4, 1) 100%);
       font-weight: 600;
       border-radius: 32px;
     }

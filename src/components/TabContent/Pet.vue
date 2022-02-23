@@ -101,8 +101,9 @@
 
 <script lang="ts">
 import Good from '../Good.vue'
+
 export default {
-  components:{Good}
+  components: {Good}
 }
 
 </script>
@@ -111,7 +112,7 @@ export default {
 .pet {
   max-height: calc(100vh - 87px);
   overflow-y: auto;
-  width:100%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   //border:1px solid red;

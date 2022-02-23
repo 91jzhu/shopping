@@ -1,5 +1,11 @@
 import * as VueRouter from 'vue-router'
 import Front from "../Front.vue";
+import Goods from "../components/HomePage/Goods.vue";
+import Car from "../components/HomePage/Car.vue";
+import Info from "../components/HomePage/Info.vue";
+import Receive from "../components/HomePage/Receive.vue";
+import Collection from "../components/HomePage/Collection.vue";
+import Record from "../components/HomePage/Record.vue";
 
 const routes = [
     {
@@ -8,36 +14,36 @@ const routes = [
     },
     {
         path: '/goods',
-        component: () => import('../components/HomePage/Goods.vue'),
+        component: Goods,
         meta: {
             index: 1
         }
     },
     {
         path: '/car',
-        component: () => import('../components/HomePage/Car.vue'),
+        component: Car,
         meta: {
             index: 2
         }
     },
     {
         path: '/info',
-        component: () => import('../components/HomePage/Info.vue'),
+        component: Info,
         meta: {
             index: 3
         }
     },
     {
         path: '/info/receive',
-        component: () => import('../components/HomePage/Receive.vue'),
+        component: Receive,
     },
     {
         path: '/info/collection',
-        component: () => import('../components/HomePage/Collection.vue'),
+        component: Collection,
     },
     {
         path: '/info/record',
-        component: () => import('../components/HomePage/Record.vue'),
+        component: Record,
     },
     {
         path: "/:catchAll(.*)",

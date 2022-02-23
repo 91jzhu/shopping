@@ -39,7 +39,10 @@ const routes = [
         path: '/info/record',
         component: () => import('../components/HomePage/Record.vue'),
     },
-
+    {
+        path:"/:catchAll(.*)",
+        redirect:'/'
+    }
 ]
 
 const router = VueRouter.createRouter({

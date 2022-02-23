@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="添加全局前置守卫">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="修复小问题">
+      <change afterPath="$PROJECT_DIR$/deplosh.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/display/Overview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/Overview.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Front.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/Front.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +61,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/新建草稿文件" value="Vue" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../coms-ui" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/JZHU/money-note-1" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,6 +80,28 @@
       <recent name="C:\Project\shopping\src\components\Tool" />
       <recent name="C:\Project\shopping\src\components\HomePage" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="deplosh.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/deplosh.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Shell Script.deplosh.sh" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -146,14 +169,9 @@
       <workItem from="1645239432453" duration="21338000" />
       <workItem from="1645349807106" duration="8280000" />
       <workItem from="1645410590357" duration="25963000" />
-      <workItem from="1645497648512" duration="4392000" />
-    </task>
-    <task id="LOCAL-00011" summary="解决添加商品更新滞后的问题">
-      <created>1644208111752</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1644208111752</updated>
+      <workItem from="1645497648512" duration="4890000" />
+      <workItem from="1645504355181" duration="13000" />
+      <workItem from="1645604266170" duration="1705000" />
     </task>
     <task id="LOCAL-00012" summary="购物车商品准备使用 dialog 删除，重构 dialog">
       <created>1644209815442</created>
@@ -491,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645449040043</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="修复小问题">
+      <created>1645502111316</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1645502111316</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +534,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dialog 样式完善" />
     <MESSAGE value="删除功能完善" />
     <MESSAGE value="初步完成收藏api" />
     <MESSAGE value="开心币正常使用" />
@@ -534,7 +558,8 @@
     <MESSAGE value="replace 样式优化" />
     <MESSAGE value="shopping 基本完成" />
     <MESSAGE value="添加全局前置守卫" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加全局前置守卫" />
+    <MESSAGE value="修复小问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复小问题" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

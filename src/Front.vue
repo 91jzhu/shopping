@@ -18,7 +18,6 @@ export default {
 
 <style scoped lang="scss">
 .start {
-  border: 1px solid red;
   height: 100%;
   display: flex;
   flex-direction: column;

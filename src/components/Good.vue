@@ -70,6 +70,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 12px;
 
   &.active {
     box-shadow: inset 2px 2px 1px #888888;

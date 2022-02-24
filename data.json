@@ -34,27 +34,6 @@
     ]
   },
   {
-    "createdAt": "2022年02月20日",
-    "buyEd": [
-      {
-        "name": "pizza",
-        "price": 24
-      },
-      {
-        "name": "pear",
-        "price": 6
-      },
-      {
-        "name": "football",
-        "price": 27
-      },
-      {
-        "name": "basketball",
-        "price": 32
-      }
-    ]
-  },
-  {
     "createdAt": "2022年02月18日",
     "buyEd": [
       {
@@ -68,19 +47,6 @@
       {
         "name": "cake",
         "price": 14
-      }
-    ]
-  },
-  {
-    "createdAt": "2022年02月17日",
-    "buyEd": [
-      {
-        "name": "watermelon",
-        "price": 9
-      },
-      {
-        "name": "banana",
-        "price": 7.5
       }
     ]
   },
@@ -188,4 +154,3 @@
     ]
   }
 ]
-

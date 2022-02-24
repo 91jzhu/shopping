@@ -5,7 +5,6 @@
         <h3>{{ title }}</h3>
         <div class="countWrapper">
           <Icon :name="good" class="good"/>
-          <div class="line"/>
           <div class="count">
             <h4>购买数量</h4>
             <div class="countBtn">
@@ -128,16 +127,6 @@ export default {
         width: 72px;
         height: 72px;
         margin: 0 12px;
-      }
-
-      .line {
-        position: absolute;
-        height: 88px;
-        top: 50%;
-        margin-top: -44px;
-        left: 88px;
-        border: 1px solid grey;
-        transform: scaleX(0.5);
       }
 
       .count {

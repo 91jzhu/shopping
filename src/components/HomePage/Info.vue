@@ -102,8 +102,8 @@ export default {
     justify-content: center;
     align-items: center;
     border: 1px solid grey;
-    margin-top: 12px;
-    padding: 36px;
+    //margin-top: 12px;
+    padding: 24px;
     font-size: 28px;
     border-radius: 24px;
   }
@@ -111,7 +111,7 @@ export default {
   .function {
     background: #ffffff;
     border: 1px solid grey;
-    margin-top: 12px;
+    //margin-top: 12px;
     border-radius: 24px;
     padding: 18px 0;
     display: flex;
@@ -120,7 +120,6 @@ export default {
 
     .receive {
       height: 100%;
-      //border:1px solid red;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -196,7 +195,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 48px;
+    margin-bottom: 30px;
 
     a {
       text-decoration: none;

@@ -84,8 +84,8 @@ export default {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding-left: 22vw;
-      font-size: 24px;
+      padding-left: 18vw;
+      font-size: 20px;
     }
   }
 

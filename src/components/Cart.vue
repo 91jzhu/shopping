@@ -111,6 +111,7 @@ export default {
     .pc {
       flex: 1;
       display: flex;
+      //border:1px solid red;
       justify-content: space-between;
       align-items: center;
 
@@ -125,7 +126,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 38px;
+        margin-right: 22px;
         padding: 8px;
       }
     }

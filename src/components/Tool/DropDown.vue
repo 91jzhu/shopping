@@ -52,14 +52,14 @@ export default {
     align-items: center;
 
     .title {
-      font-size: 24px;
+      font-size: 22px;
       color: #9f9d9e;
       padding: 4px 2px;
       display: inline-block;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 4px;
+      left: 8px;
     }
 
     .contentWrapper {
@@ -72,15 +72,15 @@ export default {
       margin-left: 160px;
       padding: 8px 0;
       width: 210px;
-      height: 140px;
+      height: 120px;
 
       &::before {
         content: "";
         width: 0;
         height: 0;
         position: absolute;
-        top: 70px;
-        right: 200px;
+        top: 60px;
+        left:-5%;
         border-bottom: 10px solid white;
         border-right: 10px solid white;
         border-top: 10px solid transparent;
@@ -91,7 +91,7 @@ export default {
 
       &::after {
         content: "";
-        top: 70px;
+        top: 60px;
         width: 12px;
         height: 20px;
         position: absolute;
@@ -99,7 +99,7 @@ export default {
       }
 
       .content {
-        max-height: 140px;
+        max-height: 120px;
         overflow-y: auto;
         display: flex;
         flex-wrap: wrap;

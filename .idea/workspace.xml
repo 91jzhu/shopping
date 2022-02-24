@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="不使用懒加载">
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="去掉竖线">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Good.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Good.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Info.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Snacks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Snacks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Record.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Record.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Rac.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Rac.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Pet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Pet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Sports.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Sports.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display/Overview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/Overview.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,14 +179,7 @@
       <workItem from="1645497648512" duration="4890000" />
       <workItem from="1645504355181" duration="13000" />
       <workItem from="1645604266170" duration="23162000" />
-      <workItem from="1645668322521" duration="4257000" />
-    </task>
-    <task id="LOCAL-00020" summary="Info 页面初次布局">
-      <created>1644239940177</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1644239940177</updated>
+      <workItem from="1645668322521" duration="5819000" />
     </task>
     <task id="LOCAL-00021" summary="重构 Snacks">
       <created>1644317990261</created>
@@ -517,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645627482003</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="去掉竖线">
+      <created>1645676616785</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1645676616785</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="图表组件初步完成" />
     <MESSAGE value="下拉菜单样式基本完成" />
     <MESSAGE value="添加事件委托" />
     <MESSAGE value="图表可以切换" />
@@ -560,7 +566,8 @@
     <MESSAGE value="购物车 css" />
     <MESSAGE value="css 优化" />
     <MESSAGE value="不使用懒加载" />
-    <option name="LAST_COMMIT_MESSAGE" value="不使用懒加载" />
+    <MESSAGE value="去掉竖线" />
+    <option name="LAST_COMMIT_MESSAGE" value="去掉竖线" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

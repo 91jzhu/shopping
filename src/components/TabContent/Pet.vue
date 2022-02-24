@@ -122,6 +122,7 @@ export default {
   }
   .bottom{
     width:100vw;
+    margin: 12px 0;
     display: flex;
     justify-content: center;
     align-items: center;

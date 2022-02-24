@@ -60,7 +60,7 @@ export default {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      font-size: 24px;
+      font-size: 20px;
     }
   }
 }

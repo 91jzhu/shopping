@@ -66,6 +66,7 @@ export default {
             },
             grid: {
               containLabel: true,
+              top:'20%',
               left: '4%',
               right: '4%',
               bottom: '4%',

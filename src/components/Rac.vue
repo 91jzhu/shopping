@@ -2,7 +2,6 @@
   <div class="RacWrapper" v-if="visible">
     <div class="content">
       <Icon :name="name" class="icon"/>
-      <div class="line"/>
       <div class="price" v-if="price">{{ price }}</div>
       <div class="count" v-if="count">{{ count ? 'x' + count : 'x3' }}</div>
       <div class="countDown" v-if="time">
@@ -101,27 +100,16 @@ export default {
       margin-left: 12px;
     }
 
-    .line {
-      position: absolute;
-      height: 72px;
-      top: 50%;
-      margin-top: -36px;
-      left: 88px;
-      border: 1px solid grey;
-      transform: scaleX(0.5);
-    }
-
     .countDown {
       font-size: 18px;
-      //border: 1px solid blue;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 72px;
       margin-right: 8px;
-      margin-left: 20px;
+      margin-left: 18px;
       border-radius: 24px;
-      padding: 0 8px;
+      padding: 0 4px;
 
       span {
 
@@ -163,7 +151,7 @@ export default {
         color: white;
         font-size: 22px;
         border: none;
-        width: 144px;
+        width: 114px;
         height: 64px;
         border-radius: 24px;
       }
@@ -178,7 +166,7 @@ export default {
       align-items: center;
       height: 72px;
       width: 32px;
-      margin-left: 24px;
+      margin-left: 12px;
       padding: 0 6px;
     }
 

@@ -42,7 +42,7 @@ import Icon from "./Tool/Icon.vue";
     align-items: center;
     width: 33.3333%;
     height: 48px;
-    padding: 4px 0;
+    padding: 8px 0;
     background: white;
     color: grey;
 

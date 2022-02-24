@@ -74,6 +74,7 @@ export default {
       width: 180px;
       height: 120px;
 
+
       &::before {
         content: "";
         width: 0;

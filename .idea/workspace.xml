@@ -4,8 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="修复移动端一些问题">
       <change beforePath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" afterDir="false" />
+=======
+    <list default="true" id="658a5c37-7e64-4ab5-b8c9-62647d21d66e" name="默认变更列表" comment="去掉竖线">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Car.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Car.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Collection.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Receive.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Record.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/Record.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Rac.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Rac.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Pet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Pet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabContent/Sports.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabContent/Sports.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tool/DropDown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display/Overview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/Overview.vue" afterDir="false" />
+>>>>>>> cd6148562eec269eb141182647449aec034c7ec8
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +184,18 @@
       <workItem from="1645497648512" duration="4890000" />
       <workItem from="1645504355181" duration="13000" />
       <workItem from="1645604266170" duration="23162000" />
+<<<<<<< HEAD
       <workItem from="1645668322521" duration="5935000" />
+=======
+      <workItem from="1645668322521" duration="5819000" />
+    </task>
+    <task id="LOCAL-00021" summary="重构 Snacks">
+      <created>1644317990261</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1644317990261</updated>
+>>>>>>> cd6148562eec269eb141182647449aec034c7ec8
     </task>
     <task id="LOCAL-00022" summary="重构 pet">
       <created>1644318497731</created>
@@ -506,6 +533,7 @@
       <option name="project" value="LOCAL" />
       <updated>1645676616785</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00070" summary="修复移动端一些问题">
       <created>1645677962267</created>
       <option name="number" value="00070" />
@@ -514,6 +542,9 @@
       <updated>1645677962267</updated>
     </task>
     <option name="localTasksCounter" value="71" />
+=======
+    <option name="localTasksCounter" value="70" />
+>>>>>>> cd6148562eec269eb141182647449aec034c7ec8
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,6 +562,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
+=======
+    <MESSAGE value="下拉菜单样式基本完成" />
+>>>>>>> cd6148562eec269eb141182647449aec034c7ec8
     <MESSAGE value="添加事件委托" />
     <MESSAGE value="图表可以切换" />
     <MESSAGE value="每日图表功能已完成" />
@@ -555,8 +590,12 @@
     <MESSAGE value="css 优化" />
     <MESSAGE value="不使用懒加载" />
     <MESSAGE value="去掉竖线" />
+<<<<<<< HEAD
     <MESSAGE value="修复移动端一些问题" />
     <option name="LAST_COMMIT_MESSAGE" value="修复移动端一些问题" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="去掉竖线" />
+>>>>>>> cd6148562eec269eb141182647449aec034c7ec8
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

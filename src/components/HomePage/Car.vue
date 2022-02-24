@@ -160,7 +160,7 @@ export default {
       }
 
       span {
-        margin: 12px 0 64px 0;
+        margin: 12px 0 172px 0;
         border: 1px solid lightgrey;
         box-shadow: 2px 2px 10px lightgrey;
         border-radius: 32px;
@@ -218,7 +218,7 @@ export default {
       color: white;
       position: absolute;
       padding: 12px 36px;
-      top: 50%;
+      top: 40%;
       transform: translateY(-50%);
       right: 20px;
       border: none;
